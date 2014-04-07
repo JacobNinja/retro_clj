@@ -17,3 +17,11 @@
     (is (= "Dl" (encode-b64 300)))
     (is (= "IX" (encode-b64 600)))
     (is (= "NH" (encode-b64 5000)))))
+
+(deftest vl64-encoding
+  (testing "encode"
+    (is (= "H" (encode-vl64 0)))
+    (is (= "I" (encode-vl64 1)))
+    (is (= "J" (encode-vl64 2)))
+    (is (= "PY" (encode-vl64 100)))
+    ))
