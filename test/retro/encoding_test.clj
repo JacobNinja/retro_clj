@@ -24,4 +24,5 @@
     (is (= "I" (encode-vl64 1)))
     (is (= "J" (encode-vl64 2)))
     (is (= "PY" (encode-vl64 100)))
+    (is (= "TY" (encode-vl64 -100)))
     ))
