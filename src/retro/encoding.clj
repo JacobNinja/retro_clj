@@ -1,5 +1,17 @@
 (ns retro.encoding)
 
+(defn- zip [a b]
+  (partition 2 (interleave a b)))
+
+(defn- negative? [s]
+  (= 4 (bit-and (int (first s)) 4)))
+
+(defn- total-bytes [b]
+  (bit-and (bit-shift-right b 3) 7))
+
+(defn- shift-amount [i]
+  (+ 2 (* 6 i)))
+
 (defn- base-64 [idx chr]
   (let [n (- (int chr) 64)
         base (Math/pow 64 idx)]
@@ -25,3 +37,17 @@
       (recur (cons (+ 64 (bit-and next-i 0x3f))
                    bytes)
              (bit-shift-right next-i 6)))))
+
+(defn- decode-vl64* [bytes]
+  (reduce (fn [_ [b shift]]
+            (bit-shift-left (bit-and b 0x3f) shift))
+          (bit-and (first bytes) 3)
+          (zip (rest bytes)
+               (map shift-amount
+                    (range (total-bytes (first bytes)))))))
+
+(defn decode-vl64 [s]
+  (let [result (decode-vl64* (map int s))]
+    (if (negative? s)
+      (* result -1)
+      result)))

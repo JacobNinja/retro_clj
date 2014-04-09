@@ -25,4 +25,11 @@
     (is (= "J" (encode-vl64 2)))
     (is (= "PY" (encode-vl64 100)))
     (is (= "TY" (encode-vl64 -100)))
+    )
+  (testing "decode"
+    (is (= 0 (decode-vl64 "H")))
+    (is (= 1 (decode-vl64 "I")))
+    (is (= 2 (decode-vl64 "J")))
+    (is (= 100 (decode-vl64 "PY")))
+    (is (= -100 (decode-vl64 "TY")))
     ))
