@@ -18,7 +18,7 @@
 (defn- packet-header [raw-packet]
   (encoding/decode-b64 (take packet-header-size raw-packet)))
 
-(defn- packet-body [body]
+(defn packet-body [body]
   (map #(apply str %)
        (partition-by packet-header packet-header-size body)))
 

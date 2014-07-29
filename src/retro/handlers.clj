@@ -2,7 +2,7 @@
   (:require [retro.encoding :refer :all]
             [clojure.string :refer [join]]))
 
-(defrecord User [name figure sex mission tickets film mail])
+(defrecord User [username figure sex mission tickets film mail])
 
 (defn greet [env]
   {:header 0})
@@ -12,13 +12,10 @@
     [{:header 8 :body static-key}
      {:header 257 :body (str "RAHIIIKHJIPAIQAdd-MM-yyyy" (char 2))}]))
 
-(defn login [env]
-  (let [[username password] (:body env)]
-    (if (and (= username "test")
-             (= password "123"))
-      [{:header 7 :body "fuse_login"}
-       {:header 3}]
-      [{:header 3 :body "Incorrect username/password"}])))
+(defn login [user]
+  (if user
+    [{:header 7 :body "fuse_login"} {:header 3}]
+    [{:header 3 :body "Incorrect username/password"}]))
 
 (defn credits [env]
   [{:header 6 :body (str (get-in env [:user :credits]) ".0")}])
