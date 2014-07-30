@@ -2,8 +2,6 @@
   (:require [retro.encoding :refer :all]
             [clojure.string :refer [join]]))
 
-(defrecord User [username figure sex mission tickets film mail])
-
 (defn greet [env]
   {:header 0})
 

@@ -1,6 +1,7 @@
 (ns retro.handler-test
   (:require [clojure.test :refer :all]
-            [retro.handlers :refer :all]))
+            [retro.handlers :refer :all]
+            [retro.records :refer [map->User]]))
 
 (defn make-check
   ([handler]

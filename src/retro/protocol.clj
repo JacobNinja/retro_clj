@@ -39,3 +39,7 @@
         (recur (drop (packet-length packet-seg) p)
                (conj r packet-seg)))
       r)))
+
+(defn packet-values [packet]
+  (map (comp encoding/decode-vl64 str)
+       packet))
