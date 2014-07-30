@@ -1,21 +1,17 @@
 (ns retro.handler-test
   (:require [clojure.test :refer :all]
             [retro.handlers :refer :all]
-            [retro.records :refer [map->User]]))
+            [retro.records :refer [map->User map->Category]]))
 
-(defn make-check
-  ([handler]
-   (fn [expected]
-     (make-check expected {})))
-  ([handler env & args]
-   (fn [expected]
-     (is (= expected (apply handler (cons env args)))))))
+(defn make-check [handler & args]
+  (fn [expected]
+    (is (= expected (apply handler args)))))
 
 (deftest greet-test
   (let [check (make-check greet)]
     (testing "greet"
       (check [{:header 0}]))
-  ))
+    ))
 
 (deftest generate-key-test
   (let [check (make-check generate-key)]
@@ -37,7 +33,7 @@
   )
 
 (deftest credits-test
-  (let [check (make-check credits {:user (map->User {:credits 120})})]
+  (let [check (make-check credits (map->User {:credits 120}))]
     (testing "credits"
       (check [{:header 6 :body "120.0"}]))))
 
@@ -49,33 +45,33 @@
 
 (deftest navigate-test
   (testing "public category with subcategory"
-    (is (= (navigate {:body "HKI"} {:name "Category Name"
-                                    :id 3
-                                    :type 1
-                                    :capacity 100
-                                    :current 1
-                                    :subcategories [{:name "Subcategory 1"
-                                                     :id 8
-                                                     :current 20
-                                                     :capacity 200}]})
+    (is (= (navigate (map->Category {:name "Category Name"
+                                     :id 3
+                                     :type 1
+                                     :capacity 100
+                                     :current 1
+                                     :subcategories [{:name "Subcategory 1"
+                                                      :id 8
+                                                      :current 20
+                                                      :capacity 200}]}))
            {:header 220
             :body (str "HKICategory Name" (char 2) "IPYH"
                        "PBHSubcategory 1" (char 2) "PEPrK")})))
 
   (testing "public subcategory with rooms"
-    (is (= (navigate {:body "HKI"} {:name "Subcategory Name"
-                                    :id 10
-                                    :type 1
-                                    :capacity 100
-                                    :current 1
-                                    :parent 2
-                                    :rooms [{:name "Public room"
-                                             :id 25
-                                             :current 20
-                                             :capacity 100
-                                             :category-id 10
-                                             :ccts "0" ; thats not right....
-                                             :description "description"}]})
+    (is (= (navigate (map->Category {:name "Subcategory Name"
+                                     :id 10
+                                     :type 1
+                                     :capacity 100
+                                     :current 1
+                                     :parent 2
+                                     :rooms [{:name "Public room"
+                                              :id 25
+                                              :current 20
+                                              :capacity 100
+                                              :category-id 10
+                                              :ccts "0" ; thats not right....
+                                              :description "description"}]}))
            {:header 220
             :body (str "HRBISubcategory Name"
                        (char 2)
@@ -98,7 +94,7 @@
 
 
   (testing "private category with rooms"
-    (is (= (navigate {:body "HPAI"} {:name "Private Category"
+    (is (= (navigate (map->Category {:name "Private Category"
                                      :id 1
                                      :type 2
                                      :capacity 4
@@ -110,7 +106,7 @@
                                               :current 1
                                               :capacity 4
                                               :description "description"
-                                              }]})
+                                              }]}))
            {:header 220
             :body (str "H" ; hide full
                        "I" ; id
