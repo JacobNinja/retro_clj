@@ -131,3 +131,7 @@
                        "description"
                        (char 2))})))
   )
+
+(deftest messenger-init-test
+  (testing "messenger init"
+    (is (= (messenger-init) []))))

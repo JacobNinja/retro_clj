@@ -23,6 +23,9 @@
   [{:header client-headers/club :body "club_habboYNEHHI"}
    {:header 23}])
 
+(defn messenger-init []
+  [])
+
 (defn- subcategories [category]
   "[0] = id
    [1] = 0 ?
