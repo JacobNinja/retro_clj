@@ -24,11 +24,11 @@
 (deftest login-test
   (testing "invalid user"
     (let [check (make-check login nil)]
-      (check [{:header 3 :body "Incorrect username/password"}])))
+      (check [{:header 35 :body "Incorrect username/password"}])))
 
   (testing "valid user"
     (let [check (make-check login (map->User {}))]
-      (check [{:header 7 :body "fuse_login"}
+      (check [{:header 2 :body "fuse_login"}
               {:header 3}])))
   )
 
