@@ -73,10 +73,60 @@
     :db/cardinality :db.cardinality/one
     :db/doc "Category parent"
     :db.install/_attribute :db.part/db}
+
+   ; Room
+   {:db/id #db/id[:db.part/db]
+    :db/ident :tx/room
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/one
+    :db/doc "Tx associated with room"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :room/name
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    :db/doc "Room name"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :room/description
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    :db/doc "Room description"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :room/category
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/one
+    :db/doc "Room category"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :room/owner
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/one
+    :db/doc "Room owner"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :room/type
+    :db/valueType :db.type/keyword
+    :db/cardinality :db.cardinality/one
+    :db/doc "Room type"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :room/wallpaper
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    :db/doc "Room wallpaper"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :room/floor
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    :db/doc "Room floor"
+    :db.install/_attribute :db.part/db}
    ])
 
 (defn ensure-schema [conn]
-  (or (-> conn d/db (d/entid :tx/user))
+  (or (-> conn d/db (d/entid :tx/room))
       @(d/transact conn schema)))
 
 (defn ensure-db [db-uri]
@@ -89,32 +139,51 @@
   (map->User {:username (:user/username user-attrs)
               :password (:user/password user-attrs)}))
 
-(defn fetch-user [username password conn]
+(defn fetch-user [username password db]
   (when-let [user (ffirst (datomic.api/q '[:find ?user
                                            :in $ ?username ?password
                                            :where [?user :user/username ?username]
                                                   [?user :user/password ?password]]
-                                         (d/db conn)
+                                         db
                                          username
                                          password))]
-    (db->User (d/entity (d/db conn) user))))
+    (db->User (d/entity db user))))
 
-(defn- db->Category [entity subcategories]
+(defn- db->Category [entity subcategories rooms]
   (map->Category {:name (:category/name entity)
                   :type (:category/type entity)
-                  :subcategories subcategories}))
+                  :subcategories subcategories
+                  :rooms rooms}))
 
 (defn- db->Subcategory [entity]
-  (db->Category entity []))
+  (db->Category entity [] []))
 
-(defn fetch-category [category-id conn]
-  (let [[category & subcategories]
-        (first (datomic.api/q '[:find ?category ?subcategories
+(defn- fetch-subcategories [category db]
+  (first (d/q '[:find ?subcategory
+                :in $ ?category
+                :where [?subcategory :category/parent ?category]] db category)))
+
+(defn- fetch-rooms [category-id db]
+  (first (d/q '[:find ?rooms
+                :in $ ?category-id
+                :where [?rooms :room/category ?category-id]] db category-id)))
+
+(defn db->Room [db entity]
+  (map->Room {:name (:room/name entity)
+              :description (:room/description entity)
+              :owner (db->User (d/entity db (:db/id (:room/owner entity))))
+              :type (:room/type entity)
+              :wallpaper (:room/wallpaper entity)
+              :floor (:room/floor entity)}))
+
+(defn fetch-category [category-id db]
+  (when-let [category (ffirst (datomic.api/q '[:find ?category
                                                :in $ ?category-id
-                                               :where [?category :category/id ?category-id]
-                                                      [?subcategories :category/parent ?category]]
-                                             (d/db conn)
+                                               :where [?category :category/id ?category-id]]
+                                             db
                                              category-id))]
-    (when category
-      (db->Category (d/entity (d/db conn) category)
-                    (map (comp db->Subcategory #(d/entity (d/db conn) %)) subcategories)))))
+    (db->Category (d/entity db category)
+                  (map (comp db->Subcategory (partial d/entity db))
+                       (fetch-subcategories category db))
+                  (map #(db->Room db (d/entity db %))
+                       (fetch-rooms category db)))))
