@@ -26,7 +26,7 @@
               [(bit-and (int (/ num 64)) 63) (mod num 64)])))
 
 (defn encode-vl64 [i]
-  (loop [bytes '()
+  (loop [bytes []
          next-i (bit-shift-right (Math/abs i) 2)]
     (if (= next-i 0)
       (apply str (map char
@@ -34,13 +34,13 @@
                                     (bit-shift-left (inc (count bytes)) 3)
                                     (if (>= i 0) 0 4))
                             bytes)))
-      (recur (cons (+ 64 (bit-and next-i 0x3f))
-                   bytes)
+      (recur (conj bytes
+                   (+ 64 (bit-and next-i 0x3f)))
              (bit-shift-right next-i 6)))))
 
 (defn- decode-vl64* [bytes]
-  (reduce (fn [_ [b shift]]
-            (bit-shift-left (bit-and b 0x3f) shift))
+  (reduce (fn [r [b shift]]
+            (+ r (bit-shift-left (bit-and b 0x3f) shift)))
           (bit-and (first bytes) 3)
           (zip (rest bytes)
                (map shift-amount
@@ -51,3 +51,9 @@
     (if (negative? s)
       (* result -1)
       result)))
+
+(defn vl64-length [s]
+  (condp > (int (first s))
+    80 1
+    88 2
+    3))
