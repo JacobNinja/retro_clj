@@ -1,5 +1,6 @@
 (ns retro.protocol
-  (:require [retro.encoding :as encoding])
+  (:require [retro.encoding :as encoding]
+            [clojure.string :refer [join]])
   (:refer-clojure :exclude [partition-by]))
 
 (def packet-header-size 2)
@@ -19,10 +20,10 @@
   (encoding/decode-b64 (take packet-header-size raw-packet)))
 
 (defn packet-body [body]
-  (map #(apply str %)
+  (map join
        (partition-by packet-header packet-header-size body)))
 
-(defn- packet-length [p]
+(defn packet-length [p]
   (+ (+ packet-header-size 3)
      (reduce + (map #(+ packet-header-size (count %)) (:body p)))))
 
@@ -41,5 +42,15 @@
       r)))
 
 (defn packet-values [packet]
-  (map (comp encoding/decode-vl64 str)
-       packet))
+  (loop [p packet
+         v []]
+    (if (empty? p)
+      v
+      (let [length (encoding/vl64-length p)]
+        (recur (drop length p)
+               (conj v (encoding/decode-vl64 (join (take length p)))))))))
+
+(defn encode-packet [p]
+  (str (encoding/encode-b64 (:header p))
+       (:body p)
+       (char 1)))

@@ -12,4 +12,8 @@
   (testing "two packets"
     (is (= [{:header 1 :body ["test"]}
             {:header 2 :body ["bar"]}]
-           (packets "@@H@A@Dtest@@G@B@Cbar")))))
+           (packets "@@H@A@Dtest@@G@B@Cbar"))))
+
+  (testing "vl64 packet values"
+    (is (= '(1 4 2000)
+           (packet-values "IPAXtG")))))
