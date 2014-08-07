@@ -5,5 +5,6 @@
 (def user-details 7)
 (def club 26)
 (def navigate 150)
+(def user-flat-cats 151)
 (def badge 157)
 (def generate-key 202)

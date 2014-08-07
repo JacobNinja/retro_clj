@@ -85,3 +85,18 @@
                                                             :type :room-type
                                                             :wallpaper "xxx"
                                                             :floor "yyy"})]})})))))
+
+(deftest user-flat-cats-test
+  (testing "categories"
+    (let [category-id (d/tempid :db.part/user)
+          db (d/with base-db [{:db/id category-id
+                               :category/name "Parent category"
+                               :category/type 2}
+                              {:db/id (d/tempid :db.part/user)
+                               :category/type 2
+                               :category/name "Category name"
+                               :category/id 10
+                               :category/parent category-id}])]
+      (is (= (user-flat-cats "" {:db (:db-after db)})
+             {:user-categories [(map->Category {:name "Category name"
+                                                :id 10})]})))))

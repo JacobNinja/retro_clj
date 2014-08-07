@@ -161,6 +161,10 @@
                                        subcategories)
                    :rooms rooms})))
 
+(defn- db->UserCategory [entity]
+  (map->Category {:name (:category/name entity)
+                  :id (:category/id entity)}))
+
 (defn db->Room [db entity]
   (map->Room {:name (:room/name entity)
               :description (:room/description entity)
@@ -197,10 +201,10 @@
 
 (defn fetch-category [category-id db]
   (when-let [category-id (ffirst (datomic.api/q '[:find ?category
-                                               :in $ ?category-id
-                                               :where [?category :category/id ?category-id]]
-                                             db
-                                             category-id))]
+                                                  :in $ ?category-id
+                                                  :where [?category :category/id ?category-id]]
+                                                db
+                                                category-id))]
     (let [category (d/entity db category-id)]
       (db->Category (fetch-parent db category)
                     category
@@ -208,3 +212,13 @@
                          (fetch-subcategories category-id db))
                     (map #(db->Room db (d/entity db %))
                          (fetch-rooms category-id db))))))
+
+(defn fetch-user-categories [db]
+  (let [categories (map first (datomic.api/q '[:find ?category
+                                               :in $ ?type
+                                               :where [?category :category/type ?type]
+                                                      [?category :category/parent _]]
+                                             db
+                                             2))]
+    (map (comp db->UserCategory (partial d/entity db))
+         categories)))

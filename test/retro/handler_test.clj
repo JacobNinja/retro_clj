@@ -160,3 +160,12 @@
                           \return
                           "directMail=0"
                           \return)}])))))
+
+(deftest user-flat-cats-test
+  (testing "user flat categories"
+    (is (= (user-flat-cats {:user-categories [(map->Category {:name "Category name" :id 10})]})
+                          [{:header 221
+                            :body (str "I" ; # categories
+                                       "RB" ; category id
+                                       "Category name"
+                                       (char 2))}]))))

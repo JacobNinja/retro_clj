@@ -8,3 +8,4 @@
 (def pub-key 8)
 (def ban 35)
 (def navigate 220)
+(def user-flat-cats 221)

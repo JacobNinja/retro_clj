@@ -42,6 +42,15 @@
                                     0)))
                \return)}])
 
+(defn user-flat-cats [{:keys [user-categories]}]
+  [{:header client-headers/user-flat-cats
+    :body (str (encode-vl64 (count user-categories))
+               (join (map (fn [category]
+                            (str (encode-vl64 (:id category))
+                                 (:name category)
+                                 (char 2)))
+                          user-categories)))}])
+
 ;; Begin NAVIGATE
 
 (defn- subcategories [category]

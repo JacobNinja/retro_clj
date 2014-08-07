@@ -11,3 +11,6 @@
 (defn navigate [packet {:keys [db]}]
   (let [[hide-full? category-id _] (protocol/packet-values packet)]
     {:category (db/fetch-category category-id db)}))
+
+(defn user-flat-cats [packet {:keys [db]}]
+  {:user-categories (db/fetch-user-categories db)})
