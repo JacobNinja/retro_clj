@@ -137,7 +137,37 @@
 
 (defn- db->User [user-attrs]
   (map->User {:username (:user/username user-attrs)
-              :password (:user/password user-attrs)}))
+              :password (:user/password user-attrs)
+              :figure (:user/figure user-attrs)
+              :sex (:user/sex user-attrs)
+              :mission (:user/mission user-attrs)
+              :tickets 0
+              :film 0
+              :mail 0}))
+
+(defn- db->Category
+  ([parent entity]
+   (db->Category parent entity [] []))
+  ([parent entity subcategories rooms]
+   (map->Category {:name (:category/name entity)
+                   :type (:category/type entity)
+                   :id (:category/id entity)
+                   :capacity 100
+                   :current 0
+                   :parent-id (if parent
+                                (:category/id parent)
+                                0)
+                   :subcategories (map (partial db->Category entity)
+                                       subcategories)
+                   :rooms rooms})))
+
+(defn db->Room [db entity]
+  (map->Room {:name (:room/name entity)
+              :description (:room/description entity)
+              :owner (db->User (d/entity db (:db/id (:room/owner entity))))
+              :type (:room/type entity)
+              :wallpaper (:room/wallpaper entity)
+              :floor (:room/floor entity)}))
 
 (defn fetch-user [username password db]
   (when-let [user (ffirst (datomic.api/q '[:find ?user
@@ -149,41 +179,32 @@
                                          password))]
     (db->User (d/entity db user))))
 
-(defn- db->Category [entity subcategories rooms]
-  (map->Category {:name (:category/name entity)
-                  :type (:category/type entity)
-                  :subcategories subcategories
-                  :rooms rooms}))
-
-(defn- db->Subcategory [entity]
-  (db->Category entity [] []))
-
 (defn- fetch-subcategories [category db]
   (first (d/q '[:find ?subcategory
                 :in $ ?category
-                :where [?subcategory :category/parent ?category]] db category)))
+                :where [?subcategory :category/parent ?category]]
+              db
+              category)))
 
 (defn- fetch-rooms [category-id db]
   (first (d/q '[:find ?rooms
                 :in $ ?category-id
                 :where [?rooms :room/category ?category-id]] db category-id)))
 
-(defn db->Room [db entity]
-  (map->Room {:name (:room/name entity)
-              :description (:room/description entity)
-              :owner (db->User (d/entity db (:db/id (:room/owner entity))))
-              :type (:room/type entity)
-              :wallpaper (:room/wallpaper entity)
-              :floor (:room/floor entity)}))
+(defn fetch-parent [db category]
+  (when-let [parent (:category/parent category)]
+    (d/entity db parent)))
 
 (defn fetch-category [category-id db]
-  (when-let [category (ffirst (datomic.api/q '[:find ?category
+  (when-let [category-id (ffirst (datomic.api/q '[:find ?category
                                                :in $ ?category-id
                                                :where [?category :category/id ?category-id]]
                                              db
                                              category-id))]
-    (db->Category (d/entity db category)
-                  (map (comp db->Subcategory (partial d/entity db))
-                       (fetch-subcategories category db))
-                  (map #(db->Room db (d/entity db %))
-                       (fetch-rooms category db)))))
+    (let [category (d/entity db category-id)]
+      (db->Category (fetch-parent db category)
+                    category
+                    (map (partial d/entity db)
+                         (fetch-subcategories category-id db))
+                    (map #(db->Room db (d/entity db %))
+                         (fetch-rooms category-id db))))))

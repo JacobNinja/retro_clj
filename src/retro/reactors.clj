@@ -2,10 +2,12 @@
   (:require [retro.protocol :as protocol]
             [retro.db :as db]))
 
-(defn login [packet db]
-  (let [[username password] (protocol/packet-body packet)]
-    (db/fetch-user username password db)))
+(defn default [p env])
 
-(defn navigate [packet db]
+(defn login [packet {:keys [db]}]
+  (let [[username password] (protocol/packet-body packet)]
+    {:user (db/fetch-user username password db)}))
+
+(defn navigate [packet {:keys [db]}]
   (let [[hide-full? category-id _] (protocol/packet-values packet)]
-    (db/fetch-category category-id db)))
+    {:category (db/fetch-category category-id db)}))
