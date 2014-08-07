@@ -3,28 +3,46 @@
             [retro.client-headers :as client-headers]
             [clojure.string :refer [join]]))
 
+(defn- zip-fill [coll1 coll2 fill]
+  (partition 2 (interleave coll1
+                           (concat coll2 (repeat fill)))))
+
 (defn greet []
   [{:header client-headers/greet}])
 
-(defn generate-key []
+(defn generate-key [env]
   (let [static-key "[100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,176,177,178,180,185,190,195,200,205,206,207,210,215,220,225,230,235,240,245,250,255,260,265,266,267,270,275,280,281,285,290,295,300,305,500,505,510,515,520,525,530,535,540,545,550,555,565,570,575,580,585,590,595,596,600,605,610,615,620,625,626,627,630,635,640,645,650,655,660,665,667,669,670,675,680,685,690,695,696,700,705,710,715,720,725,730,735,740,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837,838,839,840,841,842,843,844,845,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873]"]
     [{:header client-headers/pub-key :body static-key}
      {:header 257 :body (str "RAHIIIKHJIPAIQAdd-MM-yyyy" (char 2))}]))
 
-(defn login [user]
+(defn login [{:keys [user]}]
   (if user
     [{:header client-headers/fuse-rights :body "fuse_login"} {:header 3}]
     [{:header client-headers/ban :body "Incorrect username/password"}]))
 
-(defn credits [user]
+(defn credits [{:keys [user]}]
   [{:header client-headers/credits :body (str (:credits user) ".0")}])
 
-(defn club-habbo []
+(defn club-habbo [env]
   [{:header client-headers/club :body "club_habboYNEHHI"}
    {:header 23}])
 
-(defn messenger-init []
+(defn badge [env]
   [])
+
+(defn messenger-init [env]
+  [])
+
+(defn user-details [{:keys [user]}]
+  [{:header client-headers/user-details
+    :body (str (join \return
+                     (map (partial join "=")
+                          (zip-fill '("name" "figure" "sex" "customData" "rph_tickets" "photo_film" "directMail")
+                                    (map #(% user) '(:username :figure :sex :mission))
+                                    0)))
+               \return)}])
+
+;; Begin NAVIGATE
 
 (defn- subcategories [category]
   "[0] = id
@@ -65,7 +83,7 @@
        (char 2)
        (encode-vl64 1)
        (encode-vl64 100)
-       (encode-vl64 (get category :parent 0))
+       (encode-vl64 (get category :parent-id 0))
        (when (guest-category? category)
          (encode-vl64 (count (category-rooms category))))))
 
@@ -131,8 +149,10 @@
          public-room)
        (category-rooms category)))
 
-(defn navigate [category]
-  {:header client-headers/navigate
-   :body (str (category-response category)
-              (apply str (rooms category))
-              (subcategories category))})
+(defn navigate [{:keys [category]}]
+  [{:header client-headers/navigate
+    :body (str (category-response category)
+               (apply str (rooms category))
+               (subcategories category))}])
+
+;; end NAVIGATE
