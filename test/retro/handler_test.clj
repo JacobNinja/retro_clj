@@ -1,7 +1,7 @@
 (ns retro.handler-test
   (:require [clojure.test :refer :all]
             [retro.handlers :refer :all]
-            [retro.records :refer [map->User map->Category]]))
+            [retro.records :refer :all]))
 
 (defn make-check [handler & args]
   (fn [expected]
@@ -169,3 +169,31 @@
                                        "RB" ; category id
                                        "Category name"
                                        (char 2))}]))))
+
+(deftest room-info-test
+  (testing "room info"
+    (is (= (room-info {:room (map->Room {:name "Room name"
+                                         :description "description"
+                                         :id 1
+                                         :status :open
+                                         :owner (map->User {:name "owner"})
+                                         :current 0
+                                         :capacity 25
+                                         :model "model"})})
+           [{:header 54
+             :body (str "H" ; super users?
+                        "H" ; state enum ?
+                        "I" ; room id
+                        "owner" ; room owner
+                        (char 2)
+                        "model" ; room model
+                        (char 2)
+                        "Room name"
+                        (char 2)
+                        "description"
+                        (char 2)
+                        "H" ; show owner
+                        "H" ; can trade
+                        "H" ; current users
+                        "QF" ; capacity
+                        )}]))))

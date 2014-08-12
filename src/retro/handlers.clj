@@ -165,3 +165,37 @@
                (subcategories category))}])
 
 ;; end NAVIGATE
+
+(defn room-info [{:keys [room]}]
+  "[0] = Super users ?
+   [1] = Status (Enum)
+   [2] = Id
+   [3] = Owner
+   [4] = Chr 2
+   [5] = Model
+   [6] = Chr 2
+   [7] = Name
+   [8] = Chr 2
+   [9] = Description
+   [10] = Chr 2
+   [11] = Show owner [Bool]
+   [12] = Enable trade [Bool]
+   [13] = Current users
+   [14] = Capacity"
+  [{:header client-headers/room-info
+    :body (str (encode-vl64 0)
+               (encode-vl64 0)
+               (encode-vl64 (:id room))
+               (get-in room [:owner :name])
+               (char 2)
+               (:model room)
+               (char 2)
+               (:name room)
+               (char 2)
+               (:description room)
+               (char 2)
+               (encode-vl64 0)
+               (encode-vl64 0)
+               (encode-vl64 (:current room))
+               (encode-vl64 (:capacity room))
+               )}])

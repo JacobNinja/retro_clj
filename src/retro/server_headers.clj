@@ -3,6 +3,7 @@
 (def greet 0)
 (def login 4)
 (def user-details 7)
+(def room-info 21)
 (def club 26)
 (def navigate 150)
 (def user-flat-cats 151)

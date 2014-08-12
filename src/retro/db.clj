@@ -82,6 +82,12 @@
     :db/doc "Tx associated with room"
     :db.install/_attribute :db.part/db}
    {:db/id #db/id[:db.part/db]
+    :db/ident :room/id
+    :db/valueType :db.type/long
+    :db/cardinality :db.cardinality/one
+    :db/doc "Room id"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
     :db/ident :room/name
     :db/valueType :db.type/string
     :db/cardinality :db.cardinality/one
@@ -106,12 +112,6 @@
     :db/doc "Room owner"
     :db.install/_attribute :db.part/db}
    {:db/id #db/id[:db.part/db]
-    :db/ident :room/type
-    :db/valueType :db.type/keyword
-    :db/cardinality :db.cardinality/one
-    :db/doc "Room type"
-    :db.install/_attribute :db.part/db}
-   {:db/id #db/id[:db.part/db]
     :db/ident :room/wallpaper
     :db/valueType :db.type/string
     :db/cardinality :db.cardinality/one
@@ -122,6 +122,12 @@
     :db/valueType :db.type/string
     :db/cardinality :db.cardinality/one
     :db/doc "Room floor"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :room/model
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    :db/doc "Room model"
     :db.install/_attribute :db.part/db}
    ])
 
@@ -137,7 +143,6 @@
 
 (defn- db->User [user-attrs]
   (map->User {:username (:user/username user-attrs)
-              :password (:user/password user-attrs)
               :figure (:user/figure user-attrs)
               :sex (:user/sex user-attrs)
               :mission (:user/mission user-attrs)
@@ -168,8 +173,12 @@
 (defn db->Room [db entity]
   (map->Room {:name (:room/name entity)
               :description (:room/description entity)
+              :id (:room/id entity)
               :owner (db->User (d/entity db (:db/id (:room/owner entity))))
-              :type (:room/type entity)
+              :status :open
+              :model (:room/model entity)
+              :current 0
+              :capacity 25
               :wallpaper (:room/wallpaper entity)
               :floor (:room/floor entity)}))
 
@@ -191,9 +200,19 @@
               category)))
 
 (defn- fetch-rooms [category-id db]
-  (first (d/q '[:find ?rooms
+  (map first (d/q '[:find ?rooms
                 :in $ ?category-id
-                :where [?rooms :room/category ?category-id]] db category-id)))
+                :where [?rooms :room/category ?category-id]]
+              db
+              category-id)))
+
+(defn fetch-room [room-id db]
+  (when-let [room (ffirst (datomic.api/q '[:find ?room
+                                           :in $ ?room-id
+                                           :where [?room :room/id ?room-id]]
+                                         db
+                                         room-id))]
+    (db->Room db (d/entity db room))))
 
 (defn fetch-parent [db category]
   (when-let [parent (:category/parent category)]
