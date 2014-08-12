@@ -52,7 +52,9 @@
 
 (defn seed []
   (let [public-category (d/tempid :db.part/user)
-        private-category (d/tempid :db.part/user)]
+        private-category (d/tempid :db.part/user)
+        chill-category (d/tempid :db.part/user)
+        user (d/tempid :db.part/user)]
     [{:db/id public-category
       :category/id 3 :category/type 0 :category/name "Public Category"}
      {:db/id private-category
@@ -66,17 +68,24 @@
      ;     {:id 10 :type 0 :name "Unfinished" :parent 9}
      ;     {:id 11 :type 0 :name "Room Parts" :parent 9}
      ;     {:id 12 :type 0 :name "Events" :parent 9}
-     {:db/id (d/tempid :db.part/user)
+     {:db/id chill-category
       :category/id 13 :category/type 2 :category/name "Chat Chill & Discussion Rooms" :category/parent private-category}
      ;     {:id 14 :type 2 :name "Casinos" :parent 4}
      ;     {:id 16 :type 2 :name "Help Rooms" :parent 4}
      ;     {:id 17 :type 2 :name "Game Rooms" :parent 4}
-     {:db/id (d/tempid :db.part/user)
+     {:db/id user
       :user/username "test"
       :user/password "123"
       :user/mission "something"
       :user/figure "8000119001280152950125516"
-      :user/sex "M"}]))
+      :user/sex "M"}
+     {:db/id (d/tempid :db.part/user)
+      :room/id 1
+      :room/name "Test room"
+      :room/description "description"
+      :room/category chill-category
+      :room/owner user
+      :room/model "model-a"}]))
 
 (defn seed-db [db]
   (:db-after (d/with db (seed))))
