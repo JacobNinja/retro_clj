@@ -19,6 +19,7 @@
    headers/badge [reactors/default handlers/badge]
    headers/generate-key [reactors/default handlers/generate-key]
    headers/user-flat-cats [reactors/user-flat-cats handlers/user-flat-cats]
+   headers/room-info [reactors/room-info handlers/room-info]
    headers/navigate [reactors/navigate handlers/navigate]})
 
 (defn send-packet [ch packet]
