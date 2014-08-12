@@ -83,7 +83,7 @@
                                                             :owner test-user
                                                             :wallpaper "xxx"
                                                             :floor "yyy"
-                                                            :status :open
+                                                            :status "open"
                                                             :model "room-model"
                                                             :current 0
                                                             :capacity 25
@@ -123,4 +123,4 @@
                                 :current 0
                                 :capacity 25
                                 :model "model"
-                                :status :open})})))))
+                                :status "open"})})))))

@@ -175,7 +175,7 @@
               :description (:room/description entity)
               :id (:room/id entity)
               :owner (db->User (d/entity db (:db/id (:room/owner entity))))
-              :status :open
+              :status "open"
               :model (:room/model entity)
               :current 0
               :capacity 25

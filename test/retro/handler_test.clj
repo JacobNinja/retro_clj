@@ -101,7 +101,7 @@
                                                 :current 1
                                                 :rooms [{:id 1
                                                          :name "Room Name"
-                                                         :owner "Room owner"
+                                                         :owner (map->User {:username "Room owner"})
                                                          :status "open"
                                                          :current 1
                                                          :capacity 4
@@ -175,8 +175,8 @@
     (is (= (room-info {:room (map->Room {:name "Room name"
                                          :description "description"
                                          :id 1
-                                         :status :open
-                                         :owner (map->User {:name "owner"})
+                                         :status "open"
+                                         :owner (map->User {:username "owner"})
                                          :current 0
                                          :capacity 25
                                          :model "model"})})
