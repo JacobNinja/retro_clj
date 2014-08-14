@@ -6,6 +6,7 @@
 (def credits 6)
 (def club 7)
 (def pub-key 8)
+(def room-directory 19)
 (def ban 35)
 (def room-info 54)
 (def navigate 220)

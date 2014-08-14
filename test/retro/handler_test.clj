@@ -197,3 +197,9 @@
                         "H" ; current users
                         "QF" ; capacity
                         )}]))))
+
+(deftest room-directory-test
+  (testing "private room directory"
+    (is (= (room-directory {})
+           [{:header 19
+             :body ""}]))))

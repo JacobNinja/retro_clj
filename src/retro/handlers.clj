@@ -199,3 +199,7 @@
                (encode-vl64 (:current room))
                (encode-vl64 (:capacity room))
                )}])
+
+(defn room-directory [room]
+  [{:header client-headers/room-directory
+    :body ""}])
