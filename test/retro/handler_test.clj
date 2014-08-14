@@ -203,3 +203,9 @@
     (is (= (room-directory {})
            [{:header 19
              :body ""}]))))
+
+(deftest try-flat-test
+  (testing "try flat private room"
+    (is (= (try-flat {:room (map->Room {})})
+           [{:header 41
+             :body ""}]))))

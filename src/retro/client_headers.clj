@@ -8,6 +8,7 @@
 (def pub-key 8)
 (def room-directory 19)
 (def ban 35)
+(def try-flat 41)
 (def room-info 54)
 (def navigate 220)
 (def user-flat-cats 221)

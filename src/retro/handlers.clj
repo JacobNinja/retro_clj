@@ -203,3 +203,7 @@
 (defn room-directory [room]
   [{:header client-headers/room-directory
     :body ""}])
+
+(defn try-flat [room]
+  [{:header client-headers/try-flat
+    :body ""}])
