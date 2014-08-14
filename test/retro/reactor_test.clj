@@ -67,7 +67,6 @@
                                :room/id 1
                                :room/owner owner-id
                                :room/category subcategory-id
-                               :room/model "room-model"
                                :room/wallpaper "xxx"
                                :room/floor "yyy"}])]
       (is (= (navigate "HJI" {:db (:db-after db)})
@@ -84,7 +83,7 @@
                                                             :wallpaper "xxx"
                                                             :floor "yyy"
                                                             :status "open"
-                                                            :model "room-model"
+                                                            :model nil
                                                             :current 0
                                                             :capacity 25
                                                             :id 1})]})})))))
@@ -106,7 +105,8 @@
 
 (deftest room-info-test
   (testing "room info"
-    (let [owner-id (d/tempid :db.part/user)
+    (let [room-model (map->RoomModel {})
+          owner-id (d/tempid :db.part/user)
           db (d/with base-db [{:db/id owner-id
                                :user/username "owner"}
                               {:db/id (d/tempid :db.part/user)
@@ -115,12 +115,13 @@
                                :room/description "desc"
                                :room/owner owner-id
                                :room/model "model"}])]
-      (is (= (room-info "1" {:db (:db-after db)})
+      (is (= (room-info "1" {:db (:db-after db)
+                             :room-models {"model" room-model}})
              {:room (map->Room {:id 1
                                 :name "Roomie"
                                 :description "desc"
                                 :owner (map->User {:username "owner" :film 0 :mail 0 :tickets 0})
                                 :current 0
                                 :capacity 25
-                                :model "model"
+                                :model room-model
                                 :status "open"})})))))

@@ -15,5 +15,6 @@
 (defn user-flat-cats [packet {:keys [db]}]
   {:user-categories (db/fetch-user-categories db)})
 
-(defn room-info [room-id {:keys [db]}]
-  {:room (db/fetch-room (Integer/parseInt room-id) db)})
+(defn room-info [room-id {:keys [db room-models]}]
+  (let [room (db/fetch-room (Integer/parseInt room-id) db)]
+    {:room (assoc room :model (get room-models (:model room)))}))
