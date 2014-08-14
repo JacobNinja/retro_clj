@@ -200,11 +200,11 @@
                (encode-vl64 (:capacity room))
                )}])
 
-(defn room-directory [room]
+(defn room-directory [{:keys [room]}]
   [{:header client-headers/room-directory
     :body ""}])
 
-(defn try-flat [room]
+(defn try-flat [{:keys [room]}]
   [{:header client-headers/try-flat
     :body ""}])
 
