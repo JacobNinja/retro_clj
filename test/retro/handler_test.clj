@@ -223,3 +223,9 @@
              :body "wallpaper/zyx"}
             {:header 46
              :body "floor/xyz"}]))))
+
+(deftest heightmap-test
+  (testing "empty heightmap"
+    (is (= (heightmap {:room (map->Room {:model (map->RoomModel {:heightmap "xxx"})})})
+           [{:header 31
+             :body "xxx"}]))))

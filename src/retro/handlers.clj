@@ -217,3 +217,7 @@
     :body (str "wallpaper/" (:wallpaper room))}
    {:header client-headers/room-decoration
     :body (str "floor/" (:floor room))}])
+
+(defn heightmap [{:keys [room]}]
+  [{:header client-headers/heightmap
+    :body (get-in room [:model :heightmap])}])
