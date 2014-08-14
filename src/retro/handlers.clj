@@ -207,3 +207,13 @@
 (defn try-flat [room]
   [{:header client-headers/try-flat
     :body ""}])
+
+(defn goto-flat [{:keys [room]}]
+  [{:header client-headers/ad
+    :body "about:blank"}
+   {:header client-headers/room-model
+    :body (:model room)}
+   {:header client-headers/room-decoration
+    :body (str "wallpaper/" (:wallpaper room))}
+   {:header client-headers/room-decoration
+    :body (str "floor/" (:floor room))}])

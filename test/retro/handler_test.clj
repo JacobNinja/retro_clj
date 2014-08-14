@@ -209,3 +209,17 @@
     (is (= (try-flat {:room (map->Room {})})
            [{:header 41
              :body ""}]))))
+
+(deftest goto-flat-test
+  (testing "goto flat private"
+    (is (= (goto-flat {:room (map->Room {:floor "xyz"
+                                         :wallpaper "zyx"
+                                         :model "model"})})
+           [{:header 166
+             :body "about:blank"}
+            {:header 69
+             :body "model"}
+            {:header 46
+             :body "wallpaper/zyx"}
+            {:header 46
+             :body "floor/xyz"}]))))
