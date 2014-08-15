@@ -20,6 +20,16 @@
    headers/generate-key [reactors/default handlers/generate-key]
    headers/user-flat-cats [reactors/user-flat-cats handlers/user-flat-cats]
    headers/room-info [reactors/room-info handlers/room-info]
+   headers/heightmap [reactors/default handlers/heightmap]
+   headers/items [reactors/default handlers/items]
+   headers/objects [reactors/default handlers/objects]
+   headers/try-flat [reactors/room-info handlers/try-flat]
+   headers/goto-flat [reactors/room-info handlers/goto-flat]
+   headers/get-interest [reactors/default handlers/get-interest]
+   headers/room-ad [reactors/default handlers/room-ad]
+   headers/users [reactors/default handlers/users]
+   headers/gstat [reactors/default handlers/gstat]
+   headers/room-directory [reactors/default handlers/room-directory]
    headers/navigate [reactors/navigate handlers/navigate]})
 
 (defn send-packet [ch packet]
@@ -49,6 +59,19 @@
                                           #(encoding/decode-b64 (subs % 1))
                                           identity))
               :prefix :none))
+
+(def room-models
+  {"model_a" {:id 1
+              :name "Guest Model A"
+              :max_guests nil
+              :heightmap (apply str (replace {\| \return} "xxxxxxxxxxxx|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxx00000000|xxxxxxxxxxxx|xxxxxxxxxxxx"))
+              :ccts "0",
+              :x 3
+              :y 5
+              :z 0
+              :model "model_a"
+              :max_ascend 1.5
+              :max_descend 4.0}})
 
 (defn seed []
   (let [public-category (d/tempid :db.part/user)
@@ -99,5 +122,6 @@
           @(d/transact conn (seed))))
       (do
         (println "Starting TCP server...")
-        (tcp/start-tcp-server (partial client-handler {:db (seed-db (d/db conn))})
+        (tcp/start-tcp-server (partial client-handler {:db (seed-db (d/db conn))
+                                                       :room-models room-models})
                               {:port 1234 :decoder frame})))))
