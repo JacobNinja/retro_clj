@@ -13,6 +13,7 @@
 (def floor-items 32)
 (def ban 35)
 (def try-flat 41)
+(def items 45)
 (def room-decoration 46)
 (def room-info 54)
 (def goto-flat 59)

@@ -243,3 +243,9 @@
              :body ""}
             {:header 32
              :body ""}]))))
+
+(deftest items-test
+  (testing "empty items"
+    (is (= (items {})
+           [{:header 45
+             :body ""}]))))

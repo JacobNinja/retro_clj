@@ -231,3 +231,7 @@
     :body ""}
    {:header client-headers/floor-items
     :body ""}])
+
+(defn items [env]
+  [{:header client-headers/items
+    :body ""}])
