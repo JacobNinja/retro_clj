@@ -225,3 +225,9 @@
 (defn users [env]
   [{:header client-headers/users
     :body ""}])
+
+(defn objects [env]
+  [{:header client-headers/wall-items
+    :body ""}
+   {:header client-headers/floor-items
+    :body ""}])

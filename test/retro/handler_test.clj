@@ -235,3 +235,11 @@
     (is (= (users {})
            [{:header 28
              :body ""}]))))
+
+(deftest objects-test
+  (testing "empty objects"
+    (is (= (objects {})
+           [{:header 30
+             :body ""}
+            {:header 32
+             :body ""}]))))
