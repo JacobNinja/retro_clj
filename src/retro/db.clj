@@ -179,8 +179,8 @@
               :model (:room/model entity)
               :current 0
               :capacity 25
-              :wallpaper (:room/wallpaper entity)
-              :floor (:room/floor entity)}))
+              :wallpaper (get entity :room/wallpaper 0)
+              :floor (get entity :room/floor 0)}))
 
 (defn fetch-user [username password db]
   (when-let [user (ffirst (datomic.api/q '[:find ?user

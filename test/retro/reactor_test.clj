@@ -124,4 +124,6 @@
                                 :current 0
                                 :capacity 25
                                 :model room-model
+                                :wallpaper 0
+                                :floor 0
                                 :status "open"})})))))
