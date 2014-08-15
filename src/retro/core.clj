@@ -85,7 +85,7 @@
       :room/description "description"
       :room/category chill-category
       :room/owner user
-      :room/model "model-a"}]))
+      :room/model "model_a"}]))
 
 (defn seed-db [db]
   (:db-after (d/with db (seed))))

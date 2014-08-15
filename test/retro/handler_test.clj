@@ -179,7 +179,7 @@
                                          :owner (map->User {:username "owner"})
                                          :current 0
                                          :capacity 25
-                                         :model "model"})})
+                                         :model (map->RoomModel {:model "model"})})})
            [{:header 54
              :body (str "H" ; super users?
                         "H" ; state enum ?
@@ -214,7 +214,7 @@
   (testing "goto flat private"
     (is (= (goto-flat {:room (map->Room {:floor "xyz"
                                          :wallpaper "zyx"
-                                         :model "model"})})
+                                         :model (map->RoomModel {:model "model"})})})
            [{:header 166
              :body "about:blank"}
             {:header 69
@@ -249,3 +249,24 @@
     (is (= (items {})
            [{:header 45
              :body ""}]))))
+
+(deftest gstat-test
+  (testing "gstat first user"
+    (is (= (gstat {:user (map->User {:username "test"
+                                     :figure "123"
+                                     :sex "m"
+                                     :mission "mission"})
+                   :room (map->Room {:model
+                                     (map->RoomModel {:x 0
+                                                      :y 1
+                                                      :z 2})})})
+           [{:header 28
+             :body (str "i:0" \newline ; room user id
+                        "n:test" \newline ; user name
+                        "f:123" \newline ; user figure
+                        "l:0 1 2" \newline ; user location
+                        "s:m" \newline ; user sex
+                        "c:mission" \newline ; user mission
+                        )}
+            {:header 42 :body ""}
+            {:header 47 :body ""}]))))

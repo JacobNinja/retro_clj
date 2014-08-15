@@ -188,7 +188,7 @@
                (encode-vl64 (:id room))
                (get-in room [:owner :username])
                (char 2)
-               (:model room)
+               (get-in room [:model :model])
                (char 2)
                (:name room)
                (char 2)
@@ -235,3 +235,14 @@
 (defn items [env]
   [{:header client-headers/items
     :body ""}])
+
+(defn gstat [{:keys [user room]}]
+  [{:header client-headers/users
+    :body (str "i:0" \newline
+               "n:" (:username user) \newline
+               "f:" (:figure user) \newline
+               "l:" (get-in room [:model :x]) \space (get-in room [:model :y]) \space (get-in room [:model :z]) \newline
+               "s:" (:sex user) \newline
+               "c:" (:mission user) \newline)}
+   {:header 42 :body ""} ; rights?
+   {:header 47 :body ""}]) ; admin rights?
