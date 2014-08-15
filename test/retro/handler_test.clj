@@ -270,3 +270,8 @@
                         )}
             {:header 42 :body ""}
             {:header 47 :body ""}]))))
+
+(deftest get-interest-test
+  (testing "get interest"
+    (is (= (get-interest {})
+           [{:header 258 :body "0"}]))))

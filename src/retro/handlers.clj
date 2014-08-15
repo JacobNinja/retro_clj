@@ -246,3 +246,6 @@
                "c:" (:mission user) \newline)}
    {:header 42 :body ""} ; rights?
    {:header 47 :body ""}]) ; admin rights?
+
+(defn get-interest [env]
+  [{:header client-headers/get-interest :body "0"}])
