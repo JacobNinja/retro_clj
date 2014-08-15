@@ -1,6 +1,6 @@
 (ns retro.handlers
   (:require [retro.encoding :refer :all]
-            [retro.client-headers :as client-headers]
+            [retro.client-headers :as headers]
             [clojure.string :refer [join]]))
 
 (defn- zip-fill [coll1 coll2 fill]
@@ -8,23 +8,23 @@
                            (concat coll2 (repeat fill)))))
 
 (defn greet []
-  [{:header client-headers/greet}])
+  [{:header headers/greet}])
 
 (defn generate-key [env]
   (let [static-key "[100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,176,177,178,180,185,190,195,200,205,206,207,210,215,220,225,230,235,240,245,250,255,260,265,266,267,270,275,280,281,285,290,295,300,305,500,505,510,515,520,525,530,535,540,545,550,555,565,570,575,580,585,590,595,596,600,605,610,615,620,625,626,627,630,635,640,645,650,655,660,665,667,669,670,675,680,685,690,695,696,700,705,710,715,720,725,730,735,740,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814,815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837,838,839,840,841,842,843,844,845,846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873]"]
-    [{:header client-headers/pub-key :body static-key}
+    [{:header headers/pub-key :body static-key}
      {:header 257 :body (str "RAHIIIKHJIPAIQAdd-MM-yyyy" (char 2))}]))
 
 (defn login [{:keys [user]}]
   (if user
-    [{:header client-headers/fuse-rights :body "fuse_login"} {:header 3}]
-    [{:header client-headers/ban :body "Incorrect username/password"}]))
+    [{:header headers/fuse-rights :body "fuse_login"} {:header 3}]
+    [{:header headers/ban :body "Incorrect username/password"}]))
 
 (defn credits [{:keys [user]}]
-  [{:header client-headers/credits :body (str (:credits user) ".0")}])
+  [{:header headers/credits :body (str (:credits user) ".0")}])
 
 (defn club-habbo [env]
-  [{:header client-headers/club :body "club_habboYNEHHI"}
+  [{:header headers/club :body "club_habboYNEHHI"}
    {:header 23}])
 
 (defn badge [env]
@@ -34,7 +34,7 @@
   [])
 
 (defn user-details [{:keys [user]}]
-  [{:header client-headers/user-details
+  [{:header headers/user-details
     :body (str (join \return
                      (map (partial join "=")
                           (zip-fill '("name" "figure" "sex" "customData" "rph_tickets" "photo_film" "directMail")
@@ -43,7 +43,7 @@
                \return)}])
 
 (defn user-flat-cats [{:keys [user-categories]}]
-  [{:header client-headers/user-flat-cats
+  [{:header headers/user-flat-cats
     :body (str (encode-vl64 (count user-categories))
                (join (map (fn [category]
                             (str (encode-vl64 (:id category))
@@ -159,7 +159,7 @@
        (category-rooms category)))
 
 (defn navigate [{:keys [category]}]
-  [{:header client-headers/navigate
+  [{:header headers/navigate
     :body (str (category-response category)
                (apply str (rooms category))
                (subcategories category))}])
@@ -182,7 +182,7 @@
    [12] = Enable trade [Bool]
    [13] = Current users
    [14] = Capacity"
-  [{:header client-headers/room-info
+  [{:header headers/room-info
     :body (str (encode-vl64 0)
                (encode-vl64 0)
                (encode-vl64 (:id room))
@@ -201,51 +201,52 @@
                )}])
 
 (defn room-directory [{:keys [room]}]
-  [{:header client-headers/room-directory
+  [{:header headers/room-directory
     :body ""}])
 
 (defn try-flat [{:keys [room]}]
-  [{:header client-headers/try-flat
+  [{:header headers/try-flat
     :body ""}])
 
 (defn goto-flat [{:keys [room]}]
-  [{:header client-headers/ad
+  [{:header headers/ad
     :body "about:blank"}
-   {:header client-headers/room-model
-    :body (:model room)}
-   {:header client-headers/room-decoration
+   {:header headers/room-model
+    :body (get-in room [:model :model])}
+   {:header headers/room-decoration
     :body (str "wallpaper/" (:wallpaper room))}
-   {:header client-headers/room-decoration
+   {:header headers/room-decoration
     :body (str "floor/" (:floor room))}])
 
 (defn heightmap [{:keys [room]}]
-  [{:header client-headers/heightmap
+  [{:header headers/heightmap
     :body (get-in room [:model :heightmap])}])
 
 (defn users [env]
-  [{:header client-headers/users
+  [{:header headers/users
     :body ""}])
 
 (defn objects [env]
-  [{:header client-headers/wall-items
+  [{:header headers/wall-items
     :body ""}
-   {:header client-headers/floor-items
+   {:header headers/floor-items
     :body ""}])
 
 (defn items [env]
-  [{:header client-headers/items
+  [{:header headers/items
     :body ""}])
 
 (defn gstat [{:keys [user room]}]
-  [{:header client-headers/users
+  [{:header headers/users
     :body (str "i:0" \newline
                "n:" (:username user) \newline
                "f:" (:figure user) \newline
-               "l:" (get-in room [:model :x]) \space (get-in room [:model :y]) \space (get-in room [:model :z]) \newline
+               "l:" (join " " (map #(get-in room [:model %])
+                                   [:x :y :z])) \newline
                "s:" (:sex user) \newline
                "c:" (:mission user) \newline)}
    {:header 42 :body ""} ; rights?
    {:header 47 :body ""}]) ; admin rights?
 
 (defn get-interest [env]
-  [{:header client-headers/get-interest :body "0"}])
+  [{:header headers/get-interest :body "0"}])
