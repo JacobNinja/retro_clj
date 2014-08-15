@@ -275,3 +275,8 @@
   (testing "get interest"
     (is (= (get-interest {})
            [{:header 258 :body "0"}]))))
+
+(deftest room-ad-test
+  (testing "private room"
+    (is (= (room-ad {})
+           []))))

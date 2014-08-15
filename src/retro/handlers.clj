@@ -250,3 +250,6 @@
 
 (defn get-interest [env]
   [{:header headers/get-interest :body "0"}])
+
+(defn room-ad [env]
+  [])
