@@ -229,3 +229,9 @@
     (is (= (heightmap {:room (map->Room {:model (map->RoomModel {:heightmap "xxx"})})})
            [{:header 31
              :body "xxx"}]))))
+
+(deftest users-test
+  (testing "empty room"
+    (is (= (users {})
+           [{:header 28
+             :body ""}]))))

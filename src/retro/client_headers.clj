@@ -7,6 +7,7 @@
 (def club 7)
 (def pub-key 8)
 (def room-directory 19)
+(def users 28)
 (def heightmap 31)
 (def ban 35)
 (def try-flat 41)

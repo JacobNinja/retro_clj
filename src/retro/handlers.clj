@@ -221,3 +221,7 @@
 (defn heightmap [{:keys [room]}]
   [{:header client-headers/heightmap
     :body (get-in room [:model :heightmap])}])
+
+(defn users [env]
+  [{:header client-headers/users
+    :body ""}])
