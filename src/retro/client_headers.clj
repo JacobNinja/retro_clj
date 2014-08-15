@@ -11,6 +11,7 @@
 (def wall-items 30)
 (def heightmap 31)
 (def floor-items 32)
+(def movement 34)
 (def ban 35)
 (def try-flat 41)
 (def items 45)

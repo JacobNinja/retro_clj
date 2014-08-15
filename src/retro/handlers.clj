@@ -237,16 +237,25 @@
     :body ""}])
 
 (defn gstat [{:keys [user room]}]
-  [{:header headers/users
-    :body (str "i:0" \newline
-               "n:" (:username user) \newline
-               "f:" (:figure user) \newline
-               "l:" (join " " (map #(get-in room [:model %])
-                                   [:x :y :z])) \newline
-               "s:" (:sex user) \newline
-               "c:" (:mission user) \newline)}
-   {:header 42 :body ""} ; rights?
-   {:header 47 :body ""}]) ; admin rights?
+  (let [user-loc (map #(get-in room [:model %])
+                      [:x :y :z])]
+    [{:header headers/users
+      :body (str "i:0" \return
+                 "n:" (:username user) \return
+                 "f:" (:figure user) \return
+                 "l:" (join " " user-loc) \return
+                 "s:" (:sex user) \return
+                 "c:" (:mission user) \return)}
+     {:header 42 :body ""} ; rights?
+     {:header 47 :body ""} ; admin rights?
+     {:header headers/movement
+      :body (str "0" ; room user id
+                 \space
+                 (join "," user-loc)
+                 ",2,2" ; head position
+                 "" ; user states
+                 \return
+                 )}]))
 
 (defn get-interest [env]
   [{:header headers/get-interest :body "0"}])

@@ -251,7 +251,7 @@
              :body ""}]))))
 
 (deftest gstat-test
-  (testing "gstat first user"
+  (testing "gstat first user no states"
     (is (= (gstat {:user (map->User {:username "test"
                                      :figure "123"
                                      :sex "m"
@@ -261,15 +261,22 @@
                                                       :y 1
                                                       :z 2})})})
            [{:header 28
-             :body (str "i:0" \newline ; room user id
-                        "n:test" \newline ; user name
-                        "f:123" \newline ; user figure
-                        "l:0 1 2" \newline ; user location
-                        "s:m" \newline ; user sex
-                        "c:mission" \newline ; user mission
+             :body (str "i:0" \return ; room user id
+                        "n:test" \return ; user name
+                        "f:123" \return ; user figure
+                        "l:0 1 2" \return ; user location
+                        "s:m" \return ; user sex
+                        "c:mission" \return ; user mission
                         )}
             {:header 42 :body ""}
-            {:header 47 :body ""}]))))
+            {:header 47 :body ""}
+            {:header 34
+             :body (str "0 " ; room user id
+                        "0,1,2" ; user location
+                        ",2,2" ; head direction
+                        "" ; user states
+                        \return
+                        )}]))))
 
 (deftest get-interest-test
   (testing "get interest"
