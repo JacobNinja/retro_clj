@@ -236,8 +236,8 @@
   [{:header headers/items
     :body ""}])
 
-(defn gstat [{:keys [user room]}]
-  (let [user-loc (map #(get-in room [:model %])
+(defn gstat [{:keys [user room room-states]}]
+  (let [user-loc (map #(get-in @room-states [(:id room) :users (:username user) %])
                       [:x :y :z])]
     [{:header headers/users
       :body (str "i:0" \return

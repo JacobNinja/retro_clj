@@ -256,10 +256,8 @@
                                      :figure "123"
                                      :sex "m"
                                      :mission "mission"})
-                   :room (map->Room {:model
-                                     (map->RoomModel {:x 0
-                                                      :y 1
-                                                      :z 2})})})
+                   :room (map->Room {:id 1})
+                   :room-states (atom {1 {:users {"test" {:x 0 :y 1 :z 2}}}})})
            [{:header 28
              :body (str "i:0" \return ; room user id
                         "n:test" \return ; user name
