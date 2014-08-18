@@ -15,6 +15,16 @@
 (defn user-flat-cats [packet {:keys [db]}]
   {:user-categories (db/fetch-user-categories db)})
 
-(defn room-info [room-id {:keys [db room-models]}]
+(defn- room-with-model [room-id db models]
   (let [room (db/fetch-room (Integer/parseInt room-id) db)]
-    {:room (assoc room :model (get room-models (:model room)))}))
+    (assoc room :model (get models (:model room)))))
+
+(defn room-info [room-id {:keys [db room-models]}]
+  {:room (room-with-model room-id db room-models)})
+
+(defn goto-flat [room-id {:keys [db room-states room-models user]}]
+  (let [room (room-with-model room-id db room-models)
+        model (:model room)
+        user-loc (select-keys model [:x :y :z])]
+    (swap! room-states update-in [(:id room) :users] assoc (:username user) user-loc)
+    {:room room}))

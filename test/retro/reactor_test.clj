@@ -14,6 +14,29 @@
                            :mail 0
                            :tickets 0}))
 
+(def test-room-model (map->RoomModel {:x 0 :y 1 :z 2}))
+
+(def test-room (map->Room {:id 1
+                           :name "Roomie"
+                           :description "desc"
+                           :owner (map->User {:username "owner" :film 0 :mail 0 :tickets 0})
+                           :current 0
+                           :capacity 25
+                           :model test-room-model
+                           :wallpaper 0
+                           :floor 0
+                           :status "open"}))
+(defn test-room-tx []
+  (let [owner-id (d/tempid :db.part/user)]
+    [{:db/id owner-id
+      :user/username "owner"}
+     {:db/id (d/tempid :db.part/user)
+      :room/id (:id test-room)
+      :room/name (:name test-room)
+      :room/description (:description test-room)
+      :room/owner owner-id
+      :room/model "model"}]))
+
 (deftest login-test
   (testing "login"
     (let [db (d/with base-db [{:db/id (d/tempid :db.part/user)
@@ -127,3 +150,15 @@
                                 :wallpaper 0
                                 :floor 0
                                 :status "open"})})))))
+
+(deftest goto-flat-test
+  (testing "empty flat new state"
+    (let [db (d/with base-db (test-room-tx))
+          room-states (atom {})
+          results (goto-flat "1" {:user test-user
+                                  :db (:db-after db)
+                                  :room-states room-states
+                                  :room-models {"model" test-room-model}})]
+      (is (= @room-states
+             {1 {:users {"test" {:x 0 :y 1 :z 2}}}}))
+      (is (= (get-in results [:room :id]) 1)))))
