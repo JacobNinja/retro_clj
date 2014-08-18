@@ -1,6 +1,7 @@
 (ns retro.reactors
   (:require [retro.protocol :as protocol]
-            [retro.db :as db]))
+            [retro.db :as db]
+            [clojure.string :refer [split]]))
 
 (defn default [p env])
 
@@ -28,3 +29,7 @@
         user-loc (select-keys model [:x :y :z])]
     (swap! room-states update-in [(:id room) :users] assoc (:username user) user-loc)
     {:room room}))
+
+(defn look-to [packet {:keys [room-states user room]}]
+  (let [[body head] (map #(Integer/parseInt %) (split packet #"\s"))]
+    (swap! room-states update-in [(:id room) :users (:username user)] merge {:body body :head head})))
