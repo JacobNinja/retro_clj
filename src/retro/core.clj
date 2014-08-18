@@ -24,7 +24,7 @@
    headers/items [reactors/default handlers/items]
    headers/objects [reactors/default handlers/objects]
    headers/try-flat [reactors/room-info handlers/try-flat]
-   headers/goto-flat [reactors/room-info handlers/goto-flat]
+   headers/goto-flat [reactors/goto-flat handlers/goto-flat]
    headers/get-interest [reactors/default handlers/get-interest]
    headers/room-ad [reactors/default handlers/room-ad]
    headers/users [reactors/default handlers/users]
@@ -123,5 +123,6 @@
       (do
         (println "Starting TCP server...")
         (tcp/start-tcp-server (partial client-handler {:db (seed-db (d/db conn))
-                                                       :room-models room-models})
+                                                       :room-models room-models
+                                                       :room-states (atom {})})
                               {:port 1234 :decoder frame})))))
