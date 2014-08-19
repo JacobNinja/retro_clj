@@ -30,6 +30,7 @@
    headers/users [reactors/default handlers/users]
    headers/gstat [reactors/default handlers/gstat]
    headers/room-directory [reactors/default handlers/room-directory]
+   headers/look-to [reactors/look-to handlers/look-to]
    headers/navigate [reactors/navigate handlers/navigate]})
 
 (defn send-packet [ch packet]
