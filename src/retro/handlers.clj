@@ -237,22 +237,21 @@
     :body ""}])
 
 (defn gstat [{:keys [user room room-states]}]
-  (let [user-loc (map #(get-in @room-states [(:id room) :users (:username user) %])
-                      [:x :y :z])]
+  (let [{:keys [x y z body head room-id]} (select-keys (get-in @room-states [(:id room) :users (:username user)])
+                                                       [:x :y :z :body :head :room-id])]
     [{:header headers/users
-      :body (str "i:0" \return
+      :body (str "i:" room-id \return
                  "n:" (:username user) \return
                  "f:" (:figure user) \return
-                 "l:" (join " " user-loc) \return
+                 "l:" (join " " (list x y z)) \return
                  "s:" (:sex user) \return
                  "c:" (:mission user) \return)}
      {:header 42 :body ""} ; rights?
      {:header 47 :body ""} ; admin rights?
      {:header headers/movement
-      :body (str "0" ; room user id
+      :body (str room-id ; room user id
                  \space
-                 (join "," user-loc)
-                 ",2,2" ; head position
+                 (join "," (list x y z body head)) ; user location
                  "" ; user states
                  \return
                  )}]))

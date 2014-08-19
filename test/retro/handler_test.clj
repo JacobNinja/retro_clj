@@ -257,9 +257,9 @@
                                      :sex "m"
                                      :mission "mission"})
                    :room (map->Room {:id 1})
-                   :room-states (atom {1 {:users {"test" {:x 0 :y 1 :z 2}}}})})
+                   :room-states (atom {1 {:users {"test" {:x 0 :y 1 :z 2 :body 5 :head 6 :room-id 1}}}})})
            [{:header 28
-             :body (str "i:0" \return ; room user id
+             :body (str "i:1" \return ; room user id
                         "n:test" \return ; user name
                         "f:123" \return ; user figure
                         "l:0 1 2" \return ; user location
@@ -269,9 +269,9 @@
             {:header 42 :body ""}
             {:header 47 :body ""}
             {:header 34
-             :body (str "0 " ; room user id
+             :body (str "1 " ; room user id
                         "0,1,2" ; user location
-                        ",2,2" ; head direction
+                        ",5,6" ; body/head direction
                         "" ; user states
                         \return
                         )}]))))
