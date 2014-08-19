@@ -160,7 +160,7 @@
                                   :room-states room-states
                                   :room-models {"model" test-room-model}})]
       (is (= @room-states
-             {1 {:users {"test" {:x 0 :y 1 :z 2}}}}))
+             {1 {:users {"test" {:x 0 :y 1 :z 2 :body 2 :head 2 :room-id 0}}}}))
       (is (= (get-in results [:room :id]) 1)))))
 
 (deftest look-to-test
