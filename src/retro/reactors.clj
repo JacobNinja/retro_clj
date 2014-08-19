@@ -33,3 +33,7 @@
 (defn look-to [packet {:keys [room-states user room]}]
   (let [[body head] (protocol/point packet)]
     (swap! room-states update-in [(:id room) :users (:username user)] merge {:body body :head head})))
+
+(defn move-to [packet {:keys [user room room-states]}]
+  (let [[x y] (protocol/packet-values-b64 packet)]
+    (swap! room-states update-in [(:id room) :users (:username user)] merge {:x x :y y})))

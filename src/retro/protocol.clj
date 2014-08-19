@@ -50,6 +50,9 @@
         (recur (drop length p)
                (conj v (encoding/decode-vl64 (join (take length p)))))))))
 
+(defn packet-values-b64 [packet]
+  (map encoding/decode-b64 (partition 2 packet)))
+
 (defn point [packet]
   (map #(Integer/parseInt %) (split packet #"\s")))
 

@@ -172,3 +172,14 @@
                       :room-states room-states})
       (is (= @room-states
              {1 {:users {"test" {:x 0 :y 0 :z 0 :body 5 :head 6}}}})))))
+
+
+(deftest move-to-test
+  (testing "move to"
+    (let [room-states (atom {})]
+      (move-to "@E@F" {:user test-user
+                      :room test-room
+                      :room-states room-states})
+      (is (= (select-keys (get-in @room-states [1 :users "test"]) [:x :y])
+             {:x 5 :y 6})))))
+
