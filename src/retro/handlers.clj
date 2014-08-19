@@ -236,9 +236,18 @@
   [{:header headers/items
     :body ""}])
 
+(defn- user-movement [{:keys [x y z body head room-id]}]
+  {:header headers/movement
+   :body (str room-id ; room user id
+              \space
+              (join "," (list x y z body head)) ; user location
+              "" ; user states
+              \return)})
+
 (defn gstat [{:keys [user room room-states]}]
-  (let [{:keys [x y z body head room-id]} (select-keys (get-in @room-states [(:id room) :users (:username user)])
-                                                       [:x :y :z :body :head :room-id])]
+  (let [{:keys [x y z body head room-id] :as user-loc}
+        (select-keys (get-in @room-states [(:id room) :users (:username user)])
+                     [:x :y :z :body :head :room-id])]
     [{:header headers/users
       :body (str "i:" room-id \return
                  "n:" (:username user) \return
@@ -248,16 +257,13 @@
                  "c:" (:mission user) \return)}
      {:header 42 :body ""} ; rights?
      {:header 47 :body ""} ; admin rights?
-     {:header headers/movement
-      :body (str room-id ; room user id
-                 \space
-                 (join "," (list x y z body head)) ; user location
-                 "" ; user states
-                 \return
-                 )}]))
+     (user-movement user-loc)]))
 
 (defn get-interest [env]
   [{:header headers/get-interest :body "0"}])
 
 (defn room-ad [env]
   [])
+
+(defn look-to [{:keys [user room room-states]}]
+  [(user-movement (get-in @room-states [(:id room) :users (:username user)]))])

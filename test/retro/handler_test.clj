@@ -285,3 +285,11 @@
   (testing "private room"
     (is (= (room-ad {})
            []))))
+
+(deftest look-to-test
+  (testing "look to"
+    (is (= (look-to {:room-states (atom {1 {:users {"test" {:x 0 :y 1 :z 2 :body 5 :head 6 :room-id 1}}}})
+                     :room (map->Room {:id 1})
+                     :user (map->User {:username "test"})})
+           [{:header 34
+             :body (str "1 0,1,2,5,6" \return)}]))))
