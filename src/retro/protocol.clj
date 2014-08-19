@@ -1,6 +1,6 @@
 (ns retro.protocol
   (:require [retro.encoding :as encoding]
-            [clojure.string :refer [join]])
+            [clojure.string :refer [join split]])
   (:refer-clojure :exclude [partition-by]))
 
 (def packet-header-size 2)
@@ -49,6 +49,9 @@
       (let [length (encoding/vl64-length p)]
         (recur (drop length p)
                (conj v (encoding/decode-vl64 (join (take length p)))))))))
+
+(defn point [packet]
+  (map #(Integer/parseInt %) (split packet #"\s")))
 
 (defn encode-packet [p]
   (str (encoding/encode-b64 (:header p))

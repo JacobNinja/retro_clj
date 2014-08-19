@@ -31,5 +31,5 @@
     {:room room}))
 
 (defn look-to [packet {:keys [room-states user room]}]
-  (let [[body head] (map #(Integer/parseInt %) (split packet #"\s"))]
+  (let [[body head] (protocol/point packet)]
     (swap! room-states update-in [(:id room) :users (:username user)] merge {:body body :head head})))
