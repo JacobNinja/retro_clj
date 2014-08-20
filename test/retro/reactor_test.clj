@@ -24,8 +24,8 @@
                            :current 0
                            :capacity 25
                            :model test-room-model
-                           :wallpaper 0
-                           :floor 0
+                           :wallpaper "xxx"
+                           :floor "yyy"
                            :status "open"}))
 (defn test-room-tx []
   (let [owner-id (d/tempid :db.part/user)]
@@ -36,7 +36,9 @@
       :room/name (:name test-room)
       :room/description (:description test-room)
       :room/owner owner-id
-      :room/model "model"}]))
+      :room/model "model"
+      :room/floor (:floor test-room)
+      :room/wallpaper (:wallpaper test-room)}]))
 
 (deftest login-test
   (testing "login"
@@ -141,8 +143,8 @@
                                 :current 0
                                 :capacity 25
                                 :model room-model
-                                :wallpaper 0
-                                :floor 0
+                                :wallpaper "xxx"
+                                :floor "yyy"
                                 :status "open"})})))))
 
 (deftest goto-flat-test

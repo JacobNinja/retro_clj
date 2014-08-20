@@ -170,11 +170,11 @@
   (map->Category {:name (:category/name entity)
                   :id (:category/id entity)}))
 
-(defn db->Room [db entity]
+(defn db->Room [user entity]
   (map->Room {:name (:room/name entity)
               :description (:room/description entity)
               :id (:room/id entity)
-              :owner (db->User (d/entity db (:db/id (:room/owner entity))))
+              :owner user
               :status "open"
               :model (:room/model entity)
               :current 0
@@ -207,12 +207,14 @@
               category-id)))
 
 (defn fetch-room [room-id db]
-  (when-let [room (ffirst (datomic.api/q '[:find ?room
-                                           :in $ ?room-id
-                                           :where [?room :room/id ?room-id]]
-                                         db
-                                         room-id))]
-    (db->Room db (d/entity db room))))
+  (when-let [[room user] (first (datomic.api/q '[:find ?room ?user
+                                                 :in $ ?room-id
+                                                 :where [?room :room/id ?room-id]
+                                                        [?room :room/owner ?user]]
+                                               db
+                                               room-id))]
+    (db->Room (db->User (d/entity db user))
+              (d/entity db room))))
 
 (defn fetch-parent [db category]
   (when-let [parent (:category/parent category)]
@@ -229,8 +231,9 @@
                     category
                     (map (partial d/entity db)
                          (fetch-subcategories category-id db))
-                    (map #(db->Room db (d/entity db %))
-                         (fetch-rooms category-id db))))))
+                    (map #(db->Room (db->User (:room/owner %)) %)
+                         (map (partial d/entity db)
+                              (fetch-rooms category-id db)))))))
 
 (defn fetch-user-categories [db]
   (let [categories (map first (datomic.api/q '[:find ?category
@@ -243,11 +246,13 @@
          categories)))
 
 (defn search-rooms [search-term db]
-  (let [rooms (map first (datomic.api/q '[:find ?room
-                                          :in $ ?term
-                                          :where [?user :user/username ?term]
-                                                 [?room :room/owner ?user]]
-                                        db
-                                        search-term))]
-    (map #(db->Room db (d/entity db %))
-         rooms)))
+  (let [[user & rooms] (first (datomic.api/q '[:find ?user ?rooms
+                                               :in $ ?term
+                                               :where [?user :user/username ?term]
+                                                      [?rooms :room/owner ?user]]
+                                             db
+                                             search-term))]
+    (when-let [user (db->User (d/entity db user))]
+      (map (comp (partial db->Room user)
+                 (partial d/entity db))
+           rooms))))
