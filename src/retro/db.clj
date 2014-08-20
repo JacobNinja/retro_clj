@@ -241,3 +241,13 @@
                                              2))]
     (map (comp db->UserCategory (partial d/entity db))
          categories)))
+
+(defn search-rooms [search-term db]
+  (let [rooms (map first (datomic.api/q '[:find ?room
+                                          :in $ ?term
+                                          :where [?user :user/username ?term]
+                                                 [?room :room/owner ?user]]
+                                        db
+                                        search-term))]
+    (map #(db->Room db (d/entity db %))
+         rooms)))

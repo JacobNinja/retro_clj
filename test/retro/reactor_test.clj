@@ -15,11 +15,12 @@
                            :tickets 0}))
 
 (def test-room-model (map->RoomModel {:x 0 :y 1 :z 2}))
+(def test-room-models {"model" test-room-model})
 
 (def test-room (map->Room {:id 1
                            :name "Roomie"
                            :description "desc"
-                           :owner (map->User {:username "owner" :film 0 :mail 0 :tickets 0})
+                           :owner test-user
                            :current 0
                            :capacity 25
                            :model test-room-model
@@ -29,7 +30,7 @@
 (defn test-room-tx []
   (let [owner-id (d/tempid :db.part/user)]
     [{:db/id owner-id
-      :user/username "owner"}
+      :user/username "test"}
      {:db/id (d/tempid :db.part/user)
       :room/id (:id test-room)
       :room/name (:name test-room)
@@ -130,20 +131,13 @@
   (testing "room info"
     (let [room-model (map->RoomModel {})
           owner-id (d/tempid :db.part/user)
-          db (d/with base-db [{:db/id owner-id
-                               :user/username "owner"}
-                              {:db/id (d/tempid :db.part/user)
-                               :room/id 1
-                               :room/name "Roomie"
-                               :room/description "desc"
-                               :room/owner owner-id
-                               :room/model "model"}])]
+          db (d/with base-db (test-room-tx))]
       (is (= (room-info "1" {:db (:db-after db)
                              :room-models {"model" room-model}})
              {:room (map->Room {:id 1
                                 :name "Roomie"
                                 :description "desc"
-                                :owner (map->User {:username "owner" :film 0 :mail 0 :tickets 0})
+                                :owner test-user
                                 :current 0
                                 :capacity 25
                                 :model room-model
@@ -158,7 +152,7 @@
           results (goto-flat "1" {:user test-user
                                   :db (:db-after db)
                                   :room-states room-states
-                                  :room-models {"model" test-room-model}})]
+                                  :room-models test-room-models})]
       (is (= @room-states
              {1 {:users {"test" {:x 0 :y 1 :z 2 :body 2 :head 2 :room-id 0}}}}))
       (is (= (get-in results [:room :id]) 1)))))
@@ -183,3 +177,9 @@
       (is (= (select-keys (get-in @room-states [1 :users "test"]) [:x :y])
              {:x 5 :y 6})))))
 
+(deftest search-flats-test
+  (testing "search by username"
+    (let [db (d/with base-db (test-room-tx))]
+    (is (= (search-flats "test" {:db (:db-after db)
+                                 :room-models test-room-models})
+           {:rooms [test-room]})))))

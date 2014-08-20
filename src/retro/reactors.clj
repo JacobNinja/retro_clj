@@ -16,9 +16,12 @@
 (defn user-flat-cats [packet {:keys [db]}]
   {:user-categories (db/fetch-user-categories db)})
 
+(defn- with-model [room models]
+  (assoc room :model (get models (:model room))))
+
 (defn- room-with-model [room-id db models]
   (let [room (db/fetch-room (Integer/parseInt room-id) db)]
-    (assoc room :model (get models (:model room)))))
+    (with-model room models)))
 
 (defn room-info [room-id {:keys [db room-models]}]
   {:room (room-with-model room-id db room-models)})
@@ -37,3 +40,7 @@
 (defn move-to [packet {:keys [user room room-states]}]
   (let [[x y] (protocol/packet-values-b64 packet)]
     (swap! room-states update-in [(:id room) :users (:username user)] merge {:x x :y y})))
+
+(defn search-flats [search-term {:keys [db room-models]}]
+  {:rooms (map #(with-model % room-models)
+               (db/search-rooms search-term db))})
