@@ -13,6 +13,7 @@
 (def objects 62)
 (def items 63)
 (def gstat 64)
+(def move-to 75)
 (def look-to 79)
 (def stop 88)
 (def room-ad 126)

@@ -265,5 +265,5 @@
 (defn room-ad [env]
   [])
 
-(defn look-to [{:keys [user room room-states]}]
+(defn room-movement [{:keys [user room room-states]}]
   [(user-movement (get-in @room-states [(:id room) :users (:username user)]))])

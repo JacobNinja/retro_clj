@@ -29,8 +29,9 @@
    headers/room-ad [reactors/default handlers/room-ad]
    headers/users [reactors/default handlers/users]
    headers/gstat [reactors/default handlers/gstat]
+   headers/move-to [reactors/move-to handlers/room-movement]
    headers/room-directory [reactors/default handlers/room-directory]
-   headers/look-to [reactors/look-to handlers/look-to]
+   headers/look-to [reactors/look-to handlers/room-movement]
    headers/navigate [reactors/navigate handlers/navigate]})
 
 (defn send-packet [ch packet]
