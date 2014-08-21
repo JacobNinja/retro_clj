@@ -175,7 +175,7 @@
       (is (= @user-state
              {:x 1 :y 2}))
       (is (= (:path result)
-             [{:x 1 :y 2}])))))
+             [{:x 1 :y 2 :body 4 :head 4}])))))
 
 (deftest search-flats-test
   (testing "search by username"

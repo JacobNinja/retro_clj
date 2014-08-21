@@ -42,9 +42,7 @@
   (let [[x y] (protocol/packet-values-b64 packet)
         current (map @user-state [:x :y])]
     (swap! user-state merge {:x x :y y})
-    {:path (map (fn [[x y]]
-                  {:x x :y y})
-                (p/find-path current [x y]))}))
+    {:path (p/find-path current [x y])}))
 
 (defn search-flats [search-term {:keys [db room-models]}]
   {:rooms (map #(with-model % room-models)
