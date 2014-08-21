@@ -35,6 +35,8 @@
    headers/navigate [reactors/navigate handlers/navigate]})
 
 (defn send-packet [ch packet]
+  (when (:delay packet)
+    (Thread/sleep (:delay packet)))
   (println (str "SEND: " packet))
   (l/enqueue ch (protocol/encode-packet packet)))
 
