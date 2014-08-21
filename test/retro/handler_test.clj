@@ -293,3 +293,21 @@
                            :user (map->User {:username "test"})})
            [{:header 34
              :body (str "1 0,1,2,5,6" \return)}]))))
+
+(deftest move-to-test
+  (let [env {:room-states (atom {1 {:users {"test" {:z 2 :body 5 :head 6 :room-id 1}}}})
+             :path [{:x 1 :y 1}]
+             :room (map->Room {:id 1})
+             :user (map->User {:username "test"})}]
+    (testing "single move"
+      (is (= (move-to env)
+             [{:header 34
+               :body (str "1 1,1,2,5,6" \return)}])))
+
+    (testing "multiple moves with delay"
+      (is (= (move-to (assoc env :path [{:x 1 :y 1} {:x 2 :y 1}]))
+             [{:header 34
+               :body (str "1 1,1,2,5,6" \return)}
+              {:header 34
+               :body (str "1 2,1,2,5,6" \return)
+               :delay 300}])))))

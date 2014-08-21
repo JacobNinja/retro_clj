@@ -267,3 +267,11 @@
 
 (defn room-movement [{:keys [user room room-states]}]
   [(user-movement (get-in @room-states [(:id room) :users (:username user)]))])
+
+(defn move-to [{:keys [user room-states room path]}]
+  (let [user-state (get-in @room-states [(:id room) :users (:username user)])
+        movement (map #(user-movement (merge user-state %))
+                      path)]
+    (cons (first movement)
+          (map #(assoc % :delay 300)
+               (rest movement)))))
