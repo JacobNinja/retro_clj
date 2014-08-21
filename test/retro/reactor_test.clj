@@ -172,12 +172,14 @@
 
 (deftest move-to-test
   (testing "move to"
-    (let [room-states (atom {})]
-      (move-to "@E@F" {:user test-user
-                      :room test-room
-                      :room-states room-states})
+    (let [room-states (atom {1 {:users {"test" {:x 1 :y 1}}}})
+          result (move-to "@A@B" {:user test-user
+                                  :room test-room
+                                  :room-states room-states})]
       (is (= (select-keys (get-in @room-states [1 :users "test"]) [:x :y])
-             {:x 5 :y 6})))))
+             {:x 1 :y 2}))
+      (is (= (:path result)
+             [{:x 1 :y 2}])))))
 
 (deftest search-flats-test
   (testing "search by username"
