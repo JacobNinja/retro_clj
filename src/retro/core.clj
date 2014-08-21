@@ -29,7 +29,7 @@
    headers/room-ad [reactors/default handlers/room-ad]
    headers/users [reactors/default handlers/users]
    headers/gstat [reactors/default handlers/gstat]
-   headers/move-to [reactors/move-to handlers/room-movement]
+   headers/move-to [reactors/move-to handlers/move-to]
    headers/room-directory [reactors/default handlers/room-directory]
    headers/look-to [reactors/look-to handlers/room-movement]
    headers/navigate [reactors/navigate handlers/navigate]})
