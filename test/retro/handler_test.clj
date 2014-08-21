@@ -252,29 +252,30 @@
 
 (deftest gstat-test
   (testing "gstat first user no states"
-    (is (= (gstat {:user (map->User {:username "test"
-                                     :figure "123"
-                                     :sex "m"
-                                     :mission "mission"})
-                   :room (map->Room {:id 1})
-                   :room-states (atom {1 {:users {"test" {:x 0 :y 1 :z 2 :body 5 :head 6 :room-id 1}}}})})
-           [{:header 28
-             :body (str "i:1" \return ; room user id
-                        "n:test" \return ; user name
-                        "f:123" \return ; user figure
-                        "l:0 1 2" \return ; user location
-                        "s:m" \return ; user sex
-                        "c:mission" \return ; user mission
-                        )}
-            {:header 42 :body ""}
-            {:header 47 :body ""}
-            {:header 34
-             :body (str "1 " ; room user id
-                        "0,1,2" ; user location
-                        ",5,6" ; body/head direction
-                        "" ; user states
-                        \return
-                        )}]))))
+    (let [user-state (atom {:x 0 :y 1 :z 2 :body 5 :head 6 :room-id 1})]
+      (is (= (gstat {:user (map->User {:username "test"
+                                       :figure "123"
+                                       :sex "m"
+                                       :mission "mission"})
+                     :room (map->Room {:id 1})
+                     :user-state user-state})
+             [{:header 28
+               :body (str "i:1" \return ; room user id
+                          "n:test" \return ; user name
+                          "f:123" \return ; user figure
+                          "l:0 1 2" \return ; user location
+                          "s:m" \return ; user sex
+                          "c:mission" \return ; user mission
+                          )}
+              {:header 42 :body ""}
+              {:header 47 :body ""}
+              {:header 34
+               :body (str "1 " ; room user id
+                          "0,1,2" ; user location
+                          ",5,6" ; body/head direction
+                          "" ; user states
+                          \return
+                          )}])))))
 
 (deftest get-interest-test
   (testing "get interest"
@@ -288,17 +289,13 @@
 
 (deftest room-movement-test
   (testing "room movement"
-    (is (= (room-movement {:room-states (atom {1 {:users {"test" {:x 0 :y 1 :z 2 :body 5 :head 6 :room-id 1}}}})
-                           :room (map->Room {:id 1})
-                           :user (map->User {:username "test"})})
+    (is (= (room-movement {:user-state (atom {:x 0 :y 1 :z 2 :body 5 :head 6 :room-id 1})})
            [{:header 34
              :body (str "1 0,1,2,5,6" \return)}]))))
 
 (deftest move-to-test
-  (let [env {:room-states (atom {1 {:users {"test" {:z 2 :body 5 :head 6 :room-id 1}}}})
-             :path [{:x 1 :y 1}]
-             :room (map->Room {:id 1})
-             :user (map->User {:username "test"})}]
+  (let [env {:user-state (atom {:z 2 :body 5 :head 6 :room-id 1})
+             :path [{:x 1 :y 1}]}]
     (testing "single move"
       (is (= (move-to env)
              [{:header 34

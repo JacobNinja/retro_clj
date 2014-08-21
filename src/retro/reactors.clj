@@ -31,18 +31,17 @@
   (let [room (room-with-model room-id db room-models)
         model (:model room)
         user-loc (merge (select-keys model [:x :y :z]) {:head 2 :body 2 :room-id 0})]
-    (swap! room-states update-in [(:id room) :users] assoc (:username user) user-loc)
+    (swap! room-states update-in [(:id room) :users] assoc (:username user) (atom user-loc))
     {:room room}))
 
-(defn look-to [packet {:keys [room-states user room]}]
+(defn look-to [packet {:keys [user-state user room]}]
   (let [[body head] (protocol/point packet)]
-    (swap! room-states update-in [(:id room) :users (:username user)] merge {:body body :head head})))
+    (swap! user-state merge {:body body :head head})))
 
-(defn move-to [packet {:keys [user room room-states]}]
+(defn move-to [packet {:keys [user room user-state]}]
   (let [[x y] (protocol/packet-values-b64 packet)
-        user-state (get-in @room-states [(:id room) :users (:username user)])
-        current (map user-state [:x :y])]
-    (swap! room-states update-in [(:id room) :users (:username user)] merge {:x x :y y})
+        current (map @user-state [:x :y])]
+    (swap! user-state merge {:x x :y y})
     {:path (map (fn [[x y]]
                   {:x x :y y})
                 (p/find-path current [x y]))}))

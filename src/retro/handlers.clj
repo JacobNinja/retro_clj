@@ -244,10 +244,8 @@
               "" ; user states
               \return)})
 
-(defn gstat [{:keys [user room room-states]}]
-  (let [{:keys [x y z body head room-id] :as user-loc}
-        (select-keys (get-in @room-states [(:id room) :users (:username user)])
-                     [:x :y :z :body :head :room-id])]
+(defn gstat [{:keys [user user-state]}]
+  (let [{:keys [x y z body head room-id] :as user-loc} @user-state]
     [{:header headers/users
       :body (str "i:" room-id \return
                  "n:" (:username user) \return
@@ -265,12 +263,11 @@
 (defn room-ad [env]
   [])
 
-(defn room-movement [{:keys [user room room-states]}]
-  [(user-movement (get-in @room-states [(:id room) :users (:username user)]))])
+(defn room-movement [{:keys [user-state]}]
+  [(user-movement @user-state)])
 
-(defn move-to [{:keys [user room-states room path]}]
-  (let [user-state (get-in @room-states [(:id room) :users (:username user)])
-        movement (map #(user-movement (merge user-state %))
+(defn move-to [{:keys [user-state path]}]
+  (let [movement (map #(user-movement (merge @user-state %))
                       path)]
     (cons (first movement)
           (map #(assoc % :delay 300)

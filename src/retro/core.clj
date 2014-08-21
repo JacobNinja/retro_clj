@@ -40,17 +40,24 @@
   (println (str "SEND: " packet))
   (l/enqueue ch (protocol/encode-packet packet)))
 
+(defn- with-state [{:keys [user room] :as env}]
+  (if-let [user-state (when (and user room)
+                        (get-in @(:room-states env) [(:id room) :users (:username user)]))]
+    (assoc env :user-state user-state)
+    env))
+
 (defn- response-handler [env ch packets]
   (doseq [packet packets]
     (println (str "INCOMING: " packet))
     (when-let [[reactor handler] (mapping (encoding/decode-b64 (subs packet 0 2)))]
-      (try
-        (swap! env merge (reactor (subs packet 2) @env))
-        (doseq [r (handler @env)]
-          (send-packet ch r))
-        (catch Exception e
-          (.printStackTrace e)
-          (println e))))))
+      (let [state (with-state @env)]
+        (try
+          (swap! env merge (reactor (subs packet 2) state))
+          (doseq [r (handler (merge state @env))]
+            (send-packet ch r))
+          (catch Exception e
+            (.printStackTrace e)
+            (println e)))))))
 
 (defn- client-handler [env ch info]
   (println "CONNECTED")

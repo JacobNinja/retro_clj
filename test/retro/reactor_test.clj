@@ -155,28 +155,24 @@
                                   :db (:db-after db)
                                   :room-states room-states
                                   :room-models test-room-models})]
-      (is (= @room-states
-             {1 {:users {"test" {:x 0 :y 1 :z 2 :body 2 :head 2 :room-id 0}}}}))
+      (is (= @(get-in @room-states [1 :users "test"])
+             {:x 0 :y 1 :z 2 :body 2 :head 2 :room-id 0}))
       (is (= (get-in results [:room :id]) 1)))))
 
 (deftest look-to-test
   (testing "look to"
     (let [db (d/with base-db (test-room-tx))
-          room-states (atom {1 {:users {"test" {:x 0 :y 0 :z 0 :body 1 :head 1}}}})]
-      (look-to "5 6" {:user test-user
-                      :room test-room
-                      :room-states room-states})
-      (is (= @room-states
-             {1 {:users {"test" {:x 0 :y 0 :z 0 :body 5 :head 6}}}})))))
+          user-state (atom {:x 0 :y 0 :z 0 :body 1 :head 1})]
+      (look-to "5 6" {:user-state user-state})
+      (is (= @user-state
+             {:x 0 :y 0 :z 0 :body 5 :head 6})))))
 
 
 (deftest move-to-test
   (testing "move to"
-    (let [room-states (atom {1 {:users {"test" {:x 1 :y 1}}}})
-          result (move-to "@A@B" {:user test-user
-                                  :room test-room
-                                  :room-states room-states})]
-      (is (= (select-keys (get-in @room-states [1 :users "test"]) [:x :y])
+    (let [user-state (atom {:x 1 :y 1})
+          result (move-to "@A@B" {:user-state user-state})]
+      (is (= @user-state
              {:x 1 :y 2}))
       (is (= (:path result)
              [{:x 1 :y 2}])))))
