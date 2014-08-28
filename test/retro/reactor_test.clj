@@ -170,12 +170,9 @@
 
 (deftest move-to-test
   (testing "move to"
-    (let [user-state (atom {:x 1 :y 1})
-          result (move-to "@A@B" {:user-state user-state})]
-      (is (= @user-state
-             {:x 1 :y 2}))
-      (is (= (:path result)
-             [{:x 1 :y 2 :body 4 :head 4}])))))
+    (let [user-state (atom {:x 1 :y 1})]
+      (is (= (move-to "@A@B" {:user-state user-state})
+             {:path [{:x 1 :y 2 :body 4 :head 4}]})))))
 
 (deftest search-flats-test
   (testing "search by username"

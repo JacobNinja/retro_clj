@@ -37,6 +37,8 @@
 (defn send-packet [ch packet]
   (when (:delay packet)
     (Thread/sleep (:delay packet)))
+  (when-let [thunk (:thunk packet)]
+    (thunk))
   (println (str "SEND: " packet))
   (l/enqueue ch (protocol/encode-packet packet)))
 

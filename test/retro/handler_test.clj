@@ -294,17 +294,26 @@
              :body (str "1 0,1,2,5,6" \return)}]))))
 
 (deftest move-to-test
-  (let [env {:user-state (atom {:z 2 :body 5 :head 6 :room-id 1})
-             :path [{:x 1 :y 1}]}]
+  (let [env {:user-state (atom {:x 0 :y 1 :z 2 :body 1 :head 2 :room-id 1})
+             :path [{:x 1 :y 1 :z 2 :body 5 :head 6}]}]
     (testing "single move"
-      (is (= (move-to env)
+      (is (= (map #(select-keys % [:header :body :delay])
+                  (move-to env))
              [{:header 34
-               :body (str "1 1,1,2,5,6" \return)}])))
+               :body (str "1 0,1,2,5,6/mv 1,1,2" \return)}
+              {:header 34
+               :body (str "1 1,1,2,5,6" \return)
+               :delay 500}])))
 
     (testing "multiple moves with delay"
-      (is (= (move-to (assoc env :path [{:x 1 :y 1} {:x 2 :y 1}]))
-             [{:header 34
-               :body (str "1 1,1,2,5,6" \return)}
-              {:header 34
-               :body (str "1 2,1,2,5,6" \return)
-               :delay 300}])))))
+      (let [env (assoc env :path [{:x 1 :y 1 :z 2 :body 5 :head 6} {:x 2 :y 1 :z 2 :body 3 :head 4}])]
+        (is (= (map #(select-keys % [:header :body :delay])
+                    (move-to env))
+               [{:header 34
+                 :body (str "1 0,1,2,5,6/mv 1,1,2" \return)}
+                {:header 34
+                 :body (str "1 1,1,2,3,4/mv 2,1,2" \return)
+                 :delay 500}
+                {:header 34
+                 :body (str "1 2,1,2,3,4" \return)
+                 :delay 500}]))))))

@@ -41,7 +41,6 @@
 (defn move-to [packet {:keys [user room user-state]}]
   (let [[x y] (protocol/packet-values-b64 packet)
         current (map @user-state [:x :y])]
-    (swap! user-state merge {:x x :y y})
     {:path (p/find-path current [x y])}))
 
 (defn search-flats [search-term {:keys [db room-models]}]
