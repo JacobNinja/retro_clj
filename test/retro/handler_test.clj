@@ -242,7 +242,38 @@
            [{:header 30
              :body ""}
             {:header 32
-             :body ""}]))))
+             :body ""}])))
+
+  (testing "floor items"
+    (is (= (objects {:floor-items [(map->FloorItem {:id 1
+                                                    :sprite "xxx"
+                                                    :x 1
+                                                    :y 2
+                                                    :z 0
+                                                    :width 1
+                                                    :length 2
+                                                    :rotation 0
+                                                    :column 2
+                                                    :furni-var "yyy"})]})
+           [{:header 30
+             :body ""}
+            {:header 32
+             :body (str "1" ; id
+                        (char 2)
+                        "xxx" ; sprite
+                        (char 2)
+                        "I" ; x
+                        "J" ; y
+                        "I" ; width
+                        "J" ; length
+                        "H" ; rotation
+                        "H" ; z
+                        (char 2)
+                        "J" ; column
+                        (char 2) (char 2)
+                        "H" ; teleport id
+                        "yyy" ; furni var
+                        (char 2))}]))))
 
 (deftest items-test
   (testing "empty items"

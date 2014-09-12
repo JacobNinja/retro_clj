@@ -226,11 +226,29 @@
   [{:header headers/users
     :body ""}])
 
-(defn objects [env]
+(defn objects [{:keys [floor-items]}]
   [{:header headers/wall-items
     :body ""}
    {:header headers/floor-items
-    :body ""}])
+    :body (join (map (fn [{:keys [id sprite x y z width length column rotation furni-var]}]
+                       (str id
+                            (char 2)
+                            sprite
+                            (char 2)
+                            (encode-vl64 x)
+                            (encode-vl64 y)
+                            (encode-vl64 width)
+                            (encode-vl64 length)
+                            (encode-vl64 rotation)
+                            (encode-vl64 z)
+                            (char 2)
+                            (encode-vl64 column)
+                            (char 2)
+                            (char 2)
+                            (encode-vl64 0)
+                            furni-var
+                            (char 2)))
+                     floor-items))}])
 
 (defn items [env]
   [{:header headers/items
