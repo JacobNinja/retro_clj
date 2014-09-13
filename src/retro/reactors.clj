@@ -46,3 +46,6 @@
 (defn search-flats [search-term {:keys [db room-models]}]
   {:rooms (map #(with-model % room-models)
                (db/search-rooms search-term db))})
+
+(defn objects [_ {:keys [db room]}]
+  {:floor-items (db/fetch-floor-items db room)})

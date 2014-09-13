@@ -129,10 +129,54 @@
     :db/cardinality :db.cardinality/one
     :db/doc "Room model"
     :db.install/_attribute :db.part/db}
+
+   ; Floor item
+   {:db/id #db/id[:db.part/db]
+    :db/ident :floor-item/id
+    :db/valueType :db.type/long
+    :db/cardinality :db.cardinality/one
+    :db/doc "id"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :floor-item/x
+    :db/valueType :db.type/long
+    :db/cardinality :db.cardinality/one
+    :db/doc "x"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :floor-item/y
+    :db/valueType :db.type/long
+    :db/cardinality :db.cardinality/one
+    :db/doc "y"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :floor-item/z
+    :db/valueType :db.type/long
+    :db/cardinality :db.cardinality/one
+    :db/doc "z"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :floor-item/room
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/one
+    :db/doc "Floor item"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :floor-item/var
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    :db/doc "signed var"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :floor-item/sprite
+    :db/valueType :db.type/string
+    :db/cardinality :db.cardinality/one
+    :db/doc "sprite"
+    :db.install/_attribute :db.part/db}
    ])
 
 (defn ensure-schema [conn]
-  (or (-> conn d/db (d/entid :tx/room))
+  (or (-> conn d/db (d/entid :tx/floor-item))
       @(d/transact conn schema)))
 
 (defn ensure-db [db-uri]
@@ -256,3 +300,22 @@
       (map (comp (partial db->Room user)
                  (partial d/entity db))
            rooms))))
+
+(defn- db->FloorItem [entity]
+  (map->FloorItem {:id (or (:floor-item/id entity) 1) ; hack
+                   :x (:floor-item/x entity)
+                   :y (:floor-item/y entity)
+                   :z (:floor-item/z entity)
+                   :column "0,0,0"
+                   :rotation 2
+                   :sprite (:floor-item/sprite entity)
+                   :var "-"}))
+
+(defn fetch-floor-items [db room]
+  (let [floor-items (first (datomic.api/q '[:find ?item
+                                            :in $ ?room-id
+                                            :where [?room :room/id ?room-id]
+                                                   [?item :floor-item/room ?room]]
+                                          db
+                                          (:id room)))]
+    (map #(db->FloorItem (d/entity db %)) floor-items)))

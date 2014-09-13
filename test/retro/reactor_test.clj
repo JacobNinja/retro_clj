@@ -27,18 +27,20 @@
                            :wallpaper "xxx"
                            :floor "yyy"
                            :status "open"}))
-(defn test-room-tx []
-  (let [owner-id (d/tempid :db.part/user)]
-    [{:db/id owner-id
-      :user/username "test"}
-     {:db/id (d/tempid :db.part/user)
-      :room/id (:id test-room)
-      :room/name (:name test-room)
-      :room/description (:description test-room)
-      :room/owner owner-id
-      :room/model "model"
-      :room/floor (:floor test-room)
-      :room/wallpaper (:wallpaper test-room)}]))
+(defn test-room-tx
+  ([] (test-room-tx (d/tempid :db.part/user)))
+  ([room-id]
+   (let [owner-id (d/tempid :db.part/user)]
+     [{:db/id owner-id
+       :user/username "test"}
+      {:db/id room-id
+       :room/id (:id test-room)
+       :room/name (:name test-room)
+       :room/description (:description test-room)
+       :room/owner owner-id
+       :room/model "model"
+       :room/floor (:floor test-room)
+       :room/wallpaper (:wallpaper test-room)}])))
 
 (deftest login-test
   (testing "login"
@@ -177,6 +179,32 @@
 (deftest search-flats-test
   (testing "search by username"
     (let [db (d/with base-db (test-room-tx))]
-    (is (= (search-flats "test" {:db (:db-after db)
-                                 :room-models test-room-models})
-           {:rooms [test-room]})))))
+      (is (= (search-flats "test" {:db (:db-after db)
+                                   :room-models test-room-models})
+             {:rooms [test-room]})))))
+
+(deftest objects-test
+  (testing "objects in flat"
+    (let [room-id (d/tempid :db.part/user)
+          db (d/with base-db (concat (test-room-tx room-id)
+                                     [{:db/id (d/tempid :db.part/user)
+                                       :floor-item/id 1
+                                       :floor-item/x 1
+                                       :floor-item/y 2
+                                       :floor-item/z 3
+                                       :floor-item/var "sign"
+                                       :floor-item/sprite "foo"
+                                       :floor-item/room room-id}
+                                      {:db/id (d/tempid :db.part/user)
+                                       :floor-item/sprite "bar"}]))]
+      (is (= (objects "" {:db (:db-after db)
+                          :room {:id 1}
+                          :sprites {"foo" {:width 1 :length 1}}})
+             {:floor-items [(map->FloorItem {:id 1
+                                             :x 1
+                                             :y 2
+                                             :z 3
+                                             :rotation 2
+                                             :column "0,0,0"
+                                             :var "-"
+                                             :sprite "foo"})]})))))
