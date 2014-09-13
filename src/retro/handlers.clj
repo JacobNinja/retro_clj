@@ -226,29 +226,32 @@
   [{:header headers/users
     :body ""}])
 
-(defn objects [{:keys [floor-items]}]
+(defn objects [{:keys [floor-items sprites]}]
   [{:header headers/wall-items
     :body ""}
    {:header headers/floor-items
-    :body (join (map (fn [{:keys [id sprite x y z width length column rotation furni-var]}]
-                       (str id
-                            (char 2)
-                            sprite
-                            (char 2)
-                            (encode-vl64 x)
-                            (encode-vl64 y)
-                            (encode-vl64 width)
-                            (encode-vl64 length)
-                            (encode-vl64 rotation)
-                            (encode-vl64 z)
-                            (char 2)
-                            (encode-vl64 column)
-                            (char 2)
-                            (char 2)
-                            (encode-vl64 0)
-                            furni-var
-                            (char 2)))
-                     floor-items))}])
+    :body (str (when-not (zero? (count floor-items))
+                 (encode-vl64 (count floor-items))
+               (join (map (fn [{:keys [id sprite x y z column rotation var]}]
+                       (let [{:keys [width length]} (select-keys (sprites sprite) [:width :length])]
+                         (str id
+                              (char 2)
+                              sprite
+                              (char 2)
+                              (encode-vl64 x)
+                              (encode-vl64 y)
+                              (encode-vl64 width)
+                              (encode-vl64 length)
+                              (encode-vl64 rotation)
+                              (str z ".0")
+                              (char 2)
+                              column
+                              (char 2)
+                              (char 2)
+                              (encode-vl64 0)
+                              var
+                              (char 2))))
+                     floor-items))))}])
 
 (defn items [env]
   [{:header headers/items

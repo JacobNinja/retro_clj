@@ -250,11 +250,11 @@
                                                     :x 1
                                                     :y 2
                                                     :z 0
-                                                    :width 1
-                                                    :length 2
                                                     :rotation 0
-                                                    :column 2
-                                                    :furni-var "yyy"})]})
+                                                    :column "0,0,0"
+                                                    :var "yyy"})]
+                     :sprites {"xxx" {:width 1
+                                      :length 2}}})
            [{:header 30
              :body ""}
             {:header 32
@@ -267,9 +267,9 @@
                         "I" ; width
                         "J" ; length
                         "H" ; rotation
-                        "H" ; z
+                        "0.0" ; z
                         (char 2)
-                        "J" ; column
+                        "0,0,0" ; column
                         (char 2) (char 2)
                         "H" ; teleport id
                         "yyy" ; furni var
