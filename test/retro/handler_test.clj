@@ -258,7 +258,8 @@
            [{:header 30
              :body ""}
             {:header 32
-             :body (str "1" ; id
+             :body (str "I" ; # floor items
+                        "1" ; id
                         (char 2)
                         "xxx" ; sprite
                         (char 2)

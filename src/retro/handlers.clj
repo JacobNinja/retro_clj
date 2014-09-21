@@ -231,7 +231,7 @@
     :body ""}
    {:header headers/floor-items
     :body (str (when-not (zero? (count floor-items))
-                 (encode-vl64 (count floor-items))
+                 (encode-vl64 (count floor-items)))
                (join (map (fn [{:keys [id sprite x y z column rotation var]}]
                        (let [{:keys [width length]} (select-keys (sprites sprite) [:width :length])]
                          (str id
@@ -251,7 +251,7 @@
                               (encode-vl64 0)
                               var
                               (char 2))))
-                     floor-items))))}])
+                     floor-items)))}])
 
 (defn items [env]
   [{:header headers/items
