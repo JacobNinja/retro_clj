@@ -22,7 +22,7 @@
    headers/room-info [reactors/room-info handlers/room-info]
    headers/heightmap [reactors/default handlers/heightmap]
    headers/items [reactors/default handlers/items]
-   headers/objects [reactors/default handlers/objects]
+   headers/objects [reactors/objects handlers/objects]
    headers/try-flat [reactors/room-info handlers/try-flat]
    headers/goto-flat [reactors/goto-flat handlers/goto-flat]
    headers/get-interest [reactors/default handlers/get-interest]
@@ -86,11 +86,15 @@
               :max_ascend 1.5
               :max_descend 4.0}})
 
+(def test-sprites
+  {"md_limukaappi" {:sprite "md_limukaappi", :flags "M", :width 1, :length 1, :height 0.0, :col "0,0,0", :var_type 4, :action_height 0.0, :can_trade 1, :public 0, :hand_type "S"}})
+
 (defn seed []
   (let [public-category (d/tempid :db.part/user)
         private-category (d/tempid :db.part/user)
         chill-category (d/tempid :db.part/user)
-        user (d/tempid :db.part/user)]
+        user (d/tempid :db.part/user)
+        user-room-id (d/tempid :db.part/user)]
     [{:db/id public-category
       :category/id 3 :category/type 0 :category/name "Public Category"}
      {:db/id private-category
@@ -115,13 +119,19 @@
       :user/mission "something"
       :user/figure "8000119001280152950125516"
       :user/sex "M"}
-     {:db/id (d/tempid :db.part/user)
+     {:db/id user-room-id
       :room/id 1
       :room/name "Test room"
       :room/description "description"
       :room/category chill-category
       :room/owner user
-      :room/model "model_a"}]))
+      :room/model "model_a"}
+     {:db/id (d/tempid :db.part/user)
+      :floor-item/x 8
+      :floor-item/y 8
+      :floor-item/z 0
+      :floor-item/room user-room-id
+      :floor-item/sprite "md_limukaappi"}]))
 
 (defn seed-db [db]
   (:db-after (d/with db (seed))))
@@ -137,5 +147,6 @@
         (println "Starting TCP server...")
         (tcp/start-tcp-server (partial client-handler {:db (seed-db (d/db conn))
                                                        :room-models room-models
-                                                       :room-states (atom {})})
+                                                       :room-states (atom {})
+                                                       :sprites test-sprites})
                               {:port 1234 :decoder frame})))))
