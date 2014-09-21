@@ -23,7 +23,11 @@
       (+ (* 14 y-diff) (* 10 (- x-diff y-diff)))
       (+ (* 14 x-diff) (* 10 (- y-diff x-diff))))))
 
-(defn- find-segment [end-point start-point]
+(defn- blocked? [obstacles {:keys [x y]}]
+  (some #(and (= x (:x %)) (= y (:y %)))
+        obstacles))
+
+(defn- find-segment [end-point obstacles start-point]
   (let [{:keys [x y]} start-point
         diagonal [{:x (inc x) :y (inc y) :body 3 :head 3}
                   {:x (inc x) :y (dec y) :body 1 :head 1}
@@ -32,14 +36,18 @@
         cardinal [{:x (inc x) :y y :body 2 :head 2}
                   {:x (dec x) :y y :body 6 :head 6}
                   {:x x :y (inc y) :body 4 :head 4}
-                  {:x x :y (dec y) :body 0 :head 0}]]
+                  {:x x :y (dec y) :body 0 :head 0}]
+        unblocked (filter (partial (complement blocked?) obstacles)
+                          (concat diagonal cardinal))]
     (apply (partial min-key (fn [point]
                               (+ (g start-point point)
                                  (heuristic point end-point))))
-           (concat diagonal cardinal))))
+           unblocked)))
 
-(defn find-path [[x y] [end-x end-y]]
-  (let [end-point {:x end-x :y end-y}]
-    (rest (take-through #(= end-point (select-keys % [:x :y]))
-                        (iterate (partial find-segment end-point)
-                                 {:x x :y y})))))
+(defn find-path
+  ([start end] (find-path start end []))
+  ([[x y] [end-x end-y] obstacles]
+   (let [end-point {:x end-x :y end-y}]
+     (rest (take-through #(or (= end-point (select-keys % [:x :y])) (empty? %))
+                         (iterate (partial find-segment end-point obstacles)
+                                  {:x x :y y}))))))
