@@ -173,7 +173,9 @@
 (deftest move-to-test
   (testing "move to"
     (let [user-state (atom {:x 1 :y 1})]
-      (is (= (move-to "@A@B" {:user-state user-state})
+      (is (= (move-to "@A@B" {:user-state user-state
+                              :room {:id 1}
+                              :db base-db})
              {:path [{:x 1 :y 2 :body 4 :head 4}]})))))
 
 (deftest search-flats-test

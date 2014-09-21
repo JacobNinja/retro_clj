@@ -38,10 +38,11 @@
   (let [[body head] (protocol/point packet)]
     (swap! user-state merge {:body body :head head})))
 
-(defn move-to [packet {:keys [user room user-state]}]
+(defn move-to [packet {:keys [user room user-state db]}]
   (let [[x y] (protocol/packet-values-b64 packet)
-        current (map @user-state [:x :y])]
-    {:path (p/find-path current [x y])}))
+        current (map @user-state [:x :y])
+        floor-items (db/fetch-floor-items db room)]
+    {:path (p/find-path current [x y] floor-items)}))
 
 (defn search-flats [search-term {:keys [db room-models]}]
   {:rooms (map #(with-model % room-models)
