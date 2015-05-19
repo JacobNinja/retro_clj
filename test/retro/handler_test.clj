@@ -1,7 +1,8 @@
 (ns retro.handler-test
   (:require [clojure.test :refer :all]
             [retro.handlers :refer :all]
-            [retro.records :refer :all]))
+            [retro.records :refer :all]
+            [retro.encoding :as encoding]))
 
 (defn make-check [handler & args]
   (fn [expected]
@@ -349,3 +350,31 @@
                 {:header 34
                  :body (str "1 2,1,2,3,4" \return)
                  :delay 500}]))))))
+
+(deftest move-stuff-test
+  (let [env {:move-object (map->FloorItem {:id 123 :x 1 :y 2 :z 0 :sprite "xxx" :rotation 5 :column 6 :var "foo"})
+             :room {:model {:heightmap "xxx"}}
+             :sprites {"xxx" {:width 3 :length 4}}}]
+    (testing "move furni to x y"
+      (is (= (move-object env)
+             [{:header 95
+              :body (str "123"
+                         (char 2)
+                         "xxx"
+                         (char 2)
+                         (encoding/encode-vl64 1) ; x
+                         (encoding/encode-vl64 2) ; y
+                         (encoding/encode-vl64 3) ; width
+                         (encoding/encode-vl64 4) ; length
+                         (encoding/encode-vl64 5) ; rotation
+                         "0.0" ; z
+                         (char 2)
+                         6 ; column
+                         (char 2)
+                         (char 2)
+                         (encoding/encode-vl64 0) ; teleport id
+                         "foo" ; var
+                         (char 2)
+                         )}
+              {:header 31
+               :body "xxx"}])))))

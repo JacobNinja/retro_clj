@@ -305,3 +305,27 @@
           (map #(assoc % :delay 500)
                (concat (rest movement)
                        (list (assoc (user-movement last-movement) :thunk (fn [] (reset! user-state last-movement)))))))))
+
+(defn move-object [{:keys [move-object sprites] :as env}]
+  (let [sprite (sprites (:sprite move-object))]
+    (concat
+     [{:header headers/move-object
+       :body (str (:id move-object)
+                  (char 2)
+                  (:sprite move-object)
+                  (char 2)
+                  (encode-vl64 (:x move-object))
+                  (encode-vl64 (:y move-object))
+                  (encode-vl64 (:width sprite))
+                  (encode-vl64 (:length sprite))
+                  (encode-vl64 (:rotation move-object))
+                  (str (:z move-object) ".0")
+                  (char 2)
+                  (:column move-object)
+                  (char 2)
+                  (char 2)
+                  (encode-vl64 0)
+                  (:var move-object)
+                  (char 2)
+                  )}]
+     (heightmap env))))
