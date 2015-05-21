@@ -378,3 +378,8 @@
                          )}
               {:header 31
                :body "xxx"}])))))
+
+(deftest go-away-test
+  (testing "user clicks door"
+    (is (= (go-away {})
+           [{:header 18 :body ""}]))))

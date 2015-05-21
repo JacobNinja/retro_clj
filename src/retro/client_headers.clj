@@ -6,6 +6,7 @@
 (def credits 6)
 (def club 7)
 (def pub-key 8)
+(def hotel-view 18)
 (def room-directory 19)
 (def users 28)
 (def wall-items 30)

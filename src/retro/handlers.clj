@@ -329,3 +329,6 @@
                   (char 2)
                   )}]
      (heightmap env))))
+
+(defn go-away [_]
+  [{:header headers/hotel-view :body ""}])
