@@ -135,6 +135,7 @@
     :db/ident :floor-item/id
     :db/valueType :db.type/long
     :db/cardinality :db.cardinality/one
+    :db/unique :db.unique/identity
     :db/doc "id"
     :db.install/_attribute :db.part/db}
    {:db/id #db/id[:db.part/db]
@@ -226,6 +227,16 @@
               :wallpaper (get entity :room/wallpaper 0)
               :floor (get entity :room/floor 0)}))
 
+(defn- db->FloorItem [entity]
+  (map->FloorItem {:id (:floor-item/id entity)
+                   :x (:floor-item/x entity)
+                   :y (:floor-item/y entity)
+                   :z (:floor-item/z entity)
+                   :column "0,0,0"
+                   :rotation 2
+                   :sprite (:floor-item/sprite entity)
+                   :var "-"}))
+
 (defn fetch-user [username password db]
   (when-let [user (ffirst (datomic.api/q '[:find ?user
                                            :in $ ?username ?password
@@ -301,16 +312,6 @@
                  (partial d/entity db))
            rooms))))
 
-(defn- db->FloorItem [entity]
-  (map->FloorItem {:id (or (:floor-item/id entity) 1) ; hack
-                   :x (:floor-item/x entity)
-                   :y (:floor-item/y entity)
-                   :z (:floor-item/z entity)
-                   :column "0,0,0"
-                   :rotation 2
-                   :sprite (:floor-item/sprite entity)
-                   :var "-"}))
-
 (defn fetch-floor-items [db room]
   (let [floor-items (first (datomic.api/q '[:find ?item
                                             :in $ ?room-id
@@ -319,3 +320,18 @@
                                           db
                                           (:id room)))]
     (map #(db->FloorItem (d/entity db %)) floor-items)))
+
+(defn- transact-move-object [floor-item-id x y conn]
+  (datomic.api/transact conn
+                        [{:db/id floor-item-id
+                          :floor-item/x x
+                          :floor-item/y y}]))
+
+(defn move-floor-item [floor-item-id x y conn]
+  (when-let [floor-item (ffirst (datomic.api/q '[:find ?item
+                                                 :in $ ?item-id
+                                                 :where [?item :floor-item/id ?item-id]]
+                                               (d/db conn)
+                                               floor-item-id))]
+    (let [db (:db-after @(transact-move-object floor-item x y conn))]
+      (db->FloorItem (d/entity db floor-item)))))

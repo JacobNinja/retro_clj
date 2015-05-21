@@ -50,3 +50,9 @@
 
 (defn objects [_ {:keys [db room]}]
   {:floor-items (db/fetch-floor-items db room)})
+
+(defn move-object [validate-fn packet {:keys [conn]}]
+  (let [[object-id x y] (map #(Integer/parseInt %)
+                             (protocol/split packet))
+        object (db/move-floor-item object-id x y conn)]
+    {:move-object object}))

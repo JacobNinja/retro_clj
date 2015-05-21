@@ -210,3 +210,23 @@
                                              :column "0,0,0"
                                              :var "-"
                                              :sprite "foo"})]})))))
+
+(deftest move-object-test
+  (testing "move object to x y"
+    (let [validate-fn (fn [& args] true)
+          room-id (d/tempid :db.part/user)
+          db (:db-after @(datomic.api/transact conn (concat (test-room-tx room-id)
+                                                            [{:db/id (d/tempid :db.part/user)
+                                                              :floor-item/id 123
+                                                              :floor-item/x 1
+                                                              :floor-item/y 2
+                                                              :floor-item/z 3
+                                                              :floor-item/sprite "foo"
+                                                              :floor-item/room room-id}])))]
+      (is (= (select-keys (:move-object (move-object validate-fn
+                                                     "123 2 3"
+                                                     {:db db
+                                                      :conn conn
+                                                      :room {:id 1}}))
+                          [:id :x :y :z :rotation])
+             {:id 123 :x 2 :y 3 :z 3 :rotation 2})))))
