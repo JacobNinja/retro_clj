@@ -19,6 +19,7 @@
 (def room-info 54)
 (def goto-flat 59)
 (def room-model 69)
+(def move-object 95)
 (def ad 166)
 (def navigate 220)
 (def user-flat-cats 221)
