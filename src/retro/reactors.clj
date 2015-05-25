@@ -56,9 +56,9 @@
   {:floor-items (db/fetch-floor-items db (:room @user))})
 
 (defn move-object [validate-fn packet {:keys [conn] :as env}]
-  (let [[object-id x y] (map #(Integer/parseInt %)
+  (let [[object-id x y rotation] (map #(Integer/parseInt %)
                              (protocol/split packet))
-        object (db/move-floor-item object-id x y conn)]
+        object (db/move-floor-item object-id x y rotation conn)]
     {:move-object object}))
 
 (defn go-away [packet {:keys [room-states user]}]

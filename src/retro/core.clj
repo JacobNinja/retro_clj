@@ -136,6 +136,7 @@
                    :floor-item/x 8
                    :floor-item/y 8
                    :floor-item/z 0
+                   :floor-item/rotation 2
                    :floor-item/room user-room-id
                    :floor-item/sprite "md_limukaappi"}])))
 

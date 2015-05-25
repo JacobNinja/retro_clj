@@ -157,6 +157,12 @@
     :db/doc "z"
     :db.install/_attribute :db.part/db}
    {:db/id #db/id[:db.part/db]
+    :db/ident :floor-item/rotation
+    :db/valueType :db.type/long
+    :db/cardinality :db.cardinality/one
+    :db/doc "rotation"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
     :db/ident :floor-item/room
     :db/valueType :db.type/ref
     :db/cardinality :db.cardinality/one
@@ -233,7 +239,7 @@
                    :y (:floor-item/y entity)
                    :z (:floor-item/z entity)
                    :column "0,0,0"
-                   :rotation 2
+                   :rotation (:floor-item/rotation entity)
                    :sprite (:floor-item/sprite entity)
                    :var "-"}))
 
@@ -321,17 +327,18 @@
                                           room-id))]
     (map #(db->FloorItem (d/entity db %)) floor-items)))
 
-(defn- transact-move-object [floor-item-id x y conn]
+(defn- transact-move-object [floor-item-id x y rotation conn]
   (datomic.api/transact conn
                         [{:db/id floor-item-id
                           :floor-item/x x
-                          :floor-item/y y}]))
+                          :floor-item/y y
+                          :floor-item/rotation rotation}]))
 
-(defn move-floor-item [floor-item-id x y conn]
+(defn move-floor-item [floor-item-id x y rotation conn]
   (when-let [floor-item (ffirst (datomic.api/q '[:find ?item
                                                  :in $ ?item-id
                                                  :where [?item :floor-item/id ?item-id]]
                                                (d/db conn)
                                                floor-item-id))]
-    (let [db (:db-after @(transact-move-object floor-item x y conn))]
+    (let [db (:db-after @(transact-move-object floor-item x y rotation conn))]
       (db->FloorItem (d/entity db floor-item)))))

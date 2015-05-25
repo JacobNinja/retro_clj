@@ -196,6 +196,7 @@
                                        :floor-item/x 1
                                        :floor-item/y 2
                                        :floor-item/z 3
+                                       :floor-item/rotation 4
                                        :floor-item/var "sign"
                                        :floor-item/sprite "foo"
                                        :floor-item/room room-id}
@@ -208,7 +209,7 @@
                                              :x 1
                                              :y 2
                                              :z 3
-                                             :rotation 2
+                                             :rotation 4
                                              :column "0,0,0"
                                              :var "-"
                                              :sprite "foo"})]})))))
@@ -223,15 +224,16 @@
                                                               :floor-item/x 1
                                                               :floor-item/y 2
                                                               :floor-item/z 3
+                                                              :floor-item/rotation 0
                                                               :floor-item/sprite "foo"
                                                               :floor-item/room room-id}])))]
       (is (= (select-keys (:move-object (move-object validate-fn
-                                                     "123 2 3"
+                                                     "123 2 3 4"
                                                      {:db db
                                                       :conn conn
                                                       :room {:id 1}}))
                           [:id :x :y :z :rotation])
-             {:id 123 :x 2 :y 3 :z 3 :rotation 2})))))
+             {:id 123 :x 2 :y 3 :z 3 :rotation 4})))))
 
 (deftest go-away-test
   (testing "user is removed from room"
