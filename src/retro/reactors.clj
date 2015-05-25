@@ -60,3 +60,8 @@
                              (protocol/split packet))
         object (db/move-floor-item object-id x y conn)]
     {:move-object object}))
+
+(defn go-away [packet {:keys [room-states user]}]
+  (let [current-room (:room @user)]
+    (swap! room-states update-in [current-room :users] #(dissoc % (:username @user)))
+    nil))

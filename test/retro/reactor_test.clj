@@ -232,3 +232,11 @@
                                                       :room {:id 1}}))
                           [:id :x :y :z :rotation])
              {:id 123 :x 2 :y 3 :z 3 :rotation 2})))))
+
+(deftest go-away-test
+  (testing "user is removed from room"
+    (let [user (atom (map->User {:username "foo" :room 1}))
+          room-states (atom {1 {:users {"foo" user}}})]
+      (is (nil? (go-away "" {:room-states room-states
+                             :user user})))
+      (is (nil? (get-in @room-states [1 :users "foo"]))))))
