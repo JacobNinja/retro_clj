@@ -4,6 +4,15 @@
             [retro.path-finding :as p]
             [clojure.string :refer [split]]))
 
+(defn- with-model [room models]
+  (assoc room :model (get models (:model room))))
+
+(defn- room-with-model [room-id db models]
+  (let [room (db/fetch-room (Integer/parseInt room-id) db)]
+    (with-model room models)))
+
+;; Handlers
+
 (defn default [p env])
 
 (defn login [packet {:keys [db]}]
@@ -17,13 +26,6 @@
 
 (defn user-flat-cats [packet {:keys [db]}]
   {:user-categories (db/fetch-user-categories db)})
-
-(defn- with-model [room models]
-  (assoc room :model (get models (:model room))))
-
-(defn- room-with-model [room-id db models]
-  (let [room (db/fetch-room (Integer/parseInt room-id) db)]
-    (with-model room models)))
 
 (defn room-info [room-id {:keys [db room-models]}]
   {:room (room-with-model room-id db room-models)})
