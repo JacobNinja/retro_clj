@@ -33,7 +33,8 @@
    headers/room-directory [reactors/default handlers/room-directory]
    headers/look-to [reactors/look-to handlers/room-movement]
    headers/navigate [reactors/navigate handlers/navigate]
-   headers/move-object [(partial reactors/move-object (fn [& args] true)) handlers/move-object]})
+   headers/move-object [(partial reactors/move-object (fn [& args] true)) handlers/move-object]
+   headers/go-away [reactors/go-away handlers/go-away]})
 
 (defn send-packet [ch packet]
   (when (:delay packet)

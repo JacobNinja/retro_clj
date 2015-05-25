@@ -17,6 +17,7 @@
 (def look-to 79)
 (def stop 88)
 (def move-object 73)
+(def go-away 115)
 (def room-ad 126)
 (def navigate 150)
 (def user-flat-cats 151)
