@@ -161,7 +161,7 @@
       "seed" (seed conn)
       "replay" (replay conn)
       (do
-
+        (seed conn)
         (println "Starting TCP server...")
         (tcp/start-tcp-server (partial client-handler {:room-models room-models
                                                        :room-states (atom {})
