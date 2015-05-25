@@ -386,3 +386,8 @@
   (testing "user clicks door"
     (is (= (go-away {})
            [{:header 18 :body ""}]))))
+
+(deftest pick-up-test
+  (testing "pick up floor item"
+    (is (= (pick-up {:pick-up (map->FloorItem {:id 1})})
+           [{:header 94 :body "1"}]))))

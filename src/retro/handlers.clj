@@ -332,3 +332,6 @@
 
 (defn go-away [_]
   [{:header headers/hotel-view :body ""}])
+
+(defn pick-up [{:keys [pick-up]}]
+  [{:header headers/pick-up :body (str (:id pick-up))}])
