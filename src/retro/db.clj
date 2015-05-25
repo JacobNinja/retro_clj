@@ -312,13 +312,13 @@
                  (partial d/entity db))
            rooms))))
 
-(defn fetch-floor-items [db room]
+(defn fetch-floor-items [db room-id]
   (let [floor-items (first (datomic.api/q '[:find ?item
                                             :in $ ?room-id
                                             :where [?room :room/id ?room-id]
                                                    [?item :floor-item/room ?room]]
                                           db
-                                          (:id room)))]
+                                          room-id))]
     (map #(db->FloorItem (d/entity db %)) floor-items)))
 
 (defn- transact-move-object [floor-item-id x y conn]

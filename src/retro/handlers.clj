@@ -21,7 +21,7 @@
     [{:header headers/ban :body "Incorrect username/password"}]))
 
 (defn credits [{:keys [user]}]
-  [{:header headers/credits :body (str (:credits user) ".0")}])
+  [{:header headers/credits :body (str (:credits @user) ".0")}])
 
 (defn club-habbo [env]
   [{:header headers/club :body "club_habboYNEHHI"}
@@ -38,7 +38,7 @@
     :body (str (join \return
                      (map (partial join "=")
                           (zip-fill '("name" "figure" "sex" "customData" "rph_tickets" "photo_film" "directMail")
-                                    (map #(% user) '(:username :figure :sex :mission))
+                                    (map #(% @user) '(:username :figure :sex :mission))
                                     0)))
                \return)}])
 
@@ -261,23 +261,23 @@
   (fn []
     (str "/mv " (join "," (list x y z)))))
 
-(defn- user-movement [{:keys [x y z body head room-id states]}]
+(defn- user-movement [{:keys [x y z body head room states]}]
   {:header headers/movement
-   :body (str room-id ; room user id
+   :body (str room ; room user id
               \space
               (join "," (list x y z body head)) ; user location
               (join (map (fn [f] (f)) (or states [])))
               \return)})
 
-(defn gstat [{:keys [user user-state]}]
-  (let [{:keys [x y z body head room-id] :as user-loc} @user-state]
+(defn gstat [{:keys [user]}]
+  (let [{:keys [x y z body head room] :as user-loc} @user]
     [{:header headers/users
-      :body (str "i:" room-id \return
-                 "n:" (:username user) \return
-                 "f:" (:figure user) \return
+      :body (str "i:" room \return
+                 "n:" (:username user-loc) \return
+                 "f:" (:figure user-loc) \return
                  "l:" (join " " (list x y z)) \return
-                 "s:" (:sex user) \return
-                 "c:" (:mission user) \return)}
+                 "s:" (:sex user-loc) \return
+                 "c:" (:mission user-loc) \return)}
      {:header 42 :body ""} ; rights?
      {:header 47 :body ""} ; admin rights?
      (user-movement user-loc)]))
@@ -288,25 +288,25 @@
 (defn room-ad [env]
   [])
 
-(defn room-movement [{:keys [user-state]}]
-  [(user-movement @user-state)])
+(defn room-movement [{:keys [user]}]
+  [(user-movement @user)])
 
-(defn move-to [{:keys [user-state path]}]
-  (let [path (map #(assoc % :z (:z @user-state)) path)
+(defn move-to [{:keys [user path]}]
+  (let [path (map #(assoc % :z (:z @user)) path)
         movement (map (fn [[a b]]
-                        (user-movement (merge @user-state
+                        (user-movement (merge @user
                                               a
                                               {:body (:body b)
                                                :head (:head b)
                                                :states (list (user-state-move b))})))
-                      (partition 2 1 (cons @user-state path)))
-        last-movement (merge @user-state (last path))]
+                      (partition 2 1 (cons @user path)))
+        last-movement (merge @user (last path))]
     (cons (first movement)
           (map #(assoc % :delay 500)
                (concat (rest movement)
-                       (list (assoc (user-movement last-movement) :thunk (fn [] (reset! user-state last-movement)))))))))
+                       (list (assoc (user-movement last-movement) :thunk (fn [] (swap! user merge last-movement)))))))))
 
-(defn move-object [{:keys [move-object sprites] :as env}]
+(defn move-object [{:keys [move-object sprites room] :as env}]
   (let [sprite (sprites (:sprite move-object))]
     (concat
      [{:header headers/move-object

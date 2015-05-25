@@ -43,11 +43,8 @@
   (println (str "SEND: " packet))
   (l/enqueue ch (protocol/encode-packet packet)))
 
-(defn- with-state [{:keys [user room conn] :as env}]
-  (let [user-state (when (and user room)
-                        (get-in @(:room-states env) [(:id room) :users (:username user)]))
-        env (assoc env :db (d/db conn))]
-    (assoc env :user-state user-state)))
+(defn- with-state [{:keys [conn] :as env}]
+  (assoc env :db (d/db conn)))
 
 (defn- handle-packet [packet env]
   (when-let [[reactor handler] (mapping (encoding/decode-b64 (subs packet 0 2)))]

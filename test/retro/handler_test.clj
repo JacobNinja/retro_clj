@@ -24,17 +24,17 @@
 
 (deftest login-test
   (testing "invalid user"
-    (let [check (make-check login {:user nil})]
+    (let [check (make-check login {})]
       (check [{:header 35 :body "Incorrect username/password"}])))
 
   (testing "valid user"
-    (let [check (make-check login {:user (map->User {})})]
+    (let [check (make-check login {:user (atom (map->User {}))})]
       (check [{:header 2 :body "fuse_login"}
               {:header 3}])))
   )
 
 (deftest credits-test
-  (let [check (make-check credits {:user (map->User {:credits 120})})]
+  (let [check (make-check credits {:user (atom (map->User {:credits 120}))})]
     (testing "credits"
       (check [{:header 6 :body "120.0"}]))))
 
@@ -141,10 +141,10 @@
 
 (deftest user-details-test
   (testing "user details"
-    (let [user (map->User {:username "test"
+    (let [user (atom (map->User {:username "test"
                            :figure "123"
                            :sex "M"
-                           :mission "mission"})]
+                           :mission "mission"}))]
       (is (= (user-details {:user user})
              [{:header 5
                :body (str "name=test"
@@ -285,30 +285,33 @@
 
 (deftest gstat-test
   (testing "gstat first user no states"
-    (let [user-state (atom {:x 0 :y 1 :z 2 :body 5 :head 6 :room-id 1})]
-      (is (= (gstat {:user (map->User {:username "test"
-                                       :figure "123"
-                                       :sex "m"
-                                       :mission "mission"})
-                     :room (map->Room {:id 1})
-                     :user-state user-state})
-             [{:header 28
-               :body (str "i:1" \return ; room user id
-                          "n:test" \return ; user name
-                          "f:123" \return ; user figure
-                          "l:0 1 2" \return ; user location
-                          "s:m" \return ; user sex
-                          "c:mission" \return ; user mission
-                          )}
-              {:header 42 :body ""}
-              {:header 47 :body ""}
-              {:header 34
-               :body (str "1 " ; room user id
-                          "0,1,2" ; user location
-                          ",5,6" ; body/head direction
-                          "" ; user states
-                          \return
-                          )}])))))
+    (is (= (gstat {:user (atom (map->User {:username "test"
+                                           :figure "123"
+                                           :sex "m"
+                                           :mission "mission"
+                                           :room 1
+                                           :x 0
+                                           :y 1
+                                           :z 2
+                                           :body 5
+                                           :head 6}))})
+           [{:header 28
+             :body (str "i:1" \return ; room user id
+                        "n:test" \return ; user name
+                        "f:123" \return ; user figure
+                        "l:0 1 2" \return ; user location
+                        "s:m" \return ; user sex
+                        "c:mission" \return ; user mission
+                        )}
+            {:header 42 :body ""}
+            {:header 47 :body ""}
+            {:header 34
+             :body (str "1 " ; room user id
+                        "0,1,2" ; user location
+                        ",5,6" ; body/head direction
+                        "" ; user states
+                        \return
+                        )}]))))
 
 (deftest get-interest-test
   (testing "get interest"
@@ -322,12 +325,12 @@
 
 (deftest room-movement-test
   (testing "room movement"
-    (is (= (room-movement {:user-state (atom {:x 0 :y 1 :z 2 :body 5 :head 6 :room-id 1})})
+    (is (= (room-movement {:user (atom {:x 0 :y 1 :z 2 :body 5 :head 6 :room 1})})
            [{:header 34
              :body (str "1 0,1,2,5,6" \return)}]))))
 
 (deftest move-to-test
-  (let [env {:user-state (atom {:x 0 :y 1 :z 2 :body 1 :head 2 :room-id 1})
+  (let [env {:user (atom {:x 0 :y 1 :z 2 :body 1 :head 2 :room 1})
              :path [{:x 1 :y 1 :z 2 :body 5 :head 6}]}]
     (testing "single move"
       (is (= (map #(select-keys % [:header :body :delay])
