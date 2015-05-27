@@ -242,3 +242,17 @@
       (is (nil? (go-away "" {:room-states room-states
                              :user user})))
       (is (nil? (get-in @room-states [1 :users "foo"]))))))
+
+(deftest pick-up-test
+  (testing "pick up floor item"
+    (let [room-id (d/tempid :db.part/user)
+          floor-item-temp-id (d/tempid :db.part/user)
+          tempids (:tempids @(datomic.api/transact conn (concat (test-room-tx room-id)
+                                                                 [{:db/id floor-item-temp-id
+                                                                   :floor-item/id 123
+                                                                   :floor-item/room room-id}])))
+          floor-item-id (d/resolve-tempid (d/db conn) tempids floor-item-temp-id)]
+      (is (= (select-keys (:pick-up (pick-up "new stuff 123" {:conn conn}))
+                          [:id])
+             {:id 123}))
+      (is (nil? (:floor-item/room (d/entity (d/db conn) floor-item-id)))))))

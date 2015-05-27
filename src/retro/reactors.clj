@@ -67,3 +67,8 @@
   (let [current-room (:room @user)]
     (swap! room-states update-in [current-room :users] #(dissoc % (:username @user)))
     nil))
+
+(defn pick-up [packet {:keys [conn]}]
+  (let [[_ _ floor-item-id] (protocol/split packet)]
+    {:pick-up (db/pick-up-floor-item (Integer/parseInt floor-item-id)
+                                     conn)}))

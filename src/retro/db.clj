@@ -166,7 +166,7 @@
     :db/ident :floor-item/room
     :db/valueType :db.type/ref
     :db/cardinality :db.cardinality/one
-    :db/doc "Floor item"
+    :db/doc "room"
     :db.install/_attribute :db.part/db}
    {:db/id #db/id[:db.part/db]
     :db/ident :floor-item/var
@@ -340,5 +340,18 @@
                                                  :where [?item :floor-item/id ?item-id]]
                                                (d/db conn)
                                                floor-item-id))]
+
     (let [db (:db-after @(transact-move-object floor-item x y rotation conn))]
       (db->FloorItem (d/entity db floor-item)))))
+
+(defn pick-up-floor-item [floor-item-id conn]
+  (when-let [[floor-item room] (first (datomic.api/q '[:find ?item ?room
+                                                       :in $ ?item-id
+                                                       :where [_ :floor-item/room ?room]
+                                                              [?item :floor-item/id ?item-id]]
+                                                     (d/db conn)
+                                                     floor-item-id))]
+    @(datomic.api/transact conn
+                            [[:db/retract floor-item
+                              :floor-item/room room]])
+    (map->FloorItem {:id floor-item-id})))
