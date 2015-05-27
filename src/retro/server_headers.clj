@@ -6,6 +6,7 @@
 (def user-details 7)
 (def room-info 21)
 (def club 26)
+(def pick-up 67)
 (def try-flat 57)
 (def goto-flat 59)
 (def heightmap 60)
