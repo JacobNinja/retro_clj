@@ -6,8 +6,15 @@
             [datomic.api :as d]))
 
 (def test-db-url "datomic:mem://test")
-(def conn (db/ensure-db test-db-url))
-(def base-db (d/db conn))
+(def conn (atom (db/ensure-db test-db-url)))
+(def base-db (d/db @conn))
+
+(defn database-fixture [f]
+  (reset! conn (db/ensure-db test-db-url))
+  (f)
+  (d/delete-database test-db-url))
+
+(use-fixtures :each database-fixture)
 
 (def test-user (map->User {:username "test"
                            :film 0
@@ -218,7 +225,7 @@
   (testing "move object to x y"
     (let [validate-fn (fn [& args] true)
           room-id (d/tempid :db.part/user)
-          db (:db-after @(datomic.api/transact conn (concat (test-room-tx room-id)
+          db (:db-after @(datomic.api/transact @conn (concat (test-room-tx room-id)
                                                             [{:db/id (d/tempid :db.part/user)
                                                               :floor-item/id 123
                                                               :floor-item/x 1
@@ -230,7 +237,7 @@
       (is (= (select-keys (:move-object (move-object validate-fn
                                                      "123 2 3 4"
                                                      {:db db
-                                                      :conn conn
+                                                      :conn @conn
                                                       :room {:id 1}}))
                           [:id :x :y :z :rotation])
              {:id 123 :x 2 :y 3 :z 3 :rotation 4})))))
@@ -247,12 +254,12 @@
   (testing "pick up floor item"
     (let [room-id (d/tempid :db.part/user)
           floor-item-temp-id (d/tempid :db.part/user)
-          tempids (:tempids @(datomic.api/transact conn (concat (test-room-tx room-id)
+          tempids (:tempids @(datomic.api/transact @conn (concat (test-room-tx room-id)
                                                                  [{:db/id floor-item-temp-id
                                                                    :floor-item/id 123
                                                                    :floor-item/room room-id}])))
-          floor-item-id (d/resolve-tempid (d/db conn) tempids floor-item-temp-id)]
-      (is (= (select-keys (:pick-up (pick-up "new stuff 123" {:conn conn}))
+          floor-item-id (d/resolve-tempid (d/db @conn) tempids floor-item-temp-id)]
+      (is (= (select-keys (:pick-up (pick-up "new stuff 123" {:conn @conn}))
                           [:id])
              {:id 123}))
-      (is (nil? (:floor-item/room (d/entity (d/db conn) floor-item-id)))))))
+      (is (nil? (:floor-item/room (d/entity (d/db @conn) floor-item-id)))))))
