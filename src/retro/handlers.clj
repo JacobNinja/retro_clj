@@ -335,3 +335,23 @@
 
 (defn pick-up [{:keys [pick-up]}]
   [{:header headers/pick-up :body (str (:id pick-up))}])
+
+(defn hand [{:keys [objects]}]
+  [{:header headers/hand
+    :body (str (apply str
+                      (interleave
+                       (map-indexed (fn [i {:keys [sprite] :as object}]
+                                      (join (char 30)
+                                            (list "SI"
+                                                  (:id object)
+                                                  i
+                                                  (:hand-type sprite)
+                                                  (:sprite sprite)
+                                                  (:width sprite)
+                                                  (:length sprite)
+                                                  (:col sprite))))
+                                    objects)
+                       (repeat "/")))
+               (char 13)
+               (encode-vl64 (count objects))
+                 )}])

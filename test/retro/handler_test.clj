@@ -391,3 +391,28 @@
   (testing "pick up floor item"
     (is (= (pick-up {:pick-up (map->FloorItem {:id 1})})
            [{:header 94 :body "1"}]))))
+
+(deftest hand-test
+  (testing "objects not in room belonging to user"
+    (is (= (hand {:objects [(map->FloorItem {:id 123
+                                             :sprite {:hand-type "S" :sprite "foo" :width 1 :length 2 :col "0,0,0"}})]})
+           [{:header 140
+             :body (str "SI"
+                        (char 30)
+                        123
+                        (char 30)
+                        0
+                        (char 30)
+                        "S"
+                        (char 30)
+                        "foo"
+                        (char 30)
+                        1
+                        (char 30)
+                        2
+                        (char 30)
+                        "0,0,0"
+                        "/"
+                        (char 13)
+                        (encoding/encode-vl64 1)
+                        )}]))))
