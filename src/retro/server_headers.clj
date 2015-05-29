@@ -14,6 +14,7 @@
 (def objects 62)
 (def items 63)
 (def gstat 64)
+(def hand 65)
 (def move-to 75)
 (def look-to 79)
 (def stop 88)

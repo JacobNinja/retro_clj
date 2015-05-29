@@ -35,7 +35,8 @@
    headers/navigate [reactors/navigate handlers/navigate]
    headers/move-object [(partial reactors/move-object (fn [& args] true)) handlers/move-object]
    headers/go-away [reactors/go-away handlers/go-away]
-   headers/pick-up [reactors/pick-up handlers/pick-up]})
+   headers/pick-up [reactors/pick-up handlers/pick-up]
+   headers/hand [reactors/hand handlers/hand]})
 
 (defn send-packet [ch packet]
   (when (:delay packet)
@@ -92,7 +93,9 @@
               :max_descend 4.0}})
 
 (def test-sprites
-  {"md_limukaappi" {:sprite "md_limukaappi", :flags "M", :width 1, :length 1, :height 0.0, :col "0,0,0", :var_type 4, :action_height 0.0, :can_trade 1, :public 0, :hand_type "S"}})
+  {"md_limukaappi" {:sprite "md_limukaappi",
+                    :flags "M", :width 1, :length 1, :height 0.0, :col "0,0,0",
+                    :var_type 4, :action_height 0.0, :can_trade 1, :public 0, :hand-type "S"}})
 
 (defn seed [conn]
   (let [public-category (d/tempid :db.part/user)
@@ -139,6 +142,7 @@
                    :floor-item/z 0
                    :floor-item/rotation 2
                    :floor-item/room user-room-id
+                   :floor-item/owner user
                    :floor-item/sprite "md_limukaappi"}])))
 
 (defn replay [conn]
