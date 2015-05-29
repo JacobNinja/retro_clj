@@ -180,6 +180,12 @@
     :db/cardinality :db.cardinality/one
     :db/doc "sprite"
     :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :floor-item/owner
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/one
+    :db/doc "owner"
+    :db.install/_attribute :db.part/db}
    ])
 
 (defn ensure-schema [conn]
@@ -355,3 +361,12 @@
                             [[:db/retract floor-item
                               :floor-item/room room]])
     (map->FloorItem {:id floor-item-id})))
+
+(defn fetch-hand-objects [username db]
+  (let [hand-objects (first (d/q '[:find ?objects
+                                   :in $ ?username
+                                   :where [?user :user/username ?username]
+                                          [?objects :floor-item/owner ?user]]
+                                 db
+                                 username))]
+    (map db->FloorItem (map (partial d/entity db) hand-objects))))

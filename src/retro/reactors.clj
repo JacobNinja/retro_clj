@@ -11,6 +11,9 @@
   (let [room (db/fetch-room (Integer/parseInt room-id) db)]
     (with-model room models)))
 
+(defn- with-sprite [sprites object]
+  (assoc object :sprite (sprites (:sprite object))))
+
 ;; Handlers
 
 (defn default [p env])
@@ -72,3 +75,7 @@
   (let [[_ _ floor-item-id] (protocol/split packet)]
     {:pick-up (db/pick-up-floor-item (Integer/parseInt floor-item-id)
                                      conn)}))
+
+(defn hand [_ {:keys [db user sprites]}]
+  {:objects (map (partial with-sprite sprites)
+                 (db/fetch-hand-objects (:username @user) db))})

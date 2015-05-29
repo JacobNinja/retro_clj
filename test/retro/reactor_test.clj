@@ -263,3 +263,26 @@
                           [:id])
              {:id 123}))
       (is (nil? (:floor-item/room (d/entity (d/db @conn) floor-item-id)))))))
+
+(deftest hand-test
+  (testing "floor items in hand"
+    (let [sprite {:sprite "bar"}
+          owner (d/tempid :db.part/user)
+          floor-item (d/tempid :db.part/user)
+          floor-item-in-room (d/tempid :db.part/user)
+          db (:db-after (d/with base-db [{:db/id owner
+                                          :user/username "foo"}
+                                         {:db/id floor-item
+                                          :floor-item/owner owner
+                                          :floor-item/sprite "bar"}
+                                         {:db/id floor-item-in-room
+                                          :floor-item/owner owner
+                                          :floor-item/sprite "baz"
+                                          :floor-item/room 123}]))
+          result (hand "" {:user (atom (map->User {:username "foo"}))
+                           :db db
+                           :sprites {"bar" sprite}})]
+      (is (= 1
+             (count (:objects result))))
+      (is (= (:sprite (first (:objects result)))
+             sprite)))))
