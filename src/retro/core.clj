@@ -36,7 +36,8 @@
    headers/move-object [(partial reactors/move-object (fn [& args] true)) handlers/move-object]
    headers/go-away [reactors/go-away handlers/go-away]
    headers/pick-up [reactors/pick-up handlers/pick-up]
-   headers/hand [reactors/hand handlers/hand]})
+   headers/hand [reactors/hand handlers/hand]
+   headers/place-stuff [reactors/place-stuff handlers/place-stuff]})
 
 (defn send-packet [ch packet]
   (when (:delay packet)

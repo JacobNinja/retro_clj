@@ -18,6 +18,7 @@
 (def move-to 75)
 (def look-to 79)
 (def stop 88)
+(def place-stuff 90)
 (def move-object 73)
 (def go-away 115)
 (def room-ad 126)
