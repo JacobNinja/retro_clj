@@ -39,12 +39,20 @@
    headers/hand [reactors/hand handlers/hand]
    headers/place-stuff [reactors/place-stuff handlers/place-stuff]})
 
+(defn- escape [{:keys [body] :as packet}]
+  (assoc packet :body (clojure.string/escape (str body)
+                                             {(char 1) "[1]"
+                                              (char 2) "[2]"
+                                              (char 30) "[30]"})))
+
+(escape {:body (str (char 2))})
+
 (defn send-packet [ch packet]
   (when (:delay packet)
     (Thread/sleep (:delay packet)))
   (when-let [thunk (:thunk packet)]
     (thunk))
-  (println (str "SEND: " packet))
+  (println (str "SEND: " (escape packet)))
   (l/enqueue ch (protocol/encode-packet packet)))
 
 (defn- with-state [{:keys [conn] :as env}]
