@@ -20,6 +20,7 @@
 (def room-info 54)
 (def goto-flat 59)
 (def room-model 69)
+(def place-stuff 93)
 (def pick-up 94)
 (def move-object 95)
 (def hand 140)

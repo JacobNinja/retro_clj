@@ -416,3 +416,36 @@
                         (char 13)
                         (encoding/encode-vl64 1)
                         )}]))))
+
+(deftest place-stuff-test
+  (testing "place object"
+    (is (= (place-stuff {:place (map->FloorItem {:id 123
+                                                 :sprite {:sprite "foo"
+                                                          :width 3
+                                                          :length 4
+                                                          :col "0,0,0"}
+                                                 :x 1
+                                                 :y 2
+                                                 :z 0
+                                                 :rotation 5
+                                                 :teleport-id 456
+                                                 :var "var"})})
+           [{:header 93
+             :body (str "123"
+                        (char 2)
+                        "foo"
+                        (char 2)
+                        (encoding/encode-vl64 1) ; x
+                        (encoding/encode-vl64 2) ; y
+                        (encoding/encode-vl64 3) ; width
+                        (encoding/encode-vl64 4) ; length
+                        (encoding/encode-vl64 5) ; rotation
+                        0 ; z
+                        (char 2)
+                        "0,0,0" ; col
+                        (char 2)
+                        (char 2)
+                        (encoding/encode-vl64 456) ; teleport id
+                        "var" ; var
+                        (char 2)
+                        )}]))))

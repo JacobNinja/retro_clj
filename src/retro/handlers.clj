@@ -355,3 +355,26 @@
                (char 13)
                (encode-vl64 (count objects))
                  )}])
+
+(defn place-stuff [{:keys [place]}]
+  (let [{:keys [sprite x y z rotation id var teleport-id]} place
+        {:keys [width length col]} sprite]
+    [{:header headers/place-stuff
+      :body (str id
+                 (char 2)
+                 (:sprite sprite)
+                 (char 2)
+                 (encode-vl64 x)
+                 (encode-vl64 y)
+                 (encode-vl64 width)
+                 (encode-vl64 length)
+                 (encode-vl64 rotation)
+                 z
+                 (char 2)
+                 col
+                 (char 2)
+                 (char 2)
+                 (encode-vl64 teleport-id)
+                 var
+                 (char 2)
+                 )}]))
