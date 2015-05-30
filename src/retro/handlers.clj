@@ -232,7 +232,7 @@
    {:header headers/floor-items
     :body (str (when-not (zero? (count floor-items))
                  (encode-vl64 (count floor-items)))
-               (join (map (fn [{:keys [id sprite x y z column rotation var]}]
+               (join (map (fn [{:keys [id sprite x y z column rotation var teleport-id]}]
                        (let [{:keys [width length]} (select-keys (sprites sprite) [:width :length])]
                          (str id
                               (char 2)
@@ -248,7 +248,7 @@
                               column
                               (char 2)
                               (char 2)
-                              (encode-vl64 0)
+                              (encode-vl64 teleport-id)
                               var
                               (char 2))))
                      floor-items)))}])

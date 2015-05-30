@@ -219,6 +219,7 @@
                                              :rotation 4
                                              :column "0,0,0"
                                              :var "-"
+                                             :teleport-id 456
                                              :sprite "foo"})]})))))
 
 (deftest move-object-test

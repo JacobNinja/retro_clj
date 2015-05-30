@@ -253,6 +253,7 @@
                                                     :z 0
                                                     :rotation 0
                                                     :column "0,0,0"
+                                                    :teleport-id 456
                                                     :var "yyy"})]
                      :sprites {"xxx" {:width 1
                                       :length 2}}})
@@ -273,7 +274,7 @@
                         (char 2)
                         "0,0,0" ; column
                         (char 2) (char 2)
-                        "H" ; teleport id
+                        "XrA" ; teleport id
                         "yyy" ; furni var
                         (char 2))}]))))
 

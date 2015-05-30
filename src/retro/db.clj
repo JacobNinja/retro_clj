@@ -247,6 +247,7 @@
                    :column "0,0,0"
                    :rotation (:floor-item/rotation entity)
                    :sprite (:floor-item/sprite entity)
+                   :teleport-id 456 ; TODO static value
                    :var "-"}))
 
 (defn fetch-user [username password db]
