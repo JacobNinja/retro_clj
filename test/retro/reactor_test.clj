@@ -270,26 +270,29 @@
 
 (deftest hand-test
   (testing "floor items in hand"
-    (let [sprite {:sprite "bar"}
+    (let [room (d/tempid :db.part/user)
           owner (d/tempid :db.part/user)
           floor-item (d/tempid :db.part/user)
           floor-item-in-room (d/tempid :db.part/user)
           db (:db-after (d/with base-db [{:db/id owner
                                           :user/username "foo"}
+                                         {:db/id room
+                                          :room/id 1
+                                          :room/owner owner}
                                          {:db/id floor-item
-                                          :floor-item/owner owner
-                                          :floor-item/sprite "bar"}
+                                          :floor-item/id 1
+                                          :floor-item/owner owner}
                                          {:db/id floor-item-in-room
+                                          :floor-item/id 2
                                           :floor-item/owner owner
-                                          :floor-item/sprite "baz"
-                                          :floor-item/room 123}]))
+                                          :floor-item/room room}]))
           result (hand "" {:user (atom (map->User {:username "foo"}))
                            :db db
-                           :sprites {"bar" sprite}})]
+                           :sprites {}})]
       (is (= 1
              (count (:objects result))))
-      (is (= (:sprite (first (:objects result)))
-             sprite)))))
+      (is (= (:id (first (:objects result)))
+             1)))))
 
 (deftest place-stuff-test
   (testing "place floor item"

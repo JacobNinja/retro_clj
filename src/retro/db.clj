@@ -364,12 +364,13 @@
     (map->FloorItem {:id floor-item-id})))
 
 (defn fetch-hand-objects [username db]
-  (let [hand-objects (first (d/q '[:find ?objects
-                                   :in $ ?username
-                                   :where [?user :user/username ?username]
-                                          [?objects :floor-item/owner ?user]]
-                                 db
-                                 username))]
+  (let [hand-objects (map first (d/q '[:find ?objects
+                                       :in $ ?username
+                                       :where [?user :user/username ?username]
+                                              [?objects :floor-item/owner ?user]
+                                              (not [?objects :floor-item/room])]
+                                     db
+                                     username))]
     (map db->FloorItem (map (partial d/entity db) hand-objects))))
 
 (defn place-floor-item [conn id x y room-id]
