@@ -34,6 +34,9 @@
                            :wallpaper "xxx"
                            :floor "yyy"
                            :status "open"}))
+
+(def test-sprite {:width 5 :length 6 :col "0,0,0" :sprite "foo"})
+
 (defn test-room-tx
   ([] (test-room-tx (d/tempid :db.part/user)))
   ([room-id]
@@ -287,3 +290,28 @@
              (count (:objects result))))
       (is (= (:sprite (first (:objects result)))
              sprite)))))
+
+(deftest place-stuff-test
+  (testing "place floor item"
+    (let [user-id (d/tempid :db.part/user)
+          floor-item-id (d/tempid :db.part/user)
+          room-id (d/tempid :db.part/user)
+          tx @(d/transact @conn [{:db/id user-id
+                                 :user/username (:username test-user)}
+                                {:db/id room-id
+                                 :room/id 1}
+                                {:db/id floor-item-id
+                                 :floor-item/owner user-id
+                                 :floor-item/sprite (:sprite test-sprite)
+                                 :floor-item/id 123}])
+          floor-item-id (d/resolve-tempid (d/db @conn) (:tempids tx) floor-item-id)
+          room-id (d/resolve-tempid (d/db @conn) (:tempids tx) room-id)
+          result (place-stuff "123 1 2 3 4 5" {:conn @conn
+                                               :db (:db-after tx)
+                                               :sprites {"foo" test-sprite}
+                                               :user (atom (assoc test-user :room 1))})]
+      (is (= (select-keys (:place result)
+                          [:id :x :y :sprite])
+             {:id 123 :x 1 :y 2 :sprite test-sprite}))
+      (is (= (:db/id (:floor-item/room (d/entity (d/db @conn) floor-item-id)))
+             room-id)))))
