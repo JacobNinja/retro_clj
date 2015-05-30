@@ -406,6 +406,8 @@
                         (char 30)
                         "S"
                         (char 30)
+                        123
+                        (char 30)
                         "foo"
                         (char 30)
                         1

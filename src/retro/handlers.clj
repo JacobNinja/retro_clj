@@ -346,6 +346,7 @@
                                                   (:id object)
                                                   i
                                                   (:hand-type sprite)
+                                                  (:id object)
                                                   (:sprite sprite)
                                                   (:width sprite)
                                                   (:length sprite)
