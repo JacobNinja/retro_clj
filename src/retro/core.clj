@@ -4,6 +4,7 @@
             [retro.handlers :as handlers]
             [retro.protocol :as protocol]
             [retro.encoding :as encoding]
+            [retro.fixtures :as fixtures]
             [datomic.api :as d]
             [aleph.tcp :as tcp]
             [lamina.core :as l]
@@ -37,7 +38,8 @@
    headers/go-away [reactors/go-away handlers/go-away]
    headers/pick-up [reactors/pick-up handlers/pick-up]
    headers/hand [reactors/hand handlers/hand]
-   headers/place-stuff [reactors/place-stuff handlers/place-stuff]})
+   headers/place-stuff [reactors/place-stuff handlers/place-stuff]
+   headers/catalog-pages [reactors/default handlers/catalog-pages]})
 
 (defn- escape [{:keys [body] :as packet}]
   (assoc packet :body (clojure.string/escape (str body)
@@ -182,5 +184,6 @@
         (tcp/start-tcp-server (partial client-handler {:room-models room-models
                                                        :room-states (atom {})
                                                        :sprites test-sprites
+                                                       :pages fixtures/catalog-pages
                                                        :conn conn})
                               {:port 1234 :decoder frame})))))

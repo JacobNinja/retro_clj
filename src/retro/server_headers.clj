@@ -20,6 +20,7 @@
 (def stop 88)
 (def place-stuff 90)
 (def move-object 73)
+(def catalog-pages 101)
 (def go-away 115)
 (def room-ad 126)
 (def navigate 150)
