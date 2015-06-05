@@ -452,3 +452,13 @@
                         "var" ; var
                         (char 2)
                         )}]))))
+
+(deftest catalog-pages-test
+  (testing "list pages"
+    (is (= (catalog-pages {:pages [(map->CatalogPage {:name "Foo"
+                                                      :visible-name "foo"})]})
+           [{:header 126
+             :body (str "Foo"
+                        (char 9)
+                        "foo"
+                        \return)}]))))

@@ -379,3 +379,12 @@
                  var
                  (char 2)
                  )}]))
+
+(defn catalog-pages [{:keys [pages]}]
+  [{:header headers/catalog-pages
+    :body (apply str (map (fn [{:keys [name visible-name]}]
+                            (str name
+                                 (char 9)
+                                 visible-name
+                                 (char 13)))
+                          pages))}])

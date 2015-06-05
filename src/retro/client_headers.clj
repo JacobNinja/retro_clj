@@ -23,6 +23,7 @@
 (def place-stuff 93)
 (def pick-up 94)
 (def move-object 95)
+(def catalog-pages 126)
 (def hand 140)
 (def ad 166)
 (def navigate 220)
