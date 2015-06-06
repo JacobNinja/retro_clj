@@ -24,6 +24,7 @@
 (def pick-up 94)
 (def move-object 95)
 (def catalog-pages 126)
+(def catalog-page-info 127)
 (def hand 140)
 (def ad 166)
 (def navigate 220)

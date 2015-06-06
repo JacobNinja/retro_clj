@@ -387,4 +387,36 @@
                                  (char 9)
                                  visible-name
                                  (char 13)))
-                          pages))}])
+                          (vals pages)))}])
+
+(defn- catalog-page-items [items]
+  (apply str (map (fn [{:keys [cost purchase-code furni]}]
+                    (let [{:keys [hand-type sprite length width col]} furni]
+                      (join (char 9)
+                            (list "p:name"
+                                  "description"
+                                  cost
+                                  ""
+                                  (.toLowerCase hand-type)
+                                  sprite
+                                  0
+                                  (str width "," length)
+                                  purchase-code
+                                  (str col \return)
+                                  ))))
+                  items)))
+
+(defn catalog-page-info [{:keys [page]}]
+  (let [{:keys [name visible-name layout image side-image description label additional items]} page]
+    [{:header headers/catalog-page-info
+      :body (str "i:" name \return
+                 "n:" visible-name \return
+                 "l:" layout \return
+                 "g:" image \return
+                 "e:" side-image \return
+                 "h:" description \return
+                 "h:" label \return
+                 (when additional
+                   (apply str (interleave additional (repeat \return))))
+                 (catalog-page-items items)
+                 )}]))

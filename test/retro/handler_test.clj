@@ -455,10 +455,56 @@
 
 (deftest catalog-pages-test
   (testing "list pages"
-    (is (= (catalog-pages {:pages [(map->CatalogPage {:name "Foo"
-                                                      :visible-name "foo"})]})
+    (is (= (catalog-pages {:pages {"Foo" (map->CatalogPage {:name "Foo"
+                                                            :visible-name "foo"})}})
            [{:header 126
              :body (str "Foo"
                         (char 9)
                         "foo"
                         \return)}]))))
+
+(deftest catalog-page-info-test
+  (testing "floor items"
+    (is (= (catalog-page-info {:page (map->CatalogPage {:name "Foo"
+                                                        :visible-name "foo"
+                                                        :image "image"
+                                                        :side-image "side_image"
+                                                        :description "description"
+                                                        :label "label"
+                                                        :layout "layout"
+                                                        :additional ["s:2" "f:foo"]
+                                                        :items [{:furni {:hand-type "s" :sprite "bar" :width 2 :length 3 :col "0,0,0"},
+                                                                 :cost 10,
+                                                                 :purchase-code "purchase_bar_3"}]})})
+           [{:header 127
+             :body (str "i:Foo" \return
+                        "n:foo" \return
+                        "l:layout" \return
+                        "g:image" \return
+                        "e:side_image" \return
+                        "h:description" \return
+                        "h:label" \return
+                        "s:2" \return
+                        "f:foo" \return
+                        ; start items
+                        "p:name" ; hrm?
+                        (char 9)
+                        "description"
+                        (char 9)
+                        10
+                        (char 9) (char 9)
+                        "s"
+                        (char 9)
+                        "bar"
+                        (char 9)
+                        0 ; ?
+                        (char 9)
+                        2 ; width
+                        ","
+                        3 ; length
+                        (char 9)
+                        "purchase_bar_3"
+                        (char 9)
+                        "0,0,0" ; col
+                        \return
+                        )}]))))
