@@ -1,0 +1,7869 @@
+[{
+  :id 1
+  :sprite "spyro"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 2
+  :sprite "bardeskcorner_polyfon"
+  :flags "MO"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 3
+  :sprite "sofachair_polyfon"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 4
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "24"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 5
+  :sprite "bar_polyfon"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 6
+  :sprite "bardesk_polyfon"
+  :flags "MO"
+  :width 2
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 7
+  :sprite "sofa_polyfon"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 8
+  :sprite "bed_polyfon"
+  :flags "LT"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 9
+  :sprite "bed_polyfon_one"
+  :flags "LT"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 10
+  :sprite "divider_poly3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 11
+  :sprite "queue_tile1*3"
+  :flags "OPR"
+  :width 1
+  :length 1
+  :height 0.45
+  :col "#ffffff,#6ED0A7,#ffffff,#ffffff"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 12
+  :sprite "edice"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 3
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 13
+  :sprite "door"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 14
+  :sprite "throne"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 15
+  :sprite "mocchamaster"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 16
+  :sprite "prize2"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 17
+  :sprite "post.it"
+  :flags "VN"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "FFFF33"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 18
+  :sprite "post.it"
+  :flags "VN"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "FF9CFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 19
+  :sprite "post.it"
+  :flags "VN"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "9CFF9C"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 20
+  :sprite "post.it"
+  :flags "VN"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "9CCEFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 21
+  :sprite "wallpaper"
+  :flags "VD"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 22
+  :sprite "floor"
+  :flags "VD"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 23
+  :sprite "crl_lamp"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "P"
+  }
+ {
+  :id 24
+  :sprite "crl_sofa2c"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 25
+  :sprite "crl_sofa2b"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 26
+  :sprite "crl_sofa2a"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 27
+  :sprite "crl_chair"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 28
+  :sprite "crl_pillar"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 29
+  :sprite "crl_table1b"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 30
+  :sprite "crl_sofa1c"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 31
+  :sprite "crl_table2b"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 32
+  :sprite "crl_table2a"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 33
+  :sprite "crl_table1a"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 34
+  :sprite "crl_sofa1b"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 35
+  :sprite "crl_wall2a"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 36
+  :sprite "crl_sofa1a"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 37
+  :sprite "crl_sofa3c"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 38
+  :sprite "crl_sofa3b"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 39
+  :sprite "crl_sofa3a"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 40
+  :sprite "crl_barchair2"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 41
+  :sprite "crl_tablebar"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 42
+  :sprite "crl_pillar2"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 43
+  :sprite "crl_desk1a"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 44
+  :sprite "crl_deski"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 45
+  :sprite "crl_deskh"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 46
+  :sprite "crl_deskg"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 47
+  :sprite "crl_deskf"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 48
+  :sprite "crl_deske"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 49
+  :sprite "crl_wallb"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 50
+  :sprite "crl_walla"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 51
+  :sprite "crl_desk1b"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 52
+  :sprite "crl_desk1c"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 53
+  :sprite "crl_desk1d"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 54
+  :sprite "crl_lamp2"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 55
+  :sprite "crl_cabinet2"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 56
+  :sprite "crl_cabinet1"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 57
+  :sprite "libchair"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 58
+  :sprite "libstool"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 59
+  :sprite "umbrella2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 60
+  :sprite "pool_2sofa2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 61
+  :sprite "pool_2sofa1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 62
+  :sprite "pool_chair2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 63
+  :sprite "pool_table2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 64
+  :sprite "flower2b"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 65
+  :sprite "flower2a"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 66
+  :sprite "box"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 67
+  :sprite "flower1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 68
+  :sprite "pool_chairy"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 69
+  :sprite "umbrellay"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 70
+  :sprite "pool_tabley"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 71
+  :sprite "umbrellap"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 72
+  :sprite "umbrellao"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 73
+  :sprite "pool_chairp"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 74
+  :sprite "pool_chairo"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 75
+  :sprite "pool_tablep"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 76
+  :sprite "pool_tabo"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 77
+  :sprite "pool_tabo2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 78
+  :sprite "pool_tablep2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 79
+  :sprite "pool_chairg"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 80
+  :sprite "pool_tablg"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 81
+  :sprite "pool_tablg2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 82
+  :sprite "umbrellag"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 83
+  :sprite "float_dummychair"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 84
+  :sprite "float_dummychair2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 85
+  :sprite "floatbench2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 86
+  :sprite "floatbench1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 87
+  :sprite "bunny"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 88
+  :sprite "red_tv"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.5
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 89
+  :sprite "doorB"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 90
+  :sprite "doorC"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 91
+  :sprite "wcandleset"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 92
+  :sprite "pumpkin"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 93
+  :sprite "tv_luxus"
+  :flags "M"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 94
+  :sprite "wood_tv"
+  :flags "M"
+  :width 1
+  :length 2
+  :height 0.0
+  :col "0,0,0"
+  :var-type 6
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 95
+  :sprite "bed_silo_two"
+  :flags "LT"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 96
+  :sprite "bed_silo_one"
+  :flags "LT"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 97
+  :sprite "shelves_silo"
+  :flags " "
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 98
+  :sprite "sofa_silo"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0,0,#A2C6C8,#A2C6C8 "
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 99
+  :sprite "sofachair_silo"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,#A2C6C8,#A2C6C8,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 100
+  :sprite "table_silo_small"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,#A2C6C8,0,#A2C6C8"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 101
+  :sprite "divider_silo3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0,#A2C6C8"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 102
+  :sprite "divider_silo2"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 103
+  :sprite "divider_silo1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,#A2C6C8,0,#A2C6C8 "
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 104
+  :sprite "chair_norja"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 105
+  :sprite "couch_norja"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 106
+  :sprite "table_norja_med"
+  :flags " "
+  :width 2
+  :length 2
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 107
+  :sprite "shelves_norja"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 108
+  :sprite "soft_sofachair_norja"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 109
+  :sprite "soft_sofa_norja"
+  :flags "S"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 110
+  :sprite "divider_nor2"
+  :flags " "
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 111
+  :sprite "divider_nor1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 112
+  :sprite "divider_nor3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 113
+  :sprite "sofachair_polyfon_girl"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#EE7EA4,#EE7EA4"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 114
+  :sprite "sofa_polyfon_girl"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#ffffff,#EE7EA4,#EE7EA4,#EE7EA4,#EE7EA4"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 115
+  :sprite "carpet_polar*1"
+  :flags "PMO"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#ffbbcf,#ffbbcf,#ffddef"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 116
+  :sprite "bed_armas_two"
+  :flags "LT"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.8
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 117
+  :sprite "bed_armas_one"
+  :flags "LT"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.7
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 118
+  :sprite "fireplace_armas"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 119
+  :sprite "bartable_armas"
+  :flags " "
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 120
+  :sprite "table_armas"
+  :flags "O"
+  :width 2
+  :length 2
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 121
+  :sprite "bench_armas"
+  :flags "S"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 122
+  :sprite "divider_arm3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 123
+  :sprite "divider_arm1"
+  :flags "MO"
+  :width 1
+  :length 1
+  :height 1.3
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 124
+  :sprite "divider_arm2"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 125
+  :sprite "shelves_armas"
+  :flags " "
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 126
+  :sprite "bar_armas"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 127
+  :sprite "bar_chair_armas"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 128
+  :sprite "lamp_armas"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 129
+  :sprite "lamp2_armas"
+  :flags "MO"
+  :width 1
+  :length 1
+  :height 1.1
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 130
+  :sprite "small_table_armas"
+  :flags "MO"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 131
+  :sprite "small_chair_armas"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 132
+  :sprite "chair_silo"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,#A2C6C8,#A2C6C8,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 133
+  :sprite "table_silo_med"
+  :flags " "
+  :width 2
+  :length 2
+  :height 0.0
+  :col "0,#8FAEAF "
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 134
+  :sprite "bed_polyfon_girl_one"
+  :flags "LT"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#EE7EA4,#EE7EA4 "
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 135
+  :sprite "bed_polyfon_girl"
+  :flags "LT"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#ffffff,#ffffff,#EE7EA4,#EE7EA4"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 136
+  :sprite "mic"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 137
+  :sprite "thchair2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 138
+  :sprite "thchair1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 139
+  :sprite "doormat_plain*1"
+  :flags "PMF"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ff1f08"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 140
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "1005"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 141
+  :sprite "stand_polyfon_z"
+  :flags "OM"
+  :width 1
+  :length 1
+  :height 0.5
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 142
+  :sprite "present_gen"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 143
+  :sprite "present_gen1"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 144
+  :sprite "carpet_soft*5"
+  :flags "POM"
+  :width 2
+  :length 4
+  :height 0.0
+  :col "#FFFF66"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 145
+  :sprite "hologram"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 146
+  :sprite "skullcandle"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 147
+  :sprite "redhologram"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 148
+  :sprite "chair_polyfon"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 149
+  :sprite "table_polyfon"
+  :flags "MO"
+  :width 2
+  :length 2
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 150
+  :sprite "smooth_table_polyfon"
+  :flags "MO"
+  :width 2
+  :length 2
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 151
+  :sprite "table_polyfon_med"
+  :flags "MO"
+  :width 2
+  :length 2
+  :height 0.7
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 152
+  :sprite "table_polyfon_small"
+  :flags "MO"
+  :width 2
+  :length 2
+  :height 0.5
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 153
+  :sprite "shelves_polyfon"
+  :flags "MO"
+  :width 2
+  :length 1
+  :height 3.2
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 154
+  :sprite "fireplace_polyfon"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 155
+  :sprite "bench2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 156
+  :sprite "bench"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 157
+  :sprite "hedge7"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 158
+  :sprite "hedge8"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 159
+  :sprite "hedge2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 160
+  :sprite "hedge9"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 161
+  :sprite "hedge5"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 162
+  :sprite "picnic_dummychair1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 163
+  :sprite "picnic_ground"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 164
+  :sprite "picnic_cloth1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 165
+  :sprite "picnic_redbench2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 166
+  :sprite "picnic_redbench1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 167
+  :sprite "hedge6"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 168
+  :sprite "hedge3"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 169
+  :sprite "hedge4"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 170
+  :sprite "picnic_bench1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 171
+  :sprite "picnic_bench2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 172
+  :sprite "picnic_bench3"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 173
+  :sprite "picnic_dummychair4"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 4.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 174
+  :sprite "picnic_dummychair6"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 7.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 175
+  :sprite "picnic_stump"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 176
+  :sprite "present_gen2"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 177
+  :sprite "present_gen3"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 178
+  :sprite "present_gen4"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 179
+  :sprite "present_gen5"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 180
+  :sprite "prize1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 181
+  :sprite "prize3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 182
+  :sprite "typingmachine"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 183
+  :sprite "giftflowers"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 184
+  :sprite "plant_fruittree"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 185
+  :sprite "plant_big_cactus"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 186
+  :sprite "plant_bonsai"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 187
+  :sprite "carpet_standard*7"
+  :flags "POM"
+  :width 3
+  :length 5
+  :height 0.0
+  :col "#99CCFF,#99CCFF,#99CCFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 188
+  :sprite "plant_pineapple"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 189
+  :sprite "plant_yukka"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 190
+  :sprite "plant_sunflower"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 191
+  :sprite "plant_rose"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 192
+  :sprite "plant_small_cactus"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 193
+  :sprite "carpet_standard*1"
+  :flags "POM"
+  :width 3
+  :length 5
+  :height 0.0
+  :col "#ff1f08"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 194
+  :sprite "carpet_standard*6"
+  :flags "POM"
+  :width 3
+  :length 5
+  :height 0.0
+  :col "#777777"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 195
+  :sprite "carpet_soft*2"
+  :flags "POM"
+  :width 2
+  :length 4
+  :height 0.0
+  :col "#66FFFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 196
+  :sprite "carpet_soft*3"
+  :flags "POM"
+  :width 2
+  :length 4
+  :height 0.0
+  :col "#FFCC99"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 197
+  :sprite "carpet_soft*4"
+  :flags "POM"
+  :width 2
+  :length 4
+  :height 0.0
+  :col "#FFCCFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 198
+  :sprite "bottle"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 8
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 199
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "516"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 200
+  :sprite "poolchange"
+  :flags "CPd"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 201
+  :sprite "poolenter"
+  :flags "CPeg"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 202
+  :sprite "poolexit"
+  :flags "CPfg"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 203
+  :sprite "rare_daffodil_rug"
+  :flags "POM"
+  :width 2
+  :length 2
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 204
+  :sprite "picnic_cloth2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 205
+  :sprite "picnic_fireplace1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 206
+  :sprite "picnic_fireplace2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 207
+  :sprite "picnic_lemonade"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 208
+  :sprite "picnic_firewood2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 209
+  :sprite "picnic_firewood1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 210
+  :sprite "picnic_carrot"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 211
+  :sprite "picnic_table2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 212
+  :sprite "picnic_table"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 213
+  :sprite "hedge1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 214
+  :sprite "picnic_cabbage"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 215
+  :sprite "picnic_firewood3"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 216
+  :sprite "mntdwchair"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 217
+  :sprite "barmask"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 218
+  :sprite "mntdwsofa2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 219
+  :sprite "mntdwtable2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 220
+  :sprite "mntdwsofa1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 221
+  :sprite "mntdwtable1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 222
+  :sprite "rare_beehive_bulb*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#ffffff,#ff4c47,#ffffff"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 223
+  :sprite "hc_tbl"
+  :flags "MO"
+  :width 1
+  :length 3
+  :height 1.3
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 224
+  :sprite "mocchamaster"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 225
+  :sprite "menorah"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col " 0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 226
+  :sprite "samovar"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 227
+  :sprite "prizetrophy*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#FFDD3F"
+  :var-type 6
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 228
+  :sprite "rare_stand"
+  :flags "MS"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.9
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 229
+  :sprite "hcamme"
+  :flags "MS"
+  :width 1
+  :length 2
+  :height 8.5
+  :col "0,0,0"
+  :var-type 5
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 230
+  :sprite "rare_parasol*3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#d47fff"
+  :var-type 7
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 231
+  :sprite "rare_fountain*2"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#b8cf00"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 232
+  :sprite "club_sofa"
+  :flags "MS"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 233
+  :sprite "rare_globe"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 234
+  :sprite "hc_lmp"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 235
+  :sprite "birdie"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 236
+  :sprite "prizetrophy7*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#FFDD3F"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 237
+  :sprite "rare_icecream*8"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 4
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 238
+  :sprite "scifirocket*7"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 239
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "45"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 240
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "19"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 241
+  :sprite "carpet_polar*3"
+  :flags "POM"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#ffef9c,#ffef9c,#ffef9c"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 242
+  :sprite "carpet_polar*4"
+  :flags "POM"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#caea9c,#caea9c,#caea9c"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 243
+  :sprite "shelves_basic"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 244
+  :sprite "bar_basic"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 245
+  :sprite "fridge"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 246
+  :sprite "lamp_basic"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 247
+  :sprite "heartsofa"
+  :flags "MS"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 248
+  :sprite "valentinescreen"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.1
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 249
+  :sprite "joulutahti"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 250
+  :sprite "plant_cruddy"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 251
+  :sprite "duck"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 252
+  :sprite "statue"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 253
+  :sprite "hc_dsk"
+  :flags "M"
+  :width 1
+  :length 2
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 254
+  :sprite "hc_chr"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 255
+  :sprite "skullcandle"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 256
+  :sprite "edicehc"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col " "
+  :var-type 3
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 257
+  :sprite "bar_polyfon"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col " 0,0,0"
+  :var-type 3
+  :action-height 1.5
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 258
+  :sprite "doorD"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col " 0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 259
+  :sprite "hc_dsk"
+  :flags "M"
+  :width 1
+  :length 2
+  :height 0.0
+  :col " 0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 260
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "2005"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 261
+  :sprite "rare_elephant_statue*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#bfbfbf/"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 262
+  :sprite "rare_elephant_statue*2"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#d46b00"
+  :var-type 7
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 263
+  :sprite "birdie"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 264
+  :sprite "rcandleset"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 265
+  :sprite "rcandle"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 266
+  :sprite "rare_fountain*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 267
+  :sprite "house"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 268
+  :sprite "rare_fountain"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ff6666"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 269
+  :sprite "carpet_standard*6"
+  :flags "MOP"
+  :width 3
+  :length 5
+  :height 0.0
+  :col "#00000"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 270
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "1004"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 271
+  :sprite "md_limukaappi"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 4
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 272
+  :sprite "scifiport*9"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 273
+  :sprite "pillow*2"
+  :flags "MS"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#d47fff"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 274
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "29"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 275
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "46"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 276
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "48"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 277
+  :sprite "carpet_polar*2"
+  :flags "POM"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#bacaec,#bacaec,#bacaec"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 278
+  :sprite "djesko_turntable"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 279
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "47"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 280
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "49"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 281
+  :sprite "barchair_silo"
+  :flags "S"
+  :width 2
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 282
+  :sprite "spyro"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 283
+  :sprite "bardeskcorner_polyfon"
+  :flags "MO"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 284
+  :sprite "sofachair_polyfon"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 285
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "24"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 286
+  :sprite "bar_polyfon"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 287
+  :sprite "bardesk_polyfon"
+  :flags "MO"
+  :width 2
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 288
+  :sprite "sofa_polyfon"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 289
+  :sprite "bed_polyfon"
+  :flags "LT"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 290
+  :sprite "bed_polyfon_one"
+  :flags "LT"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 291
+  :sprite "divider_poly3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 292
+  :sprite "queue_tile1*3"
+  :flags "OPR"
+  :width 1
+  :length 1
+  :height 0.45
+  :col "#ffffff,#6ED0A7,#ffffff,#ffffff"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 293
+  :sprite "edice"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 3
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 294
+  :sprite "door"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 295
+  :sprite "throne"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 296
+  :sprite "mocchamaster"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 297
+  :sprite "prize2"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 298
+  :sprite "post.it"
+  :flags "VN"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "FFFF33"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 299
+  :sprite "post.it"
+  :flags "VN"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "FF9CFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 300
+  :sprite "post.it"
+  :flags "VN"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "9CFF9C"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 301
+  :sprite "post.it"
+  :flags "VN"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "9CCEFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 302
+  :sprite "wallpaper"
+  :flags "VD"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 303
+  :sprite "floor"
+  :flags "VD"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 304
+  :sprite "crl_lamp"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "P"
+  }
+ {
+  :id 305
+  :sprite "crl_sofa2c"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 306
+  :sprite "crl_sofa2b"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 307
+  :sprite "crl_sofa2a"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 308
+  :sprite "crl_chair"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 309
+  :sprite "crl_pillar"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 310
+  :sprite "crl_table1b"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 311
+  :sprite "crl_sofa1c"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 312
+  :sprite "crl_table2b"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 313
+  :sprite "crl_table2a"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 314
+  :sprite "crl_table1a"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 315
+  :sprite "crl_sofa1b"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 316
+  :sprite "crl_wall2a"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 317
+  :sprite "crl_sofa1a"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 318
+  :sprite "crl_sofa3c"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 319
+  :sprite "crl_sofa3b"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 320
+  :sprite "crl_sofa3a"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 321
+  :sprite "crl_barchair2"
+  :flags "S"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 322
+  :sprite "crl_tablebar"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 323
+  :sprite "crl_pillar2"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 324
+  :sprite "crl_desk1a"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 325
+  :sprite "crl_deski"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 326
+  :sprite "crl_deskh"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 327
+  :sprite "crl_deskg"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 328
+  :sprite "crl_deskf"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 329
+  :sprite "crl_deske"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 330
+  :sprite "crl_wallb"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 331
+  :sprite "crl_walla"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 332
+  :sprite "crl_desk1b"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 333
+  :sprite "crl_desk1c"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 334
+  :sprite "crl_desk1d"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 335
+  :sprite "crl_lamp2"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 336
+  :sprite "crl_cabinet2"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 337
+  :sprite "crl_cabinet1"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 338
+  :sprite "libchair"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 339
+  :sprite "libstool"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 340
+  :sprite "umbrella2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 341
+  :sprite "pool_2sofa2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 342
+  :sprite "pool_2sofa1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 343
+  :sprite "pool_chair2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 344
+  :sprite "pool_table2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 345
+  :sprite "flower2b"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 346
+  :sprite "flower2a"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 347
+  :sprite "box"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 348
+  :sprite "flower1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 349
+  :sprite "pool_chairy"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 350
+  :sprite "umbrellay"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 351
+  :sprite "pool_tabley"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 352
+  :sprite "umbrellap"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 353
+  :sprite "umbrellao"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 354
+  :sprite "pool_chairp"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 355
+  :sprite "pool_chairo"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 356
+  :sprite "pool_tablep"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 357
+  :sprite "pool_tabo"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 358
+  :sprite "pool_tabo2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 359
+  :sprite "pool_tablep2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 360
+  :sprite "pool_chairg"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 361
+  :sprite "pool_tablg"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 362
+  :sprite "pool_tablg2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 363
+  :sprite "umbrellag"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 364
+  :sprite "float_dummychair"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 365
+  :sprite "float_dummychair2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 366
+  :sprite "floatbench2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 367
+  :sprite "floatbench1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 368
+  :sprite "bunny"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 369
+  :sprite "red_tv"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.5
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 370
+  :sprite "doorB"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 371
+  :sprite "doorC"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 372
+  :sprite "wcandleset"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 373
+  :sprite "pumpkin"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 374
+  :sprite "tv_luxus"
+  :flags "M"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 375
+  :sprite "wood_tv"
+  :flags "M"
+  :width 1
+  :length 2
+  :height 0.0
+  :col "0,0,0"
+  :var-type 6
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 376
+  :sprite "bed_silo_two"
+  :flags "LT"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 377
+  :sprite "bed_silo_one"
+  :flags "LT"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 378
+  :sprite "shelves_silo"
+  :flags " "
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 379
+  :sprite "sofa_silo"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0,0,#A2C6C8,#A2C6C8 "
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 380
+  :sprite "sofachair_silo"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,#A2C6C8,#A2C6C8,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 381
+  :sprite "table_silo_small"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,#A2C6C8,0,#A2C6C8"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 382
+  :sprite "divider_silo3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0,#A2C6C8"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 383
+  :sprite "divider_silo2"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 384
+  :sprite "divider_silo1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,#A2C6C8,0,#A2C6C8 "
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 385
+  :sprite "chair_norja"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 386
+  :sprite "couch_norja"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 387
+  :sprite "table_norja_med"
+  :flags " "
+  :width 2
+  :length 2
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 388
+  :sprite "shelves_norja"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 389
+  :sprite "soft_sofachair_norja"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 390
+  :sprite "soft_sofa_norja"
+  :flags "S"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 391
+  :sprite "divider_nor2"
+  :flags " "
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 392
+  :sprite "divider_nor1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 393
+  :sprite "divider_nor3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 394
+  :sprite "sofachair_polyfon_girl"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#EE7EA4,#EE7EA4"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 395
+  :sprite "sofa_polyfon_girl"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#ffffff,#EE7EA4,#EE7EA4,#EE7EA4,#EE7EA4"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 396
+  :sprite "carpet_polar*1"
+  :flags "PMO"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#ffbbcf,#ffbbcf,#ffddef"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 397
+  :sprite "bed_armas_two"
+  :flags "LT"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.8
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 398
+  :sprite "bed_armas_one"
+  :flags "LT"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.7
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 399
+  :sprite "fireplace_armas"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 400
+  :sprite "bartable_armas"
+  :flags " "
+  :width 1
+  :length 3
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 401
+  :sprite "table_armas"
+  :flags "O"
+  :width 2
+  :length 2
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 402
+  :sprite "bench_armas"
+  :flags "S"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 403
+  :sprite "divider_arm3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 404
+  :sprite "divider_arm1"
+  :flags "MO"
+  :width 1
+  :length 1
+  :height 1.3
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 405
+  :sprite "divider_arm2"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 406
+  :sprite "shelves_armas"
+  :flags " "
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 407
+  :sprite "bar_armas"
+  :flags " "
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 408
+  :sprite "bar_chair_armas"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.2
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 409
+  :sprite "lamp_armas"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 410
+  :sprite "lamp2_armas"
+  :flags "MO"
+  :width 1
+  :length 1
+  :height 1.1
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 411
+  :sprite "small_table_armas"
+  :flags "MO"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 412
+  :sprite "small_chair_armas"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 413
+  :sprite "chair_silo"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,#A2C6C8,#A2C6C8,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 414
+  :sprite "table_silo_med"
+  :flags " "
+  :width 2
+  :length 2
+  :height 0.0
+  :col "0,#8FAEAF "
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 415
+  :sprite "bed_polyfon_girl_one"
+  :flags "LT"
+  :width 1
+  :length 3
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#EE7EA4,#EE7EA4 "
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 416
+  :sprite "bed_polyfon_girl"
+  :flags "LT"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#ffffff,#ffffff,#EE7EA4,#EE7EA4"
+  :var-type 0
+  :action-height 1.6
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 417
+  :sprite "mic"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 418
+  :sprite "thchair2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 419
+  :sprite "thchair1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 420
+  :sprite "doormat_plain*1"
+  :flags "PMF"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ff1f08"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 421
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "1005"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 422
+  :sprite "stand_polyfon_z"
+  :flags "OM"
+  :width 1
+  :length 1
+  :height 0.5
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 423
+  :sprite "present_gen"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 424
+  :sprite "present_gen1"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 425
+  :sprite "carpet_soft*5"
+  :flags "POM"
+  :width 2
+  :length 4
+  :height 0.0
+  :col "#FFFF66"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 426
+  :sprite "hologram"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 427
+  :sprite "skullcandle"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 428
+  :sprite "redhologram"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 429
+  :sprite "chair_polyfon"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 430
+  :sprite "table_polyfon"
+  :flags "MO"
+  :width 2
+  :length 2
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 431
+  :sprite "smooth_table_polyfon"
+  :flags "MO"
+  :width 2
+  :length 2
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 432
+  :sprite "table_polyfon_med"
+  :flags "MO"
+  :width 2
+  :length 2
+  :height 0.7
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 433
+  :sprite "table_polyfon_small"
+  :flags "MO"
+  :width 2
+  :length 2
+  :height 0.5
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 434
+  :sprite "shelves_polyfon"
+  :flags "MO"
+  :width 2
+  :length 1
+  :height 3.2
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 435
+  :sprite "fireplace_polyfon"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 436
+  :sprite "bench2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 437
+  :sprite "bench"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 438
+  :sprite "hedge7"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 439
+  :sprite "hedge8"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 440
+  :sprite "hedge2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 441
+  :sprite "hedge9"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 442
+  :sprite "hedge5"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 443
+  :sprite "picnic_dummychair1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 444
+  :sprite "picnic_ground"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 445
+  :sprite "picnic_cloth1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 446
+  :sprite "picnic_redbench2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 447
+  :sprite "picnic_redbench1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 448
+  :sprite "hedge6"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 449
+  :sprite "hedge3"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 450
+  :sprite "hedge4"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 451
+  :sprite "picnic_bench1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 452
+  :sprite "picnic_bench2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 453
+  :sprite "picnic_bench3"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 454
+  :sprite "picnic_dummychair4"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 4.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 455
+  :sprite "picnic_dummychair6"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 7.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 456
+  :sprite "picnic_stump"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 457
+  :sprite "present_gen2"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 458
+  :sprite "present_gen3"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 459
+  :sprite "present_gen4"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 460
+  :sprite "present_gen5"
+  :flags "GOM"
+  :width 1
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 461
+  :sprite "prize1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 462
+  :sprite "prize3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 463
+  :sprite "typingmachine"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 464
+  :sprite "giftflowers"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 465
+  :sprite "plant_fruittree"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 466
+  :sprite "plant_big_cactus"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 467
+  :sprite "plant_bonsai"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 468
+  :sprite "carpet_standard*7"
+  :flags "POM"
+  :width 3
+  :length 5
+  :height 0.0
+  :col "#99CCFF,#99CCFF,#99CCFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 469
+  :sprite "plant_pineapple"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 470
+  :sprite "plant_yukka"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 471
+  :sprite "plant_sunflower"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 472
+  :sprite "plant_rose"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 473
+  :sprite "plant_small_cactus"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 474
+  :sprite "carpet_standard*1"
+  :flags "POM"
+  :width 3
+  :length 5
+  :height 0.0
+  :col "#ff1f08"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 475
+  :sprite "carpet_standard*6"
+  :flags "POM"
+  :width 3
+  :length 5
+  :height 0.0
+  :col "#777777"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 476
+  :sprite "carpet_soft*2"
+  :flags "POM"
+  :width 2
+  :length 4
+  :height 0.0
+  :col "#66FFFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 477
+  :sprite "carpet_soft*3"
+  :flags "POM"
+  :width 2
+  :length 4
+  :height 0.0
+  :col "#FFCC99"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 478
+  :sprite "carpet_soft*4"
+  :flags "POM"
+  :width 2
+  :length 4
+  :height 0.0
+  :col "#FFCCFF"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 479
+  :sprite "bottle"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 8
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 480
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "516"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 481
+  :sprite "poolchange"
+  :flags "CPd"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 482
+  :sprite "poolenter"
+  :flags "CPeg"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 483
+  :sprite "poolexit"
+  :flags "CPfg"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 484
+  :sprite "rare_daffodil_rug"
+  :flags "POM"
+  :width 2
+  :length 2
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 485
+  :sprite "picnic_cloth2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 486
+  :sprite "picnic_fireplace1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 487
+  :sprite "picnic_fireplace2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 488
+  :sprite "picnic_lemonade"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 489
+  :sprite "picnic_firewood2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 490
+  :sprite "picnic_firewood1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 491
+  :sprite "picnic_carrot"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 492
+  :sprite "picnic_table2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 493
+  :sprite "picnic_table"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 494
+  :sprite "hedge1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 495
+  :sprite "picnic_cabbage"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 496
+  :sprite "picnic_firewood3"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 497
+  :sprite "mntdwchair"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 498
+  :sprite "barmask"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 499
+  :sprite "mntdwsofa2"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 500
+  :sprite "mntdwtable2"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 501
+  :sprite "mntdwsofa1"
+  :flags "S"
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 502
+  :sprite "mntdwtable1"
+  :flags " "
+  :width 1
+  :length 0
+  :height 0.0
+  :col "0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 0
+  :public 1
+  :hand-type "S"
+  }
+ {
+  :id 503
+  :sprite "rare_beehive_bulb*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#ffffff,#ff4c47,#ffffff"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 504
+  :sprite "hc_tbl"
+  :flags "MO"
+  :width 1
+  :length 3
+  :height 1.3
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 505
+  :sprite "mocchamaster"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 506
+  :sprite "menorah"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col " 0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 507
+  :sprite "samovar"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 508
+  :sprite "prizetrophy*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#FFDD3F"
+  :var-type 6
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 509
+  :sprite "rare_stand"
+  :flags "MS"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.9
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 510
+  :sprite "hcamme"
+  :flags "MS"
+  :width 1
+  :length 2
+  :height 8.5
+  :col "0,0,0"
+  :var-type 5
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 511
+  :sprite "rare_parasol*3"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#d47fff"
+  :var-type 7
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 512
+  :sprite "rare_fountain*2"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#b8cf00"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 513
+  :sprite "club_sofa"
+  :flags "MS"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 514
+  :sprite "rare_globe"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 515
+  :sprite "hc_lmp"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 516
+  :sprite "birdie"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 517
+  :sprite "prizetrophy7*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#FFDD3F"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 518
+  :sprite "rare_icecream*8"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 4
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 519
+  :sprite "scifirocket*7"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 520
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "45"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 521
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "19"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 522
+  :sprite "carpet_polar*3"
+  :flags "POM"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#ffef9c,#ffef9c,#ffef9c"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 523
+  :sprite "carpet_polar*4"
+  :flags "POM"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#caea9c,#caea9c,#caea9c"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 524
+  :sprite "shelves_basic"
+  :flags "M"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 525
+  :sprite "bar_basic"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 526
+  :sprite "fridge"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 527
+  :sprite "lamp_basic"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 528
+  :sprite "heartsofa"
+  :flags "MS"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 529
+  :sprite "valentinescreen"
+  :flags "SM"
+  :width 2
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.1
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 530
+  :sprite "joulutahti"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 531
+  :sprite "plant_cruddy"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 532
+  :sprite "duck"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 533
+  :sprite "statue"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 534
+  :sprite "hc_dsk"
+  :flags "M"
+  :width 1
+  :length 2
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 535
+  :sprite "hc_chr"
+  :flags "SM"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 536
+  :sprite "skullcandle"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 537
+  :sprite "edicehc"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col " "
+  :var-type 3
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 538
+  :sprite "bar_polyfon"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col " 0,0,0"
+  :var-type 3
+  :action-height 1.5
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 539
+  :sprite "doorD"
+  :flags "MZX"
+  :width 1
+  :length 1
+  :height 0.0
+  :col " 0,0,0"
+  :var-type 1
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 540
+  :sprite "hc_dsk"
+  :flags "M"
+  :width 1
+  :length 2
+  :height 0.0
+  :col " 0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 541
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "2005"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 542
+  :sprite "rare_elephant_statue*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#bfbfbf/"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 543
+  :sprite "rare_elephant_statue*2"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#d46b00"
+  :var-type 7
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 544
+  :sprite "birdie"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 545
+  :sprite "rcandleset"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 546
+  :sprite "rcandle"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 547
+  :sprite "rare_fountain*1"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 548
+  :sprite "house"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 549
+  :sprite "rare_fountain"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ff6666"
+  :var-type 5
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 550
+  :sprite "carpet_standard*6"
+  :flags "MOP"
+  :width 3
+  :length 5
+  :height 0.0
+  :col "#00000"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 551
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "1004"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 552
+  :sprite "md_limukaappi"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 4
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 553
+  :sprite "scifiport*9"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 2
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 554
+  :sprite "pillow*2"
+  :flags "MS"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "#ffffff,#ffffff,#ffffff,#d47fff"
+  :var-type 0
+  :action-height 1.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 555
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "29"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 556
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "46"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 557
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "48"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 558
+  :sprite "carpet_polar*2"
+  :flags "POM"
+  :width 2
+  :length 3
+  :height 0.0
+  :col "#bacaec,#bacaec,#bacaec"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 559
+  :sprite "djesko_turntable"
+  :flags "M"
+  :width 1
+  :length 1
+  :height 0.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ {
+  :id 560
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "47"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 561
+  :sprite "poster"
+  :flags "V"
+  :width 0
+  :length 0
+  :height 0.0
+  :col "49"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "I"
+  }
+ {
+  :id 562
+  :sprite "barchair_silo"
+  :flags "S"
+  :width 2
+  :length 1
+  :height 1.0
+  :col "0,0,0"
+  :var-type 0
+  :action-height 0.0
+  :can-trade 1
+  :public 0
+  :hand-type "S"
+  }
+ ]

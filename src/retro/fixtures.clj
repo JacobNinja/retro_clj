@@ -1,445 +1,1867 @@
 (ns retro.fixtures)
 
+(def furni
+  (read-string (slurp "fixtures/furni.edn")))
+
 (def catalog-pages
-  [{
-    :id 1
-    :name "cat_posters"
-    :visible-name "Poster"
-    :order 10
-    :layout "ctlg_layout2"
-    :image_title "catalog_gallery_headline1"
-    :side_image "catalog_posters_teaser1"
-    :description "Adorn your walls with wondrous works of art, posters, plaques and wall hangings. We have items to suit all tastes, from kitsch to cool, traditional to modern."
-    :label "Click on the item you want for more information."
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 2
-    :name "cat_mode"
-    :visible-name "Mode"
-    :order 8
-    :layout "ctlg_layout2"
-    :image_title "catalog_mode_headline1"
-    :side_image "catalog_mode_teaser1"
-    :description "Introducing the Mode Collection...  Steely grey functionality combined with sleek designer upholstery. The Habbo that chooses this furniture is a cool urban cat - streetwise, sassy and so slightly untouchable."
-    :label " Introducing the Mode Collection... Steely grey functionality combined with sleek designer upholstery. The Habbo that chooses this furniture is a cool urban cat - streetwise, sassy and so slightly untouchable."
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 3
-    :name "cat_spaces"
-    :visible-name "Spaces"
-    :order 3
-    :layout "ctlg_spaces"
-    :image_title "catalog_spaces_headline1"
-    :side_image " "
-    :description "Are your walls looking a little grey?  What you need is a splash of paint and this is the place to get it!  <br><br>A splash of colour on the walls and a nice carpet can make all the difference. Use our virtual room below to test out the combinations befo"
-    :label " "
-    :additional "t1:Wall|t2:Floor|t3:Pattern|t4:Colour|t5:Pattern|t6:Colour|t7:Preview|p:Wallpaper\tWallpaper\t2\t\ti\tspecial_wallpaper\t\t\tspecial_wallpaper|p:Floor\tFloor\t2\t\ti\tspecial_floor\t\t\tspecial_floor\u0001"
-    :staff_only 0
-    }
-   {
-    :id 4
-    :name "cat_frontpage"
-    :visible-name "Front Page"
-    :order 1
-    :layout "ctlg_frontpage2"
-    :image_title "catal_fp_header"
-    :side_image "catal_fp_pic4,catal_fp_pic5"
-    :description " "
-    :label "Need some Furni for your Habbo room?  Well, you're in the right place!  This Catalogue is packed FULL of funky Furni, just click the tabs on the right to browse.<br><br>We regularly add and remove Furni, so check back regularly for new items.<br><br> "
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 5
-    :name "cat_area"
-    :visible-name "Area"
-    :order 4
-    :layout "ctlg_layout2"
-    :image_title "catalog_area_headline1"
-    :side_image "catalog_area_teaser1"
-    :description " "
-    :label " Introducing the Area Collection...  Clean, chunky lines set this collection apart as a preserve of the down-to-earth Habbo. It's beautiful in its simplicity, and welcoming to everyone. "
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 6
-    :name "cat_iced"
-    :visible-name "Iced"
-    :order 5
-    :layout "ctlg_layout2"
-    :image_title "catalog_iced_headline1"
-    :side_image "catalog_iced_teaser1"
-    :description "Introducing the Iced Collection...  For the Habbo who needs no introduction. It's so chic, it says everything and nothing. It's a blank canvas, let your imagination to run wild! "
-    :label "Introducing the Iced Collection... For the Habbo who needs no introduction. It's so chic, it says everything and nothing. It's a blank canvas, let your imagination to run wild!"
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 7
-    :name "cat_candy"
-    :visible-name "Candy"
-    :order 6
-    :layout "ctlg_layout2"
-    :image_title "catalog_candy_headline1 "
-    :side_image "catalog_candy_teaser1"
-    :description " "
-    :label "Get off my chair fool!"
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 8
-    :name "cat_lodge"
-    :visible-name "Lodge"
-    :order 7
-    :layout "ctlg_layout2"
-    :image_title "catalog_lodge_headline1"
-    :side_image "catalog_lodge_teaser1"
-    :description " "
-    :label "Introducing the Lodge Collection...  Do you appreciate the beauty of wood?  For that ski lodge effect, or to match that open fire... Lodge is the Furni of choice for Habbos with that no frills approach to decorating. "
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 9
-    :name "cat_Accessories"
-    :visible-name "Accessories"
-    :order 11
-    :layout "ctlg_layout2"
-    :image_title "catalog_extra_headline1"
-    :side_image "catalog_extra_teaser1,"
-    :description " I love my rabbit..."
-    :label "Is your room missing something?  Well, now you can add the finishing touches that express your true personality. And don't forget, like everything else, these accessories can be moved about to suit your mood."
-    :additional "s:2: I love my rabbit...|"
-    :staff_only 0
-    }
-   {
-    :id 10
-    :name "cat_Teles"
-    :visible-name "Teleports"
-    :order 12
-    :layout "ctlg_layout2"
-    :image_title "catalog_doors_headline1"
-    :side_image "catalog_teleports_teaser2,catalog_door_c,catalog_door_b,"
-    :description "Beam your Habbo from one room to another with one of our cunningly disguised, space age teleports. Now you can link any two rooms together! Teleports are sold in pairs, so if you trade for them, check you're getting a linked pair."
-    :label "Select an item by clicking one of the icons on the left."
-    :additional "s:New Door Teleport!"
-    :staff_only 0
-    }
-   {
-    :id 11
-    :name "cat_rollers"
-    :visible-name "Rollers"
-    :order 13
-    :layout "ctlg_layout2"
-    :image_title "catalog_roller_headline1"
-    :side_image " "
-    :description "You can fit 35 Rollers in a Guest Room!"
-    :label "Click on a Roller to see more information!"
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 12
-    :name "cat_playerrares"
-    :visible-name "Rares"
-    :order 2
-    :layout "ctlg_layout2"
-    :image_title "catalog_rares_headline1"
-    :side_image "catalog_hc_teaser"
-    :description "The Shiny Rares!"
-    :label "The Shiny Rares!"
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 13
-    :name "cat_Rugs"
-    :visible-name "Rugs"
-    :order 14
-    :layout "ctlg_layout2"
-    :image_title "catalog_rugs_headline1"
-    :side_image "catalog_rugs_teaser1,"
-    :description "We have rugs for all occasions.  All rugs are non-slip and washable."
-    :label "Click on the item you want for more information."
-    :additional "s:2: Rugs, rugs and more rugs!"
-    :staff_only 0
-    }
-   {
-    :id 14
-    :name "cat_trophys"
-    :visible-name "Trophys"
-    :order 998
-    :layout "ctlg_trophies"
-    :image_title "catalog_trophies_headline1"
-    :side_image " "
-    :description "Reward your Habbo friends, or yourself with one of our fabulous glittering array of bronze, silver and gold trophies.<br><br>First choose the trophy model (click on the arrows to see all the different styles) and then the metal (click on the seal below th"
-    :label " "
-    :additional "t1:Type your inscription CAREFULLY, it's permanent!"
-    :staff_only 1
-    }
-   {
-    :id 15
-    :name "cat_plants"
-    :visible-name "Plants"
-    :order 15
-    :layout "ctlg_layout2"
-    :image_title "catalog_plants_headline1"
-    :side_image "catalog_plants_teaser1"
-    :description "Introducing the Plant Collection...  Every room needs a plant! Not only do they bring a bit of the outside inside, they also enhance the air quality!"
-    :label "Click on the item you want for more information."
-    :additional "s:2: Be at one with trees!"
-    :staff_only 0
-    }
-   {
-    :id 16
-    :name "cat_staffrares"
-    :visible-name "Staff Hidden"
-    :order 999
-    :layout "ctlg_layout2"
-    :image_title "catalog_rares_headline1"
-    :side_image "catalog_hc_teaser"
-    :description "Staff Rares Page"
-    :label "Staff Rares"
-    :additional " "
-    :staff_only 1
-    }
-   {
-    :id 17
-    :name "cat_pura"
-    :visible-name "Pura"
-    :order 9
-    :layout "ctlg_layout2"
-    :image_title "catalog_pura_headline1"
-    :side_image " "
-    :description "Introducing the Pura Collection...  This collection breathes fresh, clean air and cool tranquility."
-    :label " "
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 18
-    :name "cat_posters"
-    :visible-name "Poster"
-    :order 10
-    :layout "ctlg_layout2"
-    :image_title "catalog_gallery_headline1"
-    :side_image "catalog_posters_teaser1"
-    :description "Adorn your walls with wondrous works of art, posters, plaques and wall hangings. We have items to suit all tastes, from kitsch to cool, traditional to modern."
-    :label "Click on the item you want for more information."
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 19
-    :name "cat_mode"
-    :visible-name "Mode"
-    :order 8
-    :layout "ctlg_layout2"
-    :image_title "catalog_mode_headline1"
-    :side_image "catalog_mode_teaser1"
-    :description "Introducing the Mode Collection...  Steely grey functionality combined with sleek designer upholstery. The Habbo that chooses this furniture is a cool urban cat - streetwise, sassy and so slightly untouchable."
-    :label " Introducing the Mode Collection... Steely grey functionality combined with sleek designer upholstery. The Habbo that chooses this furniture is a cool urban cat - streetwise, sassy and so slightly untouchable."
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 20
-    :name "cat_spaces"
-    :visible-name "Spaces"
-    :order 3
-    :layout "ctlg_spaces"
-    :image_title "catalog_spaces_headline1"
-    :side_image " "
-    :description "Are your walls looking a little grey?  What you need is a splash of paint and this is the place to get it!  <br><br>A splash of colour on the walls and a nice carpet can make all the difference. Use our virtual room below to test out the combinations befo"
-    :label " "
-    :additional "t1:Wall|t2:Floor|t3:Pattern|t4:Colour|t5:Pattern|t6:Colour|t7:Preview|p:Wallpaper\tWallpaper\t2\t\ti\tspecial_wallpaper\t\t\tspecial_wallpaper|p:Floor\tFloor\t2\t\ti\tspecial_floor\t\t\tspecial_floor\u0001"
-    :staff_only 0
-    }
-   {
-    :id 21
-    :name "cat_frontpage"
-    :visible-name "Front Page"
-    :order 1
-    :layout "ctlg_frontpage2"
-    :image_title "catal_fp_header"
-    :side_image "catal_fp_pic4,catal_fp_pic5"
-    :description " "
-    :label "Need some Furni for your Habbo room?  Well, you're in the right place!  This Catalogue is packed FULL of funky Furni, just click the tabs on the right to browse.<br><br>We regularly add and remove Furni, so check back regularly for new items.<br><br> "
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 22
-    :name "cat_area"
-    :visible-name "Area"
-    :order 4
-    :layout "ctlg_layout2"
-    :image_title "catalog_area_headline1"
-    :side_image "catalog_area_teaser1"
-    :description " "
-    :label " Introducing the Area Collection...  Clean, chunky lines set this collection apart as a preserve of the down-to-earth Habbo. It's beautiful in its simplicity, and welcoming to everyone. "
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 23
-    :name "cat_iced"
-    :visible-name "Iced"
-    :order 5
-    :layout "ctlg_layout2"
-    :image_title "catalog_iced_headline1"
-    :side_image "catalog_iced_teaser1"
-    :description "Introducing the Iced Collection...  For the Habbo who needs no introduction. It's so chic, it says everything and nothing. It's a blank canvas, let your imagination to run wild! "
-    :label "Introducing the Iced Collection... For the Habbo who needs no introduction. It's so chic, it says everything and nothing. It's a blank canvas, let your imagination to run wild!"
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 24
-    :name "cat_candy"
-    :visible-name "Candy"
-    :order 6
-    :layout "ctlg_layout2"
-    :image_title "catalog_candy_headline1 "
-    :side_image "catalog_candy_teaser1"
-    :description " "
-    :label "Get off my chair fool!"
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 25
-    :name "cat_lodge"
-    :visible-name "Lodge"
-    :order 7
-    :layout "ctlg_layout2"
-    :image_title "catalog_lodge_headline1"
-    :side_image "catalog_lodge_teaser1"
-    :description " "
-    :label "Introducing the Lodge Collection...  Do you appreciate the beauty of wood?  For that ski lodge effect, or to match that open fire... Lodge is the Furni of choice for Habbos with that no frills approach to decorating. "
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 26
-    :name "cat_Accessories"
-    :visible-name "Accessories"
-    :order 11
-    :layout "ctlg_layout2"
-    :image_title "catalog_extra_headline1"
-    :side_image "catalog_extra_teaser1,"
-    :description " I love my rabbit..."
-    :label "Is your room missing something?  Well, now you can add the finishing touches that express your true personality. And don't forget, like everything else, these accessories can be moved about to suit your mood."
-    :additional "s:2: I love my rabbit...|"
-    :staff_only 0
-    }
-   {
-    :id 27
-    :name "cat_Teles"
-    :visible-name "Teleports"
-    :order 12
-    :layout "ctlg_layout2"
-    :image_title "catalog_doors_headline1"
-    :side_image "catalog_teleports_teaser2,catalog_door_c,catalog_door_b,"
-    :description "Beam your Habbo from one room to another with one of our cunningly disguised, space age teleports. Now you can link any two rooms together! Teleports are sold in pairs, so if you trade for them, check you're getting a linked pair."
-    :label "Select an item by clicking one of the icons on the left."
-    :additional "s:New Door Teleport!"
-    :staff_only 0
-    }
-   {
-    :id 28
-    :name "cat_rollers"
-    :visible-name "Rollers"
-    :order 13
-    :layout "ctlg_layout2"
-    :image_title "catalog_roller_headline1"
-    :side_image " "
-    :description "You can fit 35 Rollers in a Guest Room!"
-    :label "Click on a Roller to see more information!"
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 29
-    :name "cat_playerrares"
-    :visible-name "Rares"
-    :order 2
-    :layout "ctlg_layout2"
-    :image_title "catalog_rares_headline1"
-    :side_image "catalog_hc_teaser"
-    :description "The Shiny Rares!"
-    :label "The Shiny Rares!"
-    :additional " "
-    :staff_only 0
-    }
-   {
-    :id 30
-    :name "cat_Rugs"
-    :visible-name "Rugs"
-    :order 14
-    :layout "ctlg_layout2"
-    :image_title "catalog_rugs_headline1"
-    :side_image "catalog_rugs_teaser1,"
-    :description "We have rugs for all occasions.  All rugs are non-slip and washable."
-    :label "Click on the item you want for more information."
-    :additional "s:2: Rugs, rugs and more rugs!"
-    :staff_only 0
-    }
-   {
-    :id 31
-    :name "cat_trophys"
-    :visible-name "Trophys"
-    :order 998
-    :layout "ctlg_trophies"
-    :image_title "catalog_trophies_headline1"
-    :side_image " "
-    :description "Reward your Habbo friends, or yourself with one of our fabulous glittering array of bronze, silver and gold trophies.<br><br>First choose the trophy model (click on the arrows to see all the different styles) and then the metal (click on the seal below th"
-    :label " "
-    :additional "t1:Type your inscription CAREFULLY, it's permanent!"
-    :staff_only 1
-    }
-   {
-    :id 32
-    :name "cat_plants"
-    :visible-name "Plants"
-    :order 15
-    :layout "ctlg_layout2"
-    :image_title "catalog_plants_headline1"
-    :side_image "catalog_plants_teaser1"
-    :description "Introducing the Plant Collection...  Every room needs a plant! Not only do they bring a bit of the outside inside, they also enhance the air quality!"
-    :label "Click on the item you want for more information."
-    :additional "s:2: Be at one with trees!"
-    :staff_only 0
-    }
-   {
-    :id 33
-    :name "cat_staffrares"
-    :visible-name "Staff Hidden"
-    :order 999
-    :layout "ctlg_layout2"
-    :image_title "catalog_rares_headline1"
-    :side_image "catalog_hc_teaser"
-    :description "Staff Rares Page"
-    :label "Staff Rares"
-    :additional " "
-    :staff_only 1
-    }
-   {
-    :id 34
-    :name "cat_pura"
-    :visible-name "Pura"
-    :order 9
-    :layout "ctlg_layout2"
-    :image_title "catalog_pura_headline1"
-    :side_image " "
-    :description "Introducing the Pura Collection...  This collection breathes fresh, clean air and cool tranquility."
-    :label " "
-    :additional " "
-    :staff_only 0
-    }])
+  [{:description
+    "Adorn your walls with wondrous works of art, posters, plaques and wall hangings. We have items to suit all tastes, from kitsch to cool, traditional to modern.",
+    :visible-name "Poster",
+    :layout "ctlg_layout2",
+    :name "cat_posters",
+    :staff_only 0,
+    :label "Click on the item you want for more information.",
+    :id 1,
+    :order 10,
+    :image "catalog_gallery_headline1",
+    :side-image "catalog_posters_teaser1",
+    :items
+    [{:id 1,
+      :furni-id 4,
+      :catalog_page_id 1,
+      :cost 10,
+      :purchase-code "purchase_poster_24"}
+     {:id 56,
+      :furni-id 140,
+      :catalog_page_id 1,
+      :cost 2,
+      :purchase-code "purchase_poster_Johnny"}
+     {:id 96,
+      :furni-id 199,
+      :catalog_page_id 1,
+      :cost 4,
+      :purchase-code "purchase_best_flag"}]}
+   {:description
+    "Introducing the Mode Collection...  Steely grey functionality combined with sleek designer upholstery. The Habbo that chooses this furniture is a cool urban cat - streetwise, sassy and so slightly untouchable.",
+    :visible-name "Mode",
+    :layout "ctlg_layout2",
+    :name "cat_mode",
+    :staff_only 0,
+    :label
+    " Introducing the Mode Collection... Steely grey functionality combined with sleek designer upholstery. The Habbo that chooses this furniture is a cool urban cat - streetwise, sassy and so slightly untouchable.",
+    :id 2,
+    :order 8,
+    :image "catalog_mode_headline1",
+    :side-image "catalog_mode_teaser1",
+    :items
+    [{:id 3,
+      :furni-id 8,
+      :catalog_page_id 2,
+      :cost 3,
+      :purchase-code "purchase_bed_polyfon"}
+     {:id 57,
+      :furni-id 141,
+      :catalog_page_id 2,
+      :cost 1,
+      :purchase-code "purchase_z_shelf"}
+     {:id 79,
+      :furni-id 6,
+      :catalog_page_id 2,
+      :cost 3,
+      :purchase-code "purchase_mode_bar"}
+     {:id 82,
+      :furni-id 5,
+      :catalog_page_id 2,
+      :cost 3,
+      :purchase-code "purchase_bar_polyfon"}
+     {:id 83,
+      :furni-id 7,
+      :catalog_page_id 2,
+      :cost 3,
+      :purchase-code "purchase_sofa_polyfon"}
+     {:id 84,
+      :furni-id 9,
+      :catalog_page_id 2,
+      :cost 3,
+      :purchase-code "purchase_bed_polyfon_one"}
+     {:id 85,
+      :furni-id 3,
+      :catalog_page_id 2,
+      :cost 3,
+      :purchase-code "purchase_sofachair_polyfon"}
+     {:id 86,
+      :furni-id 10,
+      :catalog_page_id 2,
+      :cost 6,
+      :purchase-code "purchase_divider_poly3"}
+     {:id 87,
+      :furni-id 2,
+      :catalog_page_id 2,
+      :cost 3,
+      :purchase-code "purchase_bardeskcorner_polyfon"}
+     {:id 88,
+      :furni-id 148,
+      :catalog_page_id 2,
+      :cost 3,
+      :purchase-code "purchase_chair_polyfon"}
+     {:id 89,
+      :furni-id 149,
+      :catalog_page_id 2,
+      :cost 4,
+      :purchase-code "purchase_table_polyfon"}
+     {:id 90,
+      :furni-id 150,
+      :catalog_page_id 2,
+      :cost 4,
+      :purchase-code "purchase_smooth_table_polyfon"}
+     {:id 91,
+      :furni-id 151,
+      :catalog_page_id 2,
+      :cost 3,
+      :purchase-code "purchase_table_polyfon_med"}
+     {:id 92,
+      :furni-id 152,
+      :catalog_page_id 2,
+      :cost 2,
+      :purchase-code "purchase_table_polyfon_small"}
+     {:id 93,
+      :furni-id 153,
+      :catalog_page_id 2,
+      :cost 4,
+      :purchase-code "purchase_shelves_polyfon"}
+     {:id 94,
+      :furni-id 154,
+      :catalog_page_id 2,
+      :cost 5,
+      :purchase-code "purchase_fireplace_polyfon"}]}
+   {:description
+    "Are your walls looking a little grey?  What you need is a splash of paint and this is the place to get it!  <br><br>A splash of colour on the walls and a nice carpet can make all the difference. Use our virtual room below to test out the combinations befo",
+    :visible-name "Spaces",
+    :layout "ctlg_spaces",
+    :name "cat_spaces",
+    :staff_only 0,
+    :label " ",
+    :id 3,
+    :order 3,
+    :image "catalog_spaces_headline1",
+    :items
+    [{:id 141,
+      :furni-id 21,
+      :catalog_page_id 3,
+      :cost 0,
+      :purchase-code "special_wallpaper"}
+     {:id 142,
+      :furni-id 22,
+      :catalog_page_id 3,
+      :cost 0,
+      :purchase-code "special_floor"}
+     {:id 283,
+      :furni-id 21,
+      :catalog_page_id 3,
+      :cost 0,
+      :purchase-code "special_wallpaper"}
+     {:id 284,
+      :furni-id 22,
+      :catalog_page_id 3,
+      :cost 0,
+      :purchase-code "special_floor"}],
+    :additional
+    ["t1:Wall"
+     "t2:Floor"
+     "t3:Pattern"
+     "t4:Colour"
+     "t5:Pattern"
+     "t6:Colour"
+     "t7:Preview"
+     "p:Wallpaper\tWallpaper\t2\t\ti\tspecial_wallpaper\t\t\tspecial_wallpaper"
+     "p:Floor\tFloor\t2\t\ti\tspecial_floor\t\t\tspecial_floor"]}
+   {:description " ",
+    :visible-name "Front Page",
+    :layout "ctlg_frontpage2",
+    :name "cat_frontpage",
+    :staff_only 0,
+    :label
+    "Need some Furni for your Habbo room?  Well, you're in the right place!  This Catalogue is packed FULL of funky Furni, just click the tabs on the right to browse.<br><br>We regularly add and remove Furni, so check back regularly for new items.<br><br> ",
+    :id 4,
+    :order 1,
+    :image "catal_fp_header",
+    :side-image "catal_fp_pic4,catal_fp_pic5",
+    :items []}
+   {:description " ",
+    :visible-name "Area",
+    :layout "ctlg_layout2",
+    :name "cat_area",
+    :staff_only 0,
+    :label
+    " Introducing the Area Collection...  Clean, chunky lines set this collection apart as a preserve of the down-to-earth Habbo. It's beautiful in its simplicity, and welcoming to everyone. ",
+    :id 5,
+    :order 4,
+    :image "catalog_area_headline1",
+    :side-image "catalog_area_teaser1",
+    :items
+    [{:id 5,
+      :furni-id 95,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "puchase_bed_silo_two"}
+     {:id 6,
+      :furni-id 96,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "purchase_bed_silo_one"}
+     {:id 7,
+      :furni-id 97,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "puchase_shelves_silo"}
+     {:id 8,
+      :furni-id 98,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "puchase_sofa_silo"}
+     {:id 9,
+      :furni-id 99,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "purchase_sofachair_silo"}
+     {:id 10,
+      :furni-id 100,
+      :catalog_page_id 5,
+      :cost 1,
+      :purchase-code "puchase_table_silo_small"}
+     {:id 11,
+      :furni-id 101,
+      :catalog_page_id 5,
+      :cost 6,
+      :purchase-code "puchase_divider_silo3"}
+     {:id 12,
+      :furni-id 102,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "puchase_divider_silo2"}
+     {:id 13,
+      :furni-id 103,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "purchase_divider_silo1"}
+     {:id 14,
+      :furni-id 132,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "purchase_chair_silo"}
+     {:id 15,
+      :furni-id 281,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "purchase_barchair_silo"}
+     {:id 16,
+      :furni-id 133,
+      :catalog_page_id 5,
+      :cost 3,
+      :purchase-code "purchase_table_silo_med"}]}
+   {:description
+    "Introducing the Iced Collection...  For the Habbo who needs no introduction. It's so chic, it says everything and nothing. It's a blank canvas, let your imagination to run wild! ",
+    :visible-name "Iced",
+    :layout "ctlg_layout2",
+    :name "cat_iced",
+    :staff_only 0,
+    :label
+    "Introducing the Iced Collection... For the Habbo who needs no introduction. It's so chic, it says everything and nothing. It's a blank canvas, let your imagination to run wild!",
+    :id 6,
+    :order 5,
+    :image "catalog_iced_headline1",
+    :side-image "catalog_iced_teaser1",
+    :items
+    [{:id 17,
+      :furni-id 104,
+      :catalog_page_id 6,
+      :cost 3,
+      :purchase-code "purchase_chair_norja"}
+     {:id 18,
+      :furni-id 105,
+      :catalog_page_id 6,
+      :cost 3,
+      :purchase-code "puchase_couch_norja"}
+     {:id 19,
+      :furni-id 106,
+      :catalog_page_id 6,
+      :cost 3,
+      :purchase-code "purchase_table_norja_med"}
+     {:id 20,
+      :furni-id 107,
+      :catalog_page_id 6,
+      :cost 3,
+      :purchase-code "purchase_shelves_norja"}
+     {:id 21,
+      :furni-id 108,
+      :catalog_page_id 6,
+      :cost 3,
+      :purchase-code "purchase_soft_sofachair_norja"}
+     {:id 22,
+      :furni-id 109,
+      :catalog_page_id 6,
+      :cost 4,
+      :purchase-code "purchase_soft_sofa_norja"}
+     {:id 23,
+      :furni-id 110,
+      :catalog_page_id 6,
+      :cost 3,
+      :purchase-code "purchase_divider_nor2"}
+     {:id 24,
+      :furni-id 111,
+      :catalog_page_id 6,
+      :cost 3,
+      :purchase-code "purchase_divider_nor1"}
+     {:id 25,
+      :furni-id 112,
+      :catalog_page_id 6,
+      :cost 6,
+      :purchase-code "purchase_divider_nor3"}]}
+   {:description " ",
+    :visible-name "Candy",
+    :layout "ctlg_layout2",
+    :name "cat_candy",
+    :staff_only 0,
+    :label "Get off my chair fool!",
+    :id 7,
+    :order 6,
+    :image "catalog_candy_headline1 ",
+    :side-image "catalog_candy_teaser1",
+    :items
+    [{:id 26,
+      :furni-id 113,
+      :catalog_page_id 7,
+      :cost 3,
+      :purchase-code "purchase_sofachair_polyfon_girl"}
+     {:id 27,
+      :furni-id 114,
+      :catalog_page_id 7,
+      :cost 4,
+      :purchase-code "purchase_sofa_polyfon_girl"}
+     {:id 28,
+      :furni-id 115,
+      :catalog_page_id 7,
+      :cost 4,
+      :purchase-code "purchase_carpet_polar*1"}
+     {:id 29,
+      :furni-id 134,
+      :catalog_page_id 7,
+      :cost 4,
+      :purchase-code "purchase_bed_polyfon_girl_one"}
+     {:id 30,
+      :furni-id 135,
+      :catalog_page_id 7,
+      :cost 3,
+      :purchase-code "purchase_bed_polyfon_girl"}]}
+   {:description " ",
+    :visible-name "Lodge",
+    :layout "ctlg_layout2",
+    :name "cat_lodge",
+    :staff_only 0,
+    :label
+    "Introducing the Lodge Collection...  Do you appreciate the beauty of wood?  For that ski lodge effect, or to match that open fire... Lodge is the Furni of choice for Habbos with that no frills approach to decorating. ",
+    :id 8,
+    :order 7,
+    :image "catalog_lodge_headline1",
+    :side-image "catalog_lodge_teaser1",
+    :items
+    [{:id 31,
+      :furni-id 116,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_bed_armas_two"}
+     {:id 32,
+      :furni-id 117,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_bed_armas_one"}
+     {:id 33,
+      :furni-id 118,
+      :catalog_page_id 8,
+      :cost 4,
+      :purchase-code "purchase_fireplace_armas"}
+     {:id 34,
+      :furni-id 119,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_bartable_armas"}
+     {:id 35,
+      :furni-id 120,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_table_armas"}
+     {:id 36,
+      :furni-id 121,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_bench_armas"}
+     {:id 37,
+      :furni-id 122,
+      :catalog_page_id 8,
+      :cost 6,
+      :purchase-code "purchase_divider_arm3"}
+     {:id 38,
+      :furni-id 123,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_divider_arm1"}
+     {:id 39,
+      :furni-id 124,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_divider_arm2"}
+     {:id 40,
+      :furni-id 125,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_shelves_armas"}
+     {:id 41,
+      :furni-id 126,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_bar_armas"}
+     {:id 42,
+      :furni-id 127,
+      :catalog_page_id 8,
+      :cost 1,
+      :purchase-code "purchase_bar_chair_armas"}
+     {:id 43,
+      :furni-id 128,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_lamp_armas"}
+     {:id 44,
+      :furni-id 129,
+      :catalog_page_id 8,
+      :cost 3,
+      :purchase-code "purchase_lamp2_armas"}
+     {:id 45,
+      :furni-id 130,
+      :catalog_page_id 8,
+      :cost 2,
+      :purchase-code "purchase_small_table_armas"}
+     {:id 46,
+      :furni-id 131,
+      :catalog_page_id 8,
+      :cost 1,
+      :purchase-code "purchase_small_chair_armas"}]}
+   {:description " I love my rabbit...",
+    :visible-name "Accessories",
+    :layout "ctlg_layout2",
+    :name "cat_Accessories",
+    :staff_only 0,
+    :label
+    "Is your room missing something?  Well, now you can add the finishing touches that express your true personality. And don't forget, like everything else, these accessories can be moved about to suit your mood.",
+    :id 9,
+    :order 11,
+    :image "catalog_extra_headline1",
+    :side-image "catalog_extra_teaser1,",
+    :items
+    [{:id 47,
+      :furni-id 87,
+      :catalog_page_id 9,
+      :cost 3,
+      :purchase-code "purchase_bunny"}
+     {:id 48,
+      :furni-id 93,
+      :catalog_page_id 9,
+      :cost 6,
+      :purchase-code "purchase_deluxtv"}
+     {:id 49,
+      :furni-id 94,
+      :catalog_page_id 9,
+      :cost 4,
+      :purchase-code "purchase_woodtv"}
+     {:id 53,
+      :furni-id 17,
+      :catalog_page_id 9,
+      :cost 3,
+      :purchase-code "A2 tlp 20"}
+     {:id 54,
+      :furni-id 88,
+      :catalog_page_id 9,
+      :cost 3,
+      :purchase-code "purchase_red_tv"}
+     {:id 78,
+      :furni-id 198,
+      :catalog_page_id 9,
+      :cost 3,
+      :purchase-code "purchase_bottle"}
+     {:id 95,
+      :furni-id 12,
+      :catalog_page_id 9,
+      :cost 6,
+      :purchase-code "purchase_edice"}
+     {:id 137,
+      :furni-id 251,
+      :catalog_page_id 9,
+      :cost 1,
+      :purchase-code "purchase_duck"}],
+    :additional ["s:2: I love my rabbit..."]}
+   {:description
+    "Beam your Habbo from one room to another with one of our cunningly disguised, space age teleports. Now you can link any two rooms together! Teleports are sold in pairs, so if you trade for them, check you're getting a linked pair.",
+    :visible-name "Teleports",
+    :layout "ctlg_layout2",
+    :name "cat_Teles",
+    :staff_only 0,
+    :label "Select an item by clicking one of the icons on the left.",
+    :id 10,
+    :order 12,
+    :image "catalog_doors_headline1",
+    :side-image
+    "catalog_teleports_teaser2,catalog_door_c,catalog_door_b,",
+    :items
+    [{:id 50,
+      :furni-id 89,
+      :catalog_page_id 10,
+      :cost 3,
+      :purchase-code "special_teleporter_doorb"}
+     {:id 51,
+      :furni-id 90,
+      :catalog_page_id 10,
+      :cost 4,
+      :purchase-code "special_teleporter_doorc"}
+     {:id 52,
+      :furni-id 13,
+      :catalog_page_id 10,
+      :cost 5,
+      :purchase-code "special_teleporter_door"}],
+    :additional ["s:New Door Teleport!"]}
+   {:description "You can fit 35 Rollers in a Guest Room!",
+    :visible-name "Rollers",
+    :layout "ctlg_layout2",
+    :name "cat_rollers",
+    :staff_only 0,
+    :label "Click on a Roller to see more information!",
+    :id 11,
+    :order 13,
+    :image "catalog_roller_headline1",
+    :items
+    [{:id 4,
+      :furni-id 11,
+      :catalog_page_id 11,
+      :cost 5,
+      :purchase-code "purchase_roller_aqua"}]}
+   {:description "The Shiny Rares!",
+    :visible-name "Rares",
+    :layout "ctlg_layout2",
+    :name "cat_playerrares",
+    :staff_only 0,
+    :label "The Shiny Rares!",
+    :id 12,
+    :order 2,
+    :image "catalog_rares_headline1",
+    :side-image "catalog_hc_teaser",
+    :items
+    [{:id 2,
+      :furni-id 1,
+      :catalog_page_id 12,
+      :cost 25,
+      :purchase-code "purchase_spyro"}
+     {:id 61,
+      :furni-id 182,
+      :catalog_page_id 12,
+      :cost 25,
+      :purchase-code "purchase_typingmachine"}
+     {:id 62,
+      :furni-id 14,
+      :catalog_page_id 12,
+      :cost 25,
+      :purchase-code "purchase_throne"}
+     {:id 80,
+      :furni-id 145,
+      :catalog_page_id 12,
+      :cost 25,
+      :purchase-code "purchase_hologram"}
+     {:id 81,
+      :furni-id 147,
+      :catalog_page_id 12,
+      :cost 25,
+      :purchase-code "purchase_redhologram"}
+     {:id 97,
+      :furni-id 203,
+      :catalog_page_id 12,
+      :cost 25,
+      :purchase-code "purchase_petalpatch"}
+     {:id 101,
+      :furni-id 224,
+      :catalog_page_id 12,
+      :cost 25,
+      :purchase-code "purchase_mocchamaster"}
+     {:id 107,
+      :furni-id 254,
+      :catalog_page_id 12,
+      :cost 25,
+      :purchase-code "purchase_hc_chr"}
+     {:id 113,
+      :furni-id 232,
+      :catalog_page_id 12,
+      :cost 25,
+      :purchase-code "purchase_club_sofa"}
+     {:id 133,
+      :furni-id 247,
+      :catalog_page_id 12,
+      :cost 10,
+      :purchase-code "purchase_heartsofa"}]}
+   {:description
+    "We have rugs for all occasions.  All rugs are non-slip and washable.",
+    :visible-name "Rugs",
+    :layout "ctlg_layout2",
+    :name "cat_Rugs",
+    :staff_only 0,
+    :label "Click on the item you want for more information.",
+    :id 13,
+    :order 14,
+    :image "catalog_rugs_headline1",
+    :side-image "catalog_rugs_teaser1,",
+    :items
+    [{:id 55,
+      :furni-id 139,
+      :catalog_page_id 13,
+      :cost 1,
+      :purchase-code "purchase_doormat1"}
+     {:id 68,
+      :furni-id 187,
+      :catalog_page_id 13,
+      :cost 3,
+      :purchase-code "purchase_rug_standard7"}
+     {:id 73,
+      :furni-id 193,
+      :catalog_page_id 13,
+      :cost 3,
+      :purchase-code "purchase_rug_standard1"}
+     {:id 74,
+      :furni-id 194,
+      :catalog_page_id 13,
+      :cost 3,
+      :purchase-code "purchase_rug_standard6"}
+     {:id 75,
+      :furni-id 195,
+      :catalog_page_id 13,
+      :cost 3,
+      :purchase-code "purchase_carpet_soft"}
+     {:id 76,
+      :furni-id 196,
+      :catalog_page_id 13,
+      :cost 3,
+      :purchase-code "purchase_carpet_soft3"}
+     {:id 77,
+      :furni-id 197,
+      :catalog_page_id 13,
+      :cost 3,
+      :purchase-code "purchase_carpet_soft4"}],
+    :additional ["s:2: Rugs, rugs and more rugs!"]}
+   {:description
+    "Reward your Habbo friends, or yourself with one of our fabulous glittering array of bronze, silver and gold trophies.<br><br>First choose the trophy model (click on the arrows to see all the different styles) and then the metal (click on the seal below th",
+    :visible-name "Trophys",
+    :layout "ctlg_trophies",
+    :name "cat_trophys",
+    :staff_only 1,
+    :label " ",
+    :id 14,
+    :order 998,
+    :image "catalog_trophies_headline1",
+    :items [],
+    :additional ["t1:Type your inscription CAREFULLY, it's permanent!"]}
+   {:description
+    "Introducing the Plant Collection...  Every room needs a plant! Not only do they bring a bit of the outside inside, they also enhance the air quality!",
+    :visible-name "Plants",
+    :layout "ctlg_layout2",
+    :name "cat_plants",
+    :staff_only 0,
+    :label "Click on the item you want for more information.",
+    :id 15,
+    :order 15,
+    :image "catalog_plants_headline1",
+    :side-image "catalog_plants_teaser1",
+    :items
+    [{:id 63,
+      :furni-id 183,
+      :catalog_page_id 15,
+      :cost 4,
+      :purchase-code "purchase_giftflowers"}
+     {:id 64,
+      :furni-id 184,
+      :catalog_page_id 15,
+      :cost 3,
+      :purchase-code "purchase_plant_fruittree"}
+     {:id 65,
+      :furni-id 185,
+      :catalog_page_id 15,
+      :cost 3,
+      :purchase-code "purchase_plant_big_cactus"}
+     {:id 66,
+      :furni-id 186,
+      :catalog_page_id 15,
+      :cost 3,
+      :purchase-code "purchase_plant_bonsai"}
+     {:id 67,
+      :furni-id 188,
+      :catalog_page_id 15,
+      :cost 3,
+      :purchase-code "purchase_plant_pineapple"}
+     {:id 69,
+      :furni-id 189,
+      :catalog_page_id 15,
+      :cost 3,
+      :purchase-code "purchase_plant_yukka"}
+     {:id 70,
+      :furni-id 190,
+      :catalog_page_id 15,
+      :cost 3,
+      :purchase-code "purchase_plant_sunflower"}
+     {:id 71,
+      :furni-id 191,
+      :catalog_page_id 15,
+      :cost 3,
+      :purchase-code "purchase_plant_rose"}
+     {:id 72,
+      :furni-id 192,
+      :catalog_page_id 15,
+      :cost 3,
+      :purchase-code "purchase_plant_small_cactus"}],
+    :additional ["s:2: Be at one with trees!"]}
+   {:description "Staff Rares Page",
+    :visible-name "Staff Hidden",
+    :layout "ctlg_layout2",
+    :name "cat_staffrares",
+    :staff_only 1,
+    :label "Staff Rares",
+    :id 16,
+    :order 999,
+    :image "catalog_rares_headline1",
+    :side-image "catalog_hc_teaser",
+    :items
+    [{:id 58,
+      :furni-id 16,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_prize2"}
+     {:id 59,
+      :furni-id 180,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_prize1"}
+     {:id 60,
+      :furni-id 181,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_prize3"}
+     {:id 98,
+      :furni-id 241,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_carpet_polar*3"}
+     {:id 99,
+      :furni-id 222,
+      :catalog_page_id 16,
+      :cost 15,
+      :purchase-code "purchase_rare_beehive_bulb*1"}
+     {:id 100,
+      :furni-id 223,
+      :catalog_page_id 16,
+      :cost 15,
+      :purchase-code "purchase_hc_tbl"}
+     {:id 102,
+      :furni-id 225,
+      :catalog_page_id 16,
+      :cost 4,
+      :purchase-code "purchase_menorah"}
+     {:id 103,
+      :furni-id 226,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_samovar"}
+     {:id 104,
+      :furni-id 228,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_rare_stand"}
+     {:id 105,
+      :furni-id 229,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_hcamme"}
+     {:id 106,
+      :furni-id 253,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "hc_dsk"}
+     {:id 108,
+      :furni-id 256,
+      :catalog_page_id 16,
+      :cost 8,
+      :purchase-code "purchase_edicehc"}
+     {:id 109,
+      :furni-id 258,
+      :catalog_page_id 16,
+      :cost 5,
+      :purchase-code "special_teleporter_doorD"}
+     {:id 110,
+      :furni-id 260,
+      :catalog_page_id 16,
+      :cost 20,
+      :purchase-code "purchase_poster"}
+     {:id 111,
+      :furni-id 230,
+      :catalog_page_id 16,
+      :cost 5,
+      :purchase-code "purchase_rare_parasol*3"}
+     {:id 112,
+      :furni-id 231,
+      :catalog_page_id 16,
+      :cost 5,
+      :purchase-code "purchase_rare_fountain*2"}
+     {:id 114,
+      :furni-id 234,
+      :catalog_page_id 16,
+      :cost 5,
+      :purchase-code "purchase_hc_lmp"}
+     {:id 115,
+      :furni-id 254,
+      :catalog_page_id 16,
+      :cost 4,
+      :purchase-code "purchase_hc_chr"}
+     {:id 116,
+      :furni-id 255,
+      :catalog_page_id 16,
+      :cost 5,
+      :purchase-code "purchase_skullcandle"}
+     {:id 117,
+      :furni-id 256,
+      :catalog_page_id 16,
+      :cost 6,
+      :purchase-code "purchase_edicehc"}
+     {:id 118,
+      :furni-id 261,
+      :catalog_page_id 16,
+      :cost 2,
+      :purchase-code "purchase_rare_elephant_statue*1"}
+     {:id 119,
+      :furni-id 262,
+      :catalog_page_id 16,
+      :cost 2,
+      :purchase-code "purchase_rare_elephant_statue*2"}
+     {:id 120,
+      :furni-id 266,
+      :catalog_page_id 16,
+      :cost 4,
+      :purchase-code "purchase_rare_fountain*1"}
+     {:id 121,
+      :furni-id 268,
+      :catalog_page_id 16,
+      :cost 5,
+      :purchase-code "rare_fountain"}
+     {:id 122,
+      :furni-id 270,
+      :catalog_page_id 16,
+      :cost 12,
+      :purchase-code "purchase_poster"}
+     {:id 123,
+      :furni-id 274,
+      :catalog_page_id 16,
+      :cost 1,
+      :purchase-code "purchase_poster_29"}
+     {:id 124,
+      :furni-id 275,
+      :catalog_page_id 16,
+      :cost 1,
+      :purchase-code "purchase_poster_46"}
+     {:id 125,
+      :furni-id 276,
+      :catalog_page_id 16,
+      :cost 1,
+      :purchase-code "purchase_poster_48"}
+     {:id 126,
+      :furni-id 277,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_carpet_polar*2"}
+     {:id 127,
+      :furni-id 242,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_carpet_polar*4"}
+     {:id 128,
+      :furni-id 278,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_djesko_turntable"}
+     {:id 134,
+      :furni-id 248,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_valentinescreen"}
+     {:id 135,
+      :furni-id 249,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_joulutahti"}
+     {:id 136,
+      :furni-id 250,
+      :catalog_page_id 16,
+      :cost 10,
+      :purchase-code "purchase_plant_cruddy"}
+     {:id 138,
+      :furni-id 252,
+      :catalog_page_id 16,
+      :cost 5,
+      :purchase-code "purchase_statue"}
+     {:id 139,
+      :furni-id 279,
+      :catalog_page_id 16,
+      :cost 5,
+      :purchase-code "purchase_poster_47"}
+     {:id 140,
+      :furni-id 280,
+      :catalog_page_id 16,
+      :cost 5,
+      :purchase-code "purchase_poster_49"}]}
+   {:description
+    "Introducing the Pura Collection...  This collection breathes fresh, clean air and cool tranquility.",
+    :visible-name "Pura",
+    :layout "ctlg_layout2",
+    :name "cat_pura",
+    :staff_only 0,
+    :label " ",
+    :id 17,
+    :order 9,
+    :image "catalog_pura_headline1",
+    :items
+    [{:id 129,
+      :furni-id 243,
+      :catalog_page_id 17,
+      :cost 3,
+      :purchase-code "purchase_shelves_basic"}
+     {:id 130,
+      :furni-id 244,
+      :catalog_page_id 17,
+      :cost 4,
+      :purchase-code "purchase_bar_basic"}
+     {:id 131,
+      :furni-id 245,
+      :catalog_page_id 17,
+      :cost 6,
+      :purchase-code "purchase_fridge"}
+     {:id 132,
+      :furni-id 246,
+      :catalog_page_id 17,
+      :cost 3,
+      :purchase-code "purchase_lamp_basic"}]}
+   {:description
+    "Adorn your walls with wondrous works of art, posters, plaques and wall hangings. We have items to suit all tastes, from kitsch to cool, traditional to modern.",
+    :visible-name "Poster",
+    :layout "ctlg_layout2",
+    :name "cat_posters",
+    :staff_only 0,
+    :label "Click on the item you want for more information.",
+    :id 18,
+    :order 10,
+    :image "catalog_gallery_headline1",
+    :side-image "catalog_posters_teaser1",
+    :items
+    [{:id 143,
+      :furni-id 285,
+      :catalog_page_id 18,
+      :cost 10,
+      :purchase-code "purchase_poster_24"}
+     {:id 198,
+      :furni-id 421,
+      :catalog_page_id 18,
+      :cost 2,
+      :purchase-code "purchase_poster_Johnny"}
+     {:id 238,
+      :furni-id 480,
+      :catalog_page_id 18,
+      :cost 4,
+      :purchase-code "purchase_best_flag"}]}
+   {:description
+    "Introducing the Mode Collection...  Steely grey functionality combined with sleek designer upholstery. The Habbo that chooses this furniture is a cool urban cat - streetwise, sassy and so slightly untouchable.",
+    :visible-name "Mode",
+    :layout "ctlg_layout2",
+    :name "cat_mode",
+    :staff_only 0,
+    :label
+    " Introducing the Mode Collection... Steely grey functionality combined with sleek designer upholstery. The Habbo that chooses this furniture is a cool urban cat - streetwise, sassy and so slightly untouchable.",
+    :id 19,
+    :order 8,
+    :image "catalog_mode_headline1",
+    :side-image "catalog_mode_teaser1",
+    :items
+    [{:id 145,
+      :furni-id 289,
+      :catalog_page_id 19,
+      :cost 3,
+      :purchase-code "purchase_bed_polyfon"}
+     {:id 199,
+      :furni-id 422,
+      :catalog_page_id 19,
+      :cost 1,
+      :purchase-code "purchase_z_shelf"}
+     {:id 221,
+      :furni-id 287,
+      :catalog_page_id 19,
+      :cost 3,
+      :purchase-code "purchase_mode_bar"}
+     {:id 224,
+      :furni-id 286,
+      :catalog_page_id 19,
+      :cost 3,
+      :purchase-code "purchase_bar_polyfon"}
+     {:id 225,
+      :furni-id 288,
+      :catalog_page_id 19,
+      :cost 3,
+      :purchase-code "purchase_sofa_polyfon"}
+     {:id 226,
+      :furni-id 290,
+      :catalog_page_id 19,
+      :cost 3,
+      :purchase-code "purchase_bed_polyfon_one"}
+     {:id 227,
+      :furni-id 284,
+      :catalog_page_id 19,
+      :cost 3,
+      :purchase-code "purchase_sofachair_polyfon"}
+     {:id 228,
+      :furni-id 291,
+      :catalog_page_id 19,
+      :cost 6,
+      :purchase-code "purchase_divider_poly3"}
+     {:id 229,
+      :furni-id 283,
+      :catalog_page_id 19,
+      :cost 3,
+      :purchase-code "purchase_bardeskcorner_polyfon"}
+     {:id 230,
+      :furni-id 429,
+      :catalog_page_id 19,
+      :cost 3,
+      :purchase-code "purchase_chair_polyfon"}
+     {:id 231,
+      :furni-id 430,
+      :catalog_page_id 19,
+      :cost 4,
+      :purchase-code "purchase_table_polyfon"}
+     {:id 232,
+      :furni-id 431,
+      :catalog_page_id 19,
+      :cost 4,
+      :purchase-code "purchase_smooth_table_polyfon"}
+     {:id 233,
+      :furni-id 432,
+      :catalog_page_id 19,
+      :cost 3,
+      :purchase-code "purchase_table_polyfon_med"}
+     {:id 234,
+      :furni-id 433,
+      :catalog_page_id 19,
+      :cost 2,
+      :purchase-code "purchase_table_polyfon_small"}
+     {:id 235,
+      :furni-id 434,
+      :catalog_page_id 19,
+      :cost 4,
+      :purchase-code "purchase_shelves_polyfon"}
+     {:id 236,
+      :furni-id 435,
+      :catalog_page_id 19,
+      :cost 5,
+      :purchase-code "purchase_fireplace_polyfon"}]}
+   {:description
+    "Are your walls looking a little grey?  What you need is a splash of paint and this is the place to get it!  <br><br>A splash of colour on the walls and a nice carpet can make all the difference. Use our virtual room below to test out the combinations befo",
+    :visible-name "Spaces",
+    :layout "ctlg_spaces",
+    :name "cat_spaces",
+    :staff_only 0,
+    :label " ",
+    :id 20,
+    :order 3,
+    :image "catalog_spaces_headline1",
+    :items [],
+    :additional
+    ["t1:Wall"
+     "t2:Floor"
+     "t3:Pattern"
+     "t4:Colour"
+     "t5:Pattern"
+     "t6:Colour"
+     "t7:Preview"
+     "p:Wallpaper\tWallpaper\t2\t\ti\tspecial_wallpaper\t\t\tspecial_wallpaper"
+     "p:Floor\tFloor\t2\t\ti\tspecial_floor\t\t\tspecial_floor"]}
+   {:description " ",
+    :visible-name "Front Page",
+    :layout "ctlg_frontpage2",
+    :name "cat_frontpage",
+    :staff_only 0,
+    :label
+    "Need some Furni for your Habbo room?  Well, you're in the right place!  This Catalogue is packed FULL of funky Furni, just click the tabs on the right to browse.<br><br>We regularly add and remove Furni, so check back regularly for new items.<br><br> ",
+    :id 21,
+    :order 1,
+    :image "catal_fp_header",
+    :side-image "catal_fp_pic4,catal_fp_pic5",
+    :items []}
+   {:description " ",
+    :visible-name "Area",
+    :layout "ctlg_layout2",
+    :name "cat_area",
+    :staff_only 0,
+    :label
+    " Introducing the Area Collection...  Clean, chunky lines set this collection apart as a preserve of the down-to-earth Habbo. It's beautiful in its simplicity, and welcoming to everyone. ",
+    :id 22,
+    :order 4,
+    :image "catalog_area_headline1",
+    :side-image "catalog_area_teaser1",
+    :items
+    [{:id 147,
+      :furni-id 376,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "puchase_bed_silo_two"}
+     {:id 148,
+      :furni-id 377,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "purchase_bed_silo_one"}
+     {:id 149,
+      :furni-id 378,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "puchase_shelves_silo"}
+     {:id 150,
+      :furni-id 379,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "puchase_sofa_silo"}
+     {:id 151,
+      :furni-id 380,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "purchase_sofachair_silo"}
+     {:id 152,
+      :furni-id 381,
+      :catalog_page_id 22,
+      :cost 1,
+      :purchase-code "puchase_table_silo_small"}
+     {:id 153,
+      :furni-id 382,
+      :catalog_page_id 22,
+      :cost 6,
+      :purchase-code "puchase_divider_silo3"}
+     {:id 154,
+      :furni-id 383,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "puchase_divider_silo2"}
+     {:id 155,
+      :furni-id 384,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "purchase_divider_silo1"}
+     {:id 156,
+      :furni-id 413,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "purchase_chair_silo"}
+     {:id 157,
+      :furni-id 562,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "purchase_barchair_silo"}
+     {:id 158,
+      :furni-id 414,
+      :catalog_page_id 22,
+      :cost 3,
+      :purchase-code "purchase_table_silo_med"}]}
+   {:description
+    "Introducing the Iced Collection...  For the Habbo who needs no introduction. It's so chic, it says everything and nothing. It's a blank canvas, let your imagination to run wild! ",
+    :visible-name "Iced",
+    :layout "ctlg_layout2",
+    :name "cat_iced",
+    :staff_only 0,
+    :label
+    "Introducing the Iced Collection... For the Habbo who needs no introduction. It's so chic, it says everything and nothing. It's a blank canvas, let your imagination to run wild!",
+    :id 23,
+    :order 5,
+    :image "catalog_iced_headline1",
+    :side-image "catalog_iced_teaser1",
+    :items
+    [{:id 159,
+      :furni-id 385,
+      :catalog_page_id 23,
+      :cost 3,
+      :purchase-code "purchase_chair_norja"}
+     {:id 160,
+      :furni-id 386,
+      :catalog_page_id 23,
+      :cost 3,
+      :purchase-code "puchase_couch_norja"}
+     {:id 161,
+      :furni-id 387,
+      :catalog_page_id 23,
+      :cost 3,
+      :purchase-code "purchase_table_norja_med"}
+     {:id 162,
+      :furni-id 388,
+      :catalog_page_id 23,
+      :cost 3,
+      :purchase-code "purchase_shelves_norja"}
+     {:id 163,
+      :furni-id 389,
+      :catalog_page_id 23,
+      :cost 3,
+      :purchase-code "purchase_soft_sofachair_norja"}
+     {:id 164,
+      :furni-id 390,
+      :catalog_page_id 23,
+      :cost 4,
+      :purchase-code "purchase_soft_sofa_norja"}
+     {:id 165,
+      :furni-id 391,
+      :catalog_page_id 23,
+      :cost 3,
+      :purchase-code "purchase_divider_nor2"}
+     {:id 166,
+      :furni-id 392,
+      :catalog_page_id 23,
+      :cost 3,
+      :purchase-code "purchase_divider_nor1"}
+     {:id 167,
+      :furni-id 393,
+      :catalog_page_id 23,
+      :cost 6,
+      :purchase-code "purchase_divider_nor3"}]}
+   {:description " ",
+    :visible-name "Candy",
+    :layout "ctlg_layout2",
+    :name "cat_candy",
+    :staff_only 0,
+    :label "Get off my chair fool!",
+    :id 24,
+    :order 6,
+    :image "catalog_candy_headline1 ",
+    :side-image "catalog_candy_teaser1",
+    :items
+    [{:id 168,
+      :furni-id 394,
+      :catalog_page_id 24,
+      :cost 3,
+      :purchase-code "purchase_sofachair_polyfon_girl"}
+     {:id 169,
+      :furni-id 395,
+      :catalog_page_id 24,
+      :cost 4,
+      :purchase-code "purchase_sofa_polyfon_girl"}
+     {:id 170,
+      :furni-id 396,
+      :catalog_page_id 24,
+      :cost 4,
+      :purchase-code "purchase_carpet_polar*1"}
+     {:id 171,
+      :furni-id 415,
+      :catalog_page_id 24,
+      :cost 4,
+      :purchase-code "purchase_bed_polyfon_girl_one"}
+     {:id 172,
+      :furni-id 416,
+      :catalog_page_id 24,
+      :cost 3,
+      :purchase-code "purchase_bed_polyfon_girl"}]}
+   {:description " ",
+    :visible-name "Lodge",
+    :layout "ctlg_layout2",
+    :name "cat_lodge",
+    :staff_only 0,
+    :label
+    "Introducing the Lodge Collection...  Do you appreciate the beauty of wood?  For that ski lodge effect, or to match that open fire... Lodge is the Furni of choice for Habbos with that no frills approach to decorating. ",
+    :id 25,
+    :order 7,
+    :image "catalog_lodge_headline1",
+    :side-image "catalog_lodge_teaser1",
+    :items
+    [{:id 173,
+      :furni-id 397,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_bed_armas_two"}
+     {:id 174,
+      :furni-id 398,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_bed_armas_one"}
+     {:id 175,
+      :furni-id 399,
+      :catalog_page_id 25,
+      :cost 4,
+      :purchase-code "purchase_fireplace_armas"}
+     {:id 176,
+      :furni-id 400,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_bartable_armas"}
+     {:id 177,
+      :furni-id 401,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_table_armas"}
+     {:id 178,
+      :furni-id 402,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_bench_armas"}
+     {:id 179,
+      :furni-id 403,
+      :catalog_page_id 25,
+      :cost 6,
+      :purchase-code "purchase_divider_arm3"}
+     {:id 180,
+      :furni-id 404,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_divider_arm1"}
+     {:id 181,
+      :furni-id 405,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_divider_arm2"}
+     {:id 182,
+      :furni-id 406,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_shelves_armas"}
+     {:id 183,
+      :furni-id 407,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_bar_armas"}
+     {:id 184,
+      :furni-id 408,
+      :catalog_page_id 25,
+      :cost 1,
+      :purchase-code "purchase_bar_chair_armas"}
+     {:id 185,
+      :furni-id 409,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_lamp_armas"}
+     {:id 186,
+      :furni-id 410,
+      :catalog_page_id 25,
+      :cost 3,
+      :purchase-code "purchase_lamp2_armas"}
+     {:id 187,
+      :furni-id 411,
+      :catalog_page_id 25,
+      :cost 2,
+      :purchase-code "purchase_small_table_armas"}
+     {:id 188,
+      :furni-id 412,
+      :catalog_page_id 25,
+      :cost 1,
+      :purchase-code "purchase_small_chair_armas"}]}
+   {:description " I love my rabbit...",
+    :visible-name "Accessories",
+    :layout "ctlg_layout2",
+    :name "cat_Accessories",
+    :staff_only 0,
+    :label
+    "Is your room missing something?  Well, now you can add the finishing touches that express your true personality. And don't forget, like everything else, these accessories can be moved about to suit your mood.",
+    :id 26,
+    :order 11,
+    :image "catalog_extra_headline1",
+    :side-image "catalog_extra_teaser1,",
+    :items
+    [{:id 189,
+      :furni-id 368,
+      :catalog_page_id 26,
+      :cost 3,
+      :purchase-code "purchase_bunny"}
+     {:id 190,
+      :furni-id 374,
+      :catalog_page_id 26,
+      :cost 6,
+      :purchase-code "purchase_deluxtv"}
+     {:id 191,
+      :furni-id 375,
+      :catalog_page_id 26,
+      :cost 4,
+      :purchase-code "purchase_woodtv"}
+     {:id 195,
+      :furni-id 298,
+      :catalog_page_id 26,
+      :cost 3,
+      :purchase-code "A2 tlp 20"}
+     {:id 196,
+      :furni-id 369,
+      :catalog_page_id 26,
+      :cost 3,
+      :purchase-code "purchase_red_tv"}
+     {:id 220,
+      :furni-id 479,
+      :catalog_page_id 26,
+      :cost 3,
+      :purchase-code "purchase_bottle"}
+     {:id 237,
+      :furni-id 293,
+      :catalog_page_id 26,
+      :cost 6,
+      :purchase-code "purchase_edice"}
+     {:id 279,
+      :furni-id 532,
+      :catalog_page_id 26,
+      :cost 1,
+      :purchase-code "purchase_duck"}],
+    :additional ["s:2: I love my rabbit..."]}
+   {:description
+    "Beam your Habbo from one room to another with one of our cunningly disguised, space age teleports. Now you can link any two rooms together! Teleports are sold in pairs, so if you trade for them, check you're getting a linked pair.",
+    :visible-name "Teleports",
+    :layout "ctlg_layout2",
+    :name "cat_Teles",
+    :staff_only 0,
+    :label "Select an item by clicking one of the icons on the left.",
+    :id 27,
+    :order 12,
+    :image "catalog_doors_headline1",
+    :side-image
+    "catalog_teleports_teaser2,catalog_door_c,catalog_door_b,",
+    :items
+    [{:id 192,
+      :furni-id 370,
+      :catalog_page_id 27,
+      :cost 3,
+      :purchase-code "special_teleporter_doorb"}
+     {:id 193,
+      :furni-id 371,
+      :catalog_page_id 27,
+      :cost 4,
+      :purchase-code "special_teleporter_doorc"}
+     {:id 194,
+      :furni-id 294,
+      :catalog_page_id 27,
+      :cost 5,
+      :purchase-code "special_teleporter_door"}],
+    :additional ["s:New Door Teleport!"]}
+   {:description "You can fit 35 Rollers in a Guest Room!",
+    :visible-name "Rollers",
+    :layout "ctlg_layout2",
+    :name "cat_rollers",
+    :staff_only 0,
+    :label "Click on a Roller to see more information!",
+    :id 28,
+    :order 13,
+    :image "catalog_roller_headline1",
+    :items
+    [{:id 146,
+      :furni-id 292,
+      :catalog_page_id 28,
+      :cost 5,
+      :purchase-code "purchase_roller_aqua"}]}
+   {:description "The Shiny Rares!",
+    :visible-name "Rares",
+    :layout "ctlg_layout2",
+    :name "cat_playerrares",
+    :staff_only 0,
+    :label "The Shiny Rares!",
+    :id 29,
+    :order 2,
+    :image "catalog_rares_headline1",
+    :side-image "catalog_hc_teaser",
+    :items
+    [{:id 144,
+      :furni-id 282,
+      :catalog_page_id 29,
+      :cost 25,
+      :purchase-code "purchase_spyro"}
+     {:id 203,
+      :furni-id 463,
+      :catalog_page_id 29,
+      :cost 25,
+      :purchase-code "purchase_typingmachine"}
+     {:id 204,
+      :furni-id 295,
+      :catalog_page_id 29,
+      :cost 25,
+      :purchase-code "purchase_throne"}
+     {:id 222,
+      :furni-id 426,
+      :catalog_page_id 29,
+      :cost 25,
+      :purchase-code "purchase_hologram"}
+     {:id 223,
+      :furni-id 428,
+      :catalog_page_id 29,
+      :cost 25,
+      :purchase-code "purchase_redhologram"}
+     {:id 239,
+      :furni-id 484,
+      :catalog_page_id 29,
+      :cost 25,
+      :purchase-code "purchase_petalpatch"}
+     {:id 243,
+      :furni-id 505,
+      :catalog_page_id 29,
+      :cost 25,
+      :purchase-code "purchase_mocchamaster"}
+     {:id 249,
+      :furni-id 535,
+      :catalog_page_id 29,
+      :cost 25,
+      :purchase-code "purchase_hc_chr"}
+     {:id 255,
+      :furni-id 513,
+      :catalog_page_id 29,
+      :cost 25,
+      :purchase-code "purchase_club_sofa"}
+     {:id 275,
+      :furni-id 528,
+      :catalog_page_id 29,
+      :cost 10,
+      :purchase-code "purchase_heartsofa"}]}
+   {:description
+    "We have rugs for all occasions.  All rugs are non-slip and washable.",
+    :visible-name "Rugs",
+    :layout "ctlg_layout2",
+    :name "cat_Rugs",
+    :staff_only 0,
+    :label "Click on the item you want for more information.",
+    :id 30,
+    :order 14,
+    :image "catalog_rugs_headline1",
+    :side-image "catalog_rugs_teaser1,",
+    :items
+    [{:id 197,
+      :furni-id 420,
+      :catalog_page_id 30,
+      :cost 1,
+      :purchase-code "purchase_doormat1"}
+     {:id 210,
+      :furni-id 468,
+      :catalog_page_id 30,
+      :cost 3,
+      :purchase-code "purchase_rug_standard7"}
+     {:id 215,
+      :furni-id 474,
+      :catalog_page_id 30,
+      :cost 3,
+      :purchase-code "purchase_rug_standard1"}
+     {:id 216,
+      :furni-id 475,
+      :catalog_page_id 30,
+      :cost 3,
+      :purchase-code "purchase_rug_standard6"}
+     {:id 217,
+      :furni-id 476,
+      :catalog_page_id 30,
+      :cost 3,
+      :purchase-code "purchase_carpet_soft"}
+     {:id 218,
+      :furni-id 477,
+      :catalog_page_id 30,
+      :cost 3,
+      :purchase-code "purchase_carpet_soft3"}
+     {:id 219,
+      :furni-id 478,
+      :catalog_page_id 30,
+      :cost 3,
+      :purchase-code "purchase_carpet_soft4"}],
+    :additional ["s:2: Rugs, rugs and more rugs!"]}
+   {:description
+    "Reward your Habbo friends, or yourself with one of our fabulous glittering array of bronze, silver and gold trophies.<br><br>First choose the trophy model (click on the arrows to see all the different styles) and then the metal (click on the seal below th",
+    :visible-name "Trophys",
+    :layout "ctlg_trophies",
+    :name "cat_trophys",
+    :staff_only 1,
+    :label " ",
+    :id 31,
+    :order 998,
+    :image "catalog_trophies_headline1",
+    :items [],
+    :additional ["t1:Type your inscription CAREFULLY, it's permanent!"]}
+   {:description
+    "Introducing the Plant Collection...  Every room needs a plant! Not only do they bring a bit of the outside inside, they also enhance the air quality!",
+    :visible-name "Plants",
+    :layout "ctlg_layout2",
+    :name "cat_plants",
+    :staff_only 0,
+    :label "Click on the item you want for more information.",
+    :id 32,
+    :order 15,
+    :image "catalog_plants_headline1",
+    :side-image "catalog_plants_teaser1",
+    :items
+    [{:id 205,
+      :furni-id 464,
+      :catalog_page_id 32,
+      :cost 4,
+      :purchase-code "purchase_giftflowers"}
+     {:id 206,
+      :furni-id 465,
+      :catalog_page_id 32,
+      :cost 3,
+      :purchase-code "purchase_plant_fruittree"}
+     {:id 207,
+      :furni-id 466,
+      :catalog_page_id 32,
+      :cost 3,
+      :purchase-code "purchase_plant_big_cactus"}
+     {:id 208,
+      :furni-id 467,
+      :catalog_page_id 32,
+      :cost 3,
+      :purchase-code "purchase_plant_bonsai"}
+     {:id 209,
+      :furni-id 469,
+      :catalog_page_id 32,
+      :cost 3,
+      :purchase-code "purchase_plant_pineapple"}
+     {:id 211,
+      :furni-id 470,
+      :catalog_page_id 32,
+      :cost 3,
+      :purchase-code "purchase_plant_yukka"}
+     {:id 212,
+      :furni-id 471,
+      :catalog_page_id 32,
+      :cost 3,
+      :purchase-code "purchase_plant_sunflower"}
+     {:id 213,
+      :furni-id 472,
+      :catalog_page_id 32,
+      :cost 3,
+      :purchase-code "purchase_plant_rose"}
+     {:id 214,
+      :furni-id 473,
+      :catalog_page_id 32,
+      :cost 3,
+      :purchase-code "purchase_plant_small_cactus"}],
+    :additional ["s:2: Be at one with trees!"]}
+   {:description "Staff Rares Page",
+    :visible-name "Staff Hidden",
+    :layout "ctlg_layout2",
+    :name "cat_staffrares",
+    :staff_only 1,
+    :label "Staff Rares",
+    :id 33,
+    :order 999,
+    :image "catalog_rares_headline1",
+    :side-image "catalog_hc_teaser",
+    :items
+    [{:id 200,
+      :furni-id 297,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_prize2"}
+     {:id 201,
+      :furni-id 461,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_prize1"}
+     {:id 202,
+      :furni-id 462,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_prize3"}
+     {:id 240,
+      :furni-id 522,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_carpet_polar*3"}
+     {:id 241,
+      :furni-id 503,
+      :catalog_page_id 33,
+      :cost 15,
+      :purchase-code "purchase_rare_beehive_bulb*1"}
+     {:id 242,
+      :furni-id 504,
+      :catalog_page_id 33,
+      :cost 15,
+      :purchase-code "purchase_hc_tbl"}
+     {:id 244,
+      :furni-id 506,
+      :catalog_page_id 33,
+      :cost 4,
+      :purchase-code "purchase_menorah"}
+     {:id 245,
+      :furni-id 507,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_samovar"}
+     {:id 246,
+      :furni-id 509,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_rare_stand"}
+     {:id 247,
+      :furni-id 510,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_hcamme"}
+     {:id 248,
+      :furni-id 534,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "hc_dsk"}
+     {:id 250,
+      :furni-id 537,
+      :catalog_page_id 33,
+      :cost 8,
+      :purchase-code "purchase_edicehc"}
+     {:id 251,
+      :furni-id 539,
+      :catalog_page_id 33,
+      :cost 5,
+      :purchase-code "special_teleporter_doorD"}
+     {:id 252,
+      :furni-id 541,
+      :catalog_page_id 33,
+      :cost 20,
+      :purchase-code "purchase_poster"}
+     {:id 253,
+      :furni-id 511,
+      :catalog_page_id 33,
+      :cost 5,
+      :purchase-code "purchase_rare_parasol*3"}
+     {:id 254,
+      :furni-id 512,
+      :catalog_page_id 33,
+      :cost 5,
+      :purchase-code "purchase_rare_fountain*2"}
+     {:id 256,
+      :furni-id 515,
+      :catalog_page_id 33,
+      :cost 5,
+      :purchase-code "purchase_hc_lmp"}
+     {:id 257,
+      :furni-id 535,
+      :catalog_page_id 33,
+      :cost 4,
+      :purchase-code "purchase_hc_chr"}
+     {:id 258,
+      :furni-id 536,
+      :catalog_page_id 33,
+      :cost 5,
+      :purchase-code "purchase_skullcandle"}
+     {:id 259,
+      :furni-id 537,
+      :catalog_page_id 33,
+      :cost 6,
+      :purchase-code "purchase_edicehc"}
+     {:id 260,
+      :furni-id 542,
+      :catalog_page_id 33,
+      :cost 2,
+      :purchase-code "purchase_rare_elephant_statue*1"}
+     {:id 261,
+      :furni-id 543,
+      :catalog_page_id 33,
+      :cost 2,
+      :purchase-code "purchase_rare_elephant_statue*2"}
+     {:id 262,
+      :furni-id 547,
+      :catalog_page_id 33,
+      :cost 4,
+      :purchase-code "purchase_rare_fountain*1"}
+     {:id 263,
+      :furni-id 549,
+      :catalog_page_id 33,
+      :cost 5,
+      :purchase-code "rare_fountain"}
+     {:id 264,
+      :furni-id 551,
+      :catalog_page_id 33,
+      :cost 12,
+      :purchase-code "purchase_poster"}
+     {:id 265,
+      :furni-id 555,
+      :catalog_page_id 33,
+      :cost 1,
+      :purchase-code "purchase_poster_29"}
+     {:id 266,
+      :furni-id 556,
+      :catalog_page_id 33,
+      :cost 1,
+      :purchase-code "purchase_poster_46"}
+     {:id 267,
+      :furni-id 557,
+      :catalog_page_id 33,
+      :cost 1,
+      :purchase-code "purchase_poster_48"}
+     {:id 268,
+      :furni-id 558,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_carpet_polar*2"}
+     {:id 269,
+      :furni-id 523,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_carpet_polar*4"}
+     {:id 270,
+      :furni-id 559,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_djesko_turntable"}
+     {:id 276,
+      :furni-id 529,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_valentinescreen"}
+     {:id 277,
+      :furni-id 530,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_joulutahti"}
+     {:id 278,
+      :furni-id 531,
+      :catalog_page_id 33,
+      :cost 10,
+      :purchase-code "purchase_plant_cruddy"}
+     {:id 280,
+      :furni-id 533,
+      :catalog_page_id 33,
+      :cost 5,
+      :purchase-code "purchase_statue"}
+     {:id 281,
+      :furni-id 560,
+      :catalog_page_id 33,
+      :cost 5,
+      :purchase-code "purchase_poster_47"}
+     {:id 282,
+      :furni-id 561,
+      :catalog_page_id 33,
+      :cost 5,
+      :purchase-code "purchase_poster_49"}]}
+   {:description
+    "Introducing the Pura Collection...  This collection breathes fresh, clean air and cool tranquility.",
+    :visible-name "Pura",
+    :layout "ctlg_layout2",
+    :name "cat_pura",
+    :staff_only 0,
+    :label " ",
+    :id 34,
+    :order 9,
+    :image "catalog_pura_headline1",
+    :items
+    [{:id 271,
+      :furni-id 524,
+      :catalog_page_id 34,
+      :cost 3,
+      :purchase-code "purchase_shelves_basic"}
+     {:id 272,
+      :furni-id 525,
+      :catalog_page_id 34,
+      :cost 4,
+      :purchase-code "purchase_bar_basic"}
+     {:id 273,
+      :furni-id 526,
+      :catalog_page_id 34,
+      :cost 6,
+      :purchase-code "purchase_fridge"}
+     {:id 274,
+      :furni-id 527,
+      :catalog_page_id 34,
+      :cost 3,
+      :purchase-code "purchase_lamp_basic"}]}])
+
+(defn catalog-pages-with-furni []
+  (let [furni-map (into {}
+                        (map (fn [f] [(:id f) f]) furni))]
+    (into {}
+          (map (fn [page] [(:name page) page])
+               (map (fn [page]
+                      (assoc page
+                        :items
+                        (map (fn [item]
+                               (assoc item :furni (furni-map (:furni-id item))))
+                             (:items page))))
+                    catalog-pages)))))
