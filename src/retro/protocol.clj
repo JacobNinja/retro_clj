@@ -18,8 +18,10 @@
 (defn- packet-header [raw-packet]
   (encoding/decode-b64 (take packet-header-size raw-packet)))
 
-(defn split [body]
-  (clojure.string/split body #" "))
+(defn split
+  ([body] (split body #" "))
+  ([body delimiter]
+   (clojure.string/split body delimiter)))
 
 (defn packet-body [body]
   (map clojure.string/join

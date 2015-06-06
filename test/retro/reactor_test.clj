@@ -318,3 +318,9 @@
              {:id 123 :x 1 :y 2 :sprite test-sprite}))
       (is (= (:db/id (:floor-item/room (d/entity (d/db @conn) floor-item-id)))
              room-id)))))
+
+(deftest catalog-page-info-test
+  (testing "page info"
+    (let [page (map->CatalogPage {:name "cat_mode"})]
+      (is (= (catalog-page-info "production/foo/en" {:pages {"foo" page}})
+             {:page page})))))

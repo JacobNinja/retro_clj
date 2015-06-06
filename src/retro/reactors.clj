@@ -84,3 +84,7 @@
   (let [[id x y] (map #(Integer/parseInt %) (protocol/split packet))]
     {:place (with-sprite sprites
               (db/place-floor-item conn id x y (:room @user)))}))
+
+(defn catalog-page-info [packet {:keys [pages]}]
+  (let [[_ page _] (protocol/split packet #"\/")]
+    {:page (pages page)}))
