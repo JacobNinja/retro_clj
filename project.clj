@@ -6,5 +6,5 @@
   :dependencies [[org.clojure/clojure "1.7.0-RC1"]
                  [com.datomic/datomic-free "0.9.5173" :exclusions [joda-time]]
                  [aleph "0.3.4-SNAPSHOT"]]
-  :aot [aleph.tcp lamina.core gloss.core]
+  :aot [aleph.tcp lamina.core gloss.core retro.fixtures retro.encoding]
   :main retro.core)
