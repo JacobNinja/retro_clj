@@ -39,7 +39,9 @@
    headers/pick-up [reactors/pick-up handlers/pick-up]
    headers/hand [reactors/hand handlers/hand]
    headers/place-stuff [reactors/place-stuff handlers/place-stuff]
-   headers/catalog-pages [reactors/default handlers/catalog-pages]})
+   headers/catalog-pages [reactors/default handlers/catalog-pages]
+   headers/catalog-page-info [reactors/catalog-page-info handlers/catalog-page-info]
+   })
 
 (defn- escape [{:keys [body] :as packet}]
   (assoc packet :body (clojure.string/escape (str body)
@@ -184,6 +186,6 @@
         (tcp/start-tcp-server (partial client-handler {:room-models room-models
                                                        :room-states (atom {})
                                                        :sprites test-sprites
-                                                       :pages fixtures/catalog-pages
+                                                       :pages (fixtures/catalog-pages-with-furni)
                                                        :conn conn})
                               {:port 1234 :decoder frame})))))
