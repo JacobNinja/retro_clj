@@ -518,3 +518,9 @@
                         "0,0,0" ; col
                         \return
                         )}]))))
+
+(deftest catalog-purchase-test
+  (testing "success"
+    (is (= (catalog-purchase {})
+           [{:header 67
+             :body ""}]))))

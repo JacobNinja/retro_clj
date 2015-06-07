@@ -19,6 +19,7 @@
 (def room-decoration 46)
 (def room-info 54)
 (def goto-flat 59)
+(def catalog-purchase 67)
 (def room-model 69)
 (def place-stuff 93)
 (def pick-up 94)

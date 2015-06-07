@@ -420,3 +420,7 @@
                    (apply str (interleave additional (repeat \return))))
                  (catalog-page-items items)
                  )}]))
+
+(defn catalog-purchase [_]
+  [{:header headers/catalog-purchase
+    :body ""}])
