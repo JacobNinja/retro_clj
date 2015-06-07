@@ -454,14 +454,24 @@
                         )}]))))
 
 (deftest catalog-pages-test
-  (testing "list pages"
+  (testing "list pages in order"
     (is (= (catalog-pages {:pages {"Foo" (map->CatalogPage {:name "Foo"
-                                                            :visible-name "foo"})}})
+                                                            :order 10
+                                                            :visible-name "foo"})
+                                   "Bar" (map->CatalogPage {:name "Bar"
+                                                            :order 2
+                                                            :visible-name "bar"})}})
            [{:header 126
-             :body (str "Foo"
+             :body (str "Bar"
+                        (char 9)
+                        "bar"
+                        \return
+
+                        "Foo"
                         (char 9)
                         "foo"
-                        \return)}]))))
+                        \return
+                        )}]))))
 
 (deftest catalog-page-info-test
   (testing "floor items"

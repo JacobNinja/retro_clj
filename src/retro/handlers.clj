@@ -387,7 +387,7 @@
                                  (char 9)
                                  visible-name
                                  (char 13)))
-                          (vals pages)))}])
+                          (sort-by :order (vals pages))))}])
 
 (defn- catalog-page-items [items]
   (apply str (map (fn [{:keys [cost purchase-code furni]}]
