@@ -4,6 +4,7 @@
 (def room-directory 2)
 (def login 4)
 (def user-details 7)
+(def credits 8)
 (def room-info 21)
 (def club 26)
 (def pick-up 67)

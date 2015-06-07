@@ -41,6 +41,7 @@
    headers/place-stuff [reactors/place-stuff handlers/place-stuff]
    headers/catalog-pages [reactors/default handlers/catalog-pages]
    headers/catalog-page-info [reactors/catalog-page-info handlers/catalog-page-info]
+   headers/credits [reactors/default handlers/credits]
    })
 
 (defn- escape [{:keys [body] :as packet}]
@@ -140,6 +141,7 @@
                    :user/password "123"
                    :user/mission "something"
                    :user/figure "8000119001280152950125516"
+                   :user/credits 100
                    :user/sex "M"}
                   {:db/id user-room-id
                    :room/id 1

@@ -41,6 +41,12 @@
     :db/cardinality :db.cardinality/one
     :db/doc "User sex"
     :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :user/credits
+    :db/valueType :db.type/long
+    :db/cardinality :db.cardinality/one
+    :db/doc "User credits"
+    :db.install/_attribute :db.part/db}
 
    ; Category
    {:db/id #db/id[:db.part/db]
@@ -203,6 +209,7 @@
               :figure (:user/figure user-attrs)
               :sex (:user/sex user-attrs)
               :mission (:user/mission user-attrs)
+              :credits (:user/credits user-attrs)
               :tickets 0
               :film 0
               :mail 0}))

@@ -17,6 +17,7 @@
 (use-fixtures :each database-fixture)
 
 (def test-user (map->User {:username "test"
+                           :credits 1
                            :film 0
                            :mail 0
                            :tickets 0}))
@@ -37,12 +38,17 @@
 
 (def test-sprite {:width 5 :length 6 :col "0,0,0" :sprite "foo"})
 
+(defn- test-user-tx [tempid]
+  {:db/id tempid
+   :user/username (:username test-user)
+   :user/credits (:credits test-user)
+   :user/password "123"})
+
 (defn test-room-tx
   ([] (test-room-tx (d/tempid :db.part/user)))
   ([room-id]
    (let [owner-id (d/tempid :db.part/user)]
-     [{:db/id owner-id
-       :user/username "test"}
+     [(test-user-tx owner-id)
       {:db/id room-id
        :room/id (:id test-room)
        :room/name (:name test-room)
@@ -54,9 +60,7 @@
 
 (deftest login-test
   (testing "login"
-    (let [db (:db-after (d/with base-db [{:db/id (d/tempid :db.part/user)
-                                          :user/username (:username test-user)
-                                          :user/password "123"}]))]
+    (let [db (:db-after (d/with base-db [(test-user-tx (d/tempid :db.part/user))]))]
       (let [result (login "@Dtest@C123" {:db db})]
         (is (= @(:user result)
                test-user)))
@@ -99,8 +103,7 @@
                                :category/id 2
                                :category/type 0
                                :category/name "Subcategory name"}
-                              {:db/id owner-id
-                               :user/username (:username test-user)}
+                              (test-user-tx owner-id)
                               {:db/id (d/tempid :db.part/user)
                                :room/name "Room name"
                                :room/description "description"
