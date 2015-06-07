@@ -214,6 +214,15 @@
                                        :floor-item/sprite "foo"
                                        :floor-item/room room-id}
                                       {:db/id (d/tempid :db.part/user)
+                                       :floor-item/id 2
+                                       :floor-item/x 5
+                                       :floor-item/y 6
+                                       :floor-item/z 1
+                                       :floor-item/rotation 2
+                                       :floor-item/var "sign"
+                                       :floor-item/sprite "bar"
+                                       :floor-item/room room-id}
+                                      {:db/id (d/tempid :db.part/user)
                                        :floor-item/sprite "bar"}]))]
       (is (= (objects "" {:db (:db-after db)
                           :user (atom {:room 1})
@@ -226,7 +235,16 @@
                                              :column "0,0,0"
                                              :var "-"
                                              :teleport-id 456
-                                             :sprite "foo"})]})))))
+                                             :sprite "foo"})
+                            (map->FloorItem {:id 2
+                                             :x 5
+                                             :y 6
+                                             :z 1
+                                             :rotation 2
+                                             :column "0,0,0"
+                                             :var "-"
+                                             :teleport-id 456
+                                             :sprite "bar"})]})))))
 
 (deftest move-object-test
   (testing "move object to x y"
