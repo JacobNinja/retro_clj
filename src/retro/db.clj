@@ -207,12 +207,6 @@
     :db/cardinality :db.cardinality/one
     :db/doc "sprite"
     :db.install/_attribute :db.part/db}
-   {:db/id #db/id[:db.part/db]
-    :db/ident :floor-item/owner
-    :db/valueType :db.type/ref
-    :db/cardinality :db.cardinality/one
-    :db/doc "owner"
-    :db.install/_attribute :db.part/db}
    ])
 
 (defn ensure-schema [conn]
@@ -395,7 +389,7 @@
   (let [hand-objects (map first (d/q '[:find ?objects
                                        :in $ ?username
                                        :where [?user :user/username ?username]
-                                              [?objects :floor-item/owner ?user]
+                                              [?user :user/items ?objects]
                                               (not [?objects :floor-item/room])]
                                      db
                                      username))]

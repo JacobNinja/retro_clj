@@ -42,6 +42,7 @@
    headers/catalog-pages [reactors/default handlers/catalog-pages]
    headers/catalog-page-info [reactors/catalog-page-info handlers/catalog-page-info]
    headers/credits [reactors/default handlers/credits]
+   headers/catalog-purchase [reactors/catalog-purchase handlers/catalog-purchase]
    })
 
 (defn- escape [{:keys [body] :as packet}]
