@@ -88,3 +88,11 @@
 (defn catalog-page-info [packet {:keys [pages]}]
   (let [[_ page _] (protocol/split packet #"\/")]
     {:page (pages page)}))
+
+(defn catalog-purchase [packet {:keys [conn user pages]}]
+  (let [[_ category _ purchase-code _] (protocol/split packet #"\r")
+        sprite (get-in (first (filter #(= (:purchase-code %) purchase-code)
+                                      (:items (pages category))))
+                       [:furni :sprite])]
+    (db/purchase conn sprite @user)
+    nil))

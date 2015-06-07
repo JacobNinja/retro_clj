@@ -13,6 +13,7 @@
     :db.install/_attribute :db.part/db}
    {:db/id #db/id[:db.part/db]
     :db/ident :user/username
+    :db/unique :db.unique/identity
     :db/valueType :db.type/string
     :db/cardinality :db.cardinality/one
     :db/doc "User name"
@@ -46,6 +47,12 @@
     :db/valueType :db.type/long
     :db/cardinality :db.cardinality/one
     :db/doc "User credits"
+    :db.install/_attribute :db.part/db}
+   {:db/id #db/id[:db.part/db]
+    :db/ident :user/items
+    :db/valueType :db.type/ref
+    :db/cardinality :db.cardinality/many
+    :db/doc "User items"
     :db.install/_attribute :db.part/db}
 
    ; Category
@@ -394,3 +401,15 @@
                           :floor-item/y y
                           :floor-item/room room}])]
     (db->FloorItem (d/entity (:db-after tx) floor-item))))
+
+(defn purchase [conn sprite owner]
+  (let [item-id (d/tempid :db.part/user)
+        item-max-id (ffirst (d/q '[:find (max ?id)
+                                   :where [_ :floor-item/id ?id]]
+                                 (d/db conn)))]
+    @(d/transact conn
+                 [{:db/id item-id
+                   :floor-item/id (inc item-max-id)
+                   :floor-item/sprite sprite}
+                  [:db/add [:user/username (:username owner)]
+                   :user/items item-id]])))

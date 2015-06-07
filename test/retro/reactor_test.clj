@@ -327,3 +327,32 @@
     (let [page (map->CatalogPage {:name "cat_mode"})]
       (is (= (catalog-page-info "production/foo/en" {:pages {"foo" page}})
              {:page page})))))
+
+(deftest catalog-purchase-test
+  (testing "purchase item"
+    (let [user-id (d/tempid :db.part/user)
+          tx @(d/transact @conn [(test-user-tx user-id)
+                                 {:db/id (d/tempid :db.part/user)
+                                  :floor-item/id 1}])
+          result (catalog-purchase (str "production" \return
+                                        "category" \return
+                                        "en" \return
+                                        "purchase_foo" \return
+                                        "-" \return
+                                        "0" \return
+                                        \return \return)
+                                   {:conn @conn
+                                    :user (atom test-user)
+                                    :pages {"category" (map->CatalogPage {:items [{:purchase-code "purchase_foo"
+                                                                                   :furni {:sprite "foo"}}]})}})]
+      (is (nil? result))
+      (let [items (:user/items (d/entity (d/db @conn)
+                                         (d/resolve-tempid (:db-after tx)
+                                                           (:tempids tx)
+                                                           user-id)))
+            entity (d/entity (d/db @conn)
+                             (:db/id (first items)))]
+        (is (= (:floor-item/sprite entity)
+               "foo"))
+        (is (= (:floor-item/id entity)
+               2))))))
