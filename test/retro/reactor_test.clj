@@ -277,18 +277,20 @@
           owner (d/tempid :db.part/user)
           floor-item (d/tempid :db.part/user)
           floor-item-in-room (d/tempid :db.part/user)
+          floor-item-no-owner (d/tempid :db.part/user)
           db (:db-after (d/with base-db [{:db/id owner
-                                          :user/username "foo"}
+                                          :user/username "foo"
+                                          :user/items [floor-item floor-item-in-room]}
                                          {:db/id room
-                                          :room/id 1
-                                          :room/owner owner}
+                                          :room/id 1}
                                          {:db/id floor-item
-                                          :floor-item/id 1
-                                          :floor-item/owner owner}
+                                          :floor-item/id 1}
+                                         {:db/id floor-item-no-owner
+                                          :floor-item/id 3}
                                          {:db/id floor-item-in-room
                                           :floor-item/id 2
-                                          :floor-item/owner owner
-                                          :floor-item/room room}]))
+                                          :floor-item/room room}
+                                         ]))
           result (hand "" {:user (atom (map->User {:username "foo"}))
                            :db db
                            :sprites {}})]
@@ -303,11 +305,11 @@
           floor-item-id (d/tempid :db.part/user)
           room-id (d/tempid :db.part/user)
           tx @(d/transact @conn [{:db/id user-id
-                                 :user/username (:username test-user)}
+                                 :user/username (:username test-user)
+                                 :user/items floor-item-id}
                                 {:db/id room-id
                                  :room/id 1}
                                 {:db/id floor-item-id
-                                 :floor-item/owner user-id
                                  :floor-item/sprite (:sprite test-sprite)
                                  :floor-item/id 123}])
           floor-item-id (d/resolve-tempid (d/db @conn) (:tempids tx) floor-item-id)

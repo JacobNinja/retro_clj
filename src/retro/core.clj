@@ -107,16 +107,16 @@
               :max_descend 4.0}})
 
 (def test-sprites
-  {"md_limukaappi" {:sprite "md_limukaappi",
-                    :flags "M", :width 1, :length 1, :height 0.0, :col "0,0,0",
-                    :var_type 4, :action_height 0.0, :can_trade 1, :public 0, :hand-type "S"}})
+  (into {}
+        (map (fn [furni] [(:sprite furni) furni]) fixtures/furni)))
 
 (defn seed [conn]
   (let [public-category (d/tempid :db.part/user)
         private-category (d/tempid :db.part/user)
         chill-category (d/tempid :db.part/user)
         user (d/tempid :db.part/user)
-        user-room-id (d/tempid :db.part/user)]
+        user-room-id (d/tempid :db.part/user)
+        mtn-dew (d/tempid :db.part/user)]
     @(d/transact conn
                  [{:db/id public-category
                    :category/id 3 :category/type 0 :category/name "Public Category"}
@@ -142,7 +142,8 @@
                    :user/mission "something"
                    :user/figure "8000119001280152950125516"
                    :user/credits 100
-                   :user/sex "M"}
+                   :user/sex "M"
+                   :user/items mtn-dew}
                   {:db/id user-room-id
                    :room/id 1
                    :room/name "Test room"
@@ -150,14 +151,13 @@
                    :room/category chill-category
                    :room/owner user
                    :room/model "model_a"}
-                  {:db/id (d/tempid :db.part/user)
+                  {:db/id mtn-dew
                    :floor-item/id 123
                    :floor-item/x 8
                    :floor-item/y 8
                    :floor-item/z 0
                    :floor-item/rotation 2
                    :floor-item/room user-room-id
-                   :floor-item/owner user
                    :floor-item/sprite "md_limukaappi"}])))
 
 (defn replay [conn]
