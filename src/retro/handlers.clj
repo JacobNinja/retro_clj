@@ -292,19 +292,20 @@
   [(user-movement @user)])
 
 (defn move-to [{:keys [user path]}]
-  (let [path (map #(assoc % :z (:z @user)) path)
-        movement (map (fn [[a b]]
-                        (user-movement (merge @user
-                                              a
-                                              {:body (:body b)
-                                               :head (:head b)
-                                               :states (list (user-state-move b))})))
-                      (partition 2 1 (cons @user path)))
-        last-movement (merge @user (last path))]
-    (cons (first movement)
-          (map #(assoc % :delay 500)
-               (concat (rest movement)
-                       (list (assoc (user-movement last-movement) :thunk (fn [] (swap! user merge last-movement)))))))))
+  (when path
+    (let [path (map #(assoc % :z (:z @user)) path)
+          movement (map (fn [[a b]]
+                          (user-movement (merge @user
+                                                a
+                                                {:body (:body b)
+                                                 :head (:head b)
+                                                 :states (list (user-state-move b))})))
+                        (partition 2 1 (cons @user path)))
+          last-movement (merge @user (last path))]
+      (cons (first movement)
+            (map #(assoc % :delay 500)
+                 (concat (rest movement)
+                         (list (assoc (user-movement last-movement) :thunk (fn [] (swap! user merge last-movement))))))))))
 
 (defn move-object [{:keys [move-object sprites room] :as env}]
   (let [sprite (sprites (:sprite move-object))]

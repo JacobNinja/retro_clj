@@ -47,7 +47,8 @@
 (defn find-path
   ([start end] (find-path start end []))
   ([[x y] [end-x end-y] obstacles]
-   (let [end-point {:x end-x :y end-y}]
-     (rest (take-through #(or (= end-point (select-keys % [:x :y])) (empty? %))
-                         (iterate (partial find-segment end-point obstacles)
-                                  {:x x :y y}))))))
+   (when-not (some (fn [obstacle] (= (select-keys obstacle [:x :y]) {:x end-x :y end-y})) obstacles)
+     (let [end-point {:x end-x :y end-y}]
+       (rest (take-through #(or (= end-point (select-keys % [:x :y])) (empty? %))
+                           (iterate (partial find-segment end-point obstacles)
+                                    {:x x :y y})))))))

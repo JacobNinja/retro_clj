@@ -25,4 +25,8 @@
 
   (testing "path with object"
     (is (= (find-path [1 1] [3 3] [{:x 2 :y 2}])
-           [{:x 1 :y 2 :body 4 :head 4} {:x 2 :y 3 :body 3 :head 3} {:x 3 :y 3 :body 2 :head 2}]))))
+           [{:x 1 :y 2 :body 4 :head 4} {:x 2 :y 3 :body 3 :head 3} {:x 3 :y 3 :body 2 :head 2}])))
+
+  (testing "path with object on it"
+    (is (nil? (find-path [1 1] [3 3] [{:x 3 :y 3}]))))
+  )
