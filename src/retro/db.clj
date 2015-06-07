@@ -4,6 +4,20 @@
 
 (def schema
   [
+   ; Transaction functions
+   {:db/id #db/id[:db.part/db]
+    :db/ident :increment
+    :db/fn (d/function
+            {:lang "clojure"
+             :params '[db attr id]
+             :code '(let [max-id (ffirst (d/q '[:find (max ?id)
+                                                :in $ ?attr
+                                                :where [_ ?attr ?id]]
+                                              db
+                                              attr))]
+                      [{:db/id id
+                        attr (inc max-id)}])})}
+
    ; User
    {:db/id #db/id[:db.part/db]
     :db/ident :tx/user
@@ -403,13 +417,10 @@
     (db->FloorItem (d/entity (:db-after tx) floor-item))))
 
 (defn purchase [conn sprite owner]
-  (let [item-id (d/tempid :db.part/user)
-        item-max-id (ffirst (d/q '[:find (max ?id)
-                                   :where [_ :floor-item/id ?id]]
-                                 (d/db conn)))]
+  (let [item-id (d/tempid :db.part/user)]
     @(d/transact conn
                  [{:db/id item-id
-                   :floor-item/id (inc item-max-id)
                    :floor-item/sprite sprite}
+                  [:increment :floor-item/id item-id]
                   [:db/add [:user/username (:username owner)]
                    :user/items item-id]])))
