@@ -319,8 +319,8 @@
                                                :sprites {"foo" test-sprite}
                                                :user (atom (assoc test-user :room 1))})]
       (is (= (select-keys (:place result)
-                          [:id :x :y :sprite])
-             {:id 123 :x 1 :y 2 :sprite test-sprite}))
+                          [:id :x :y :sprite :rotation])
+             {:id 123 :x 1 :y 2 :sprite test-sprite :rotation 5}))
       (is (= (:db/id (:floor-item/room (d/entity (d/db @conn) floor-item-id)))
              room-id)))))
 

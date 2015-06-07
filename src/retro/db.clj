@@ -395,7 +395,7 @@
                                      username))]
     (map db->FloorItem (map (partial d/entity db) hand-objects))))
 
-(defn place-floor-item [conn id x y room-id]
+(defn place-floor-item [conn id x y rotation room-id]
   (let [[floor-item room] (first (d/q '[:find ?floor-item ?room
                                         :in $ ?floor-item-id ?room-id
                                         :where [?room :room/id ?room-id]
@@ -407,6 +407,7 @@
                         [{:db/id floor-item
                           :floor-item/x x
                           :floor-item/y y
+                          :floor-item/rotation rotation
                           :floor-item/room room}])]
     (db->FloorItem (d/entity (:db-after tx) floor-item))))
 

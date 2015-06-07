@@ -81,9 +81,9 @@
                  (db/fetch-hand-objects (:username @user) db))})
 
 (defn place-stuff [packet {:keys [conn user sprites]}]
-  (let [[id x y] (map #(Integer/parseInt %) (protocol/split packet))]
+  (let [[id x y _ _ rotation] (map #(Integer/parseInt %) (protocol/split packet))]
     {:place (with-sprite sprites
-              (db/place-floor-item conn id x y (:room @user)))}))
+              (db/place-floor-item conn id x y rotation (:room @user)))}))
 
 (defn catalog-page-info [packet {:keys [pages]}]
   (let [[_ page _] (protocol/split packet #"\/")]
