@@ -36,8 +36,9 @@
 (defn goto-flat [room-id {:keys [db room-states room-models user] :as env}]
   (let [room (room-with-model room-id db room-models)
         model (:model room)
-        user-loc (merge (select-keys model [:x :y :z])
-                        {:head 2 :body 2 :room (:id room) :states [(fn [] "/flatctrl")]})]
+        user-loc (update-in (merge (select-keys model [:x :y :z])
+                                   {:head 2 :body 2 :room (:id room)})
+                            [:states] assoc :rights (fn [] "/flatctrl"))]
     (swap! user merge user-loc)
     (swap! room-states update-in [(:id room) :users] assoc (:username @user) user)
     {:room room}))
@@ -96,3 +97,6 @@
                        [:furni :sprite])]
     (db/purchase conn sprite @user)
     nil))
+
+(defn wave [_ {:keys [user]}]
+  (swap! user update-in [:states] assoc :wave (fn [] "/wave")))

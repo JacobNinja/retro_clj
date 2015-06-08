@@ -376,3 +376,10 @@
                "foo"))
         (is (= (:floor-item/id entity)
                2))))))
+
+(deftest wave-test
+  (testing "adds wave state"
+    (let [user (atom {})]
+      (wave "" {:user user})
+      (is (= ((:wave (:states @user)))
+             "/wave")))))
