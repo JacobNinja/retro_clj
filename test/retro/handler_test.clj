@@ -524,3 +524,19 @@
     (is (= (catalog-purchase {})
            [{:header 67
              :body ""}]))))
+
+(deftest wave-test
+  (testing "wave state"
+    (let [user (atom {:x 0 :y 1 :z 2 :body 5 :head 6 :room 1 :states {:wave (fn [] "/wave")}})
+          result (wave {:user user})]
+      (is (= (first result)
+             {:header 34
+              :body (str "1 0,1,2,5,6/wave" \return)}))
+      (is (= (select-keys (second result)
+                          [:header :body :delay])
+             {:header 34
+              :body (str "1 0,1,2,5,6" \return)
+              :delay 2000}))
+      ; Remove wave status
+      ((:thunk (second result)))
+      (is (nil? (get-in @user [:states :wave]))))))

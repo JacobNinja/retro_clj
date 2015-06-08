@@ -266,7 +266,7 @@
    :body (str room ; room user id
               \space
               (join "," (list x y z body head)) ; user location
-              (join (map (fn [f] (f)) (or states [])))
+              (join (map (fn [[_ f]] (f)) (or states {})))
               \return)})
 
 (defn gstat [{:keys [user]}]
@@ -295,11 +295,11 @@
   (when path
     (let [path (map #(assoc % :z (:z @user)) path)
           movement (map (fn [[a b]]
-                          (user-movement (merge @user
-                                                a
-                                                {:body (:body b)
-                                                 :head (:head b)
-                                                 :states (list (user-state-move b))})))
+                          (user-movement (update-in (merge @user
+                                                           a
+                                                           {:body (:body b)
+                                                            :head (:head b)})
+                                                    [:states] assoc :move (user-state-move b))))
                         (partition 2 1 (cons @user path)))
           last-movement (merge @user (last path))]
       (cons (first movement)
@@ -425,3 +425,9 @@
 (defn catalog-purchase [_]
   [{:header headers/catalog-purchase
     :body ""}])
+
+(defn wave [{:keys [user]}]
+  [(user-movement @user)
+   (merge (user-movement (update-in @user [:states] dissoc :wave))
+          {:delay 2000
+           :thunk (fn [] (swap! user update-in [:states] dissoc :wave))})])
