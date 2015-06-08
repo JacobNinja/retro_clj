@@ -431,6 +431,3 @@
    (merge (user-movement (update-in @user [:states] dissoc :wave))
           {:delay 2000
            :thunk (fn [] (swap! user update-in [:states] dissoc :wave))})])
-
-(defn dance [{:keys [user]}]
-  [(user-movement @user)])
