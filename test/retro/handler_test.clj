@@ -540,3 +540,10 @@
       ; Remove wave status
       ((:thunk (second result)))
       (is (nil? (get-in @user [:states :wave]))))))
+
+(deftest dance-test
+  (testing "dance state"
+    (let [user (atom {:x 0 :y 1 :z 2 :body 5 :head 6 :room 1 :states {:dance (fn [] "/dance")}})]
+      (is (= (dance {:user user})
+             [{:header 34
+               :body (str "1 0,1,2,5,6/dance" \return)}])))))
