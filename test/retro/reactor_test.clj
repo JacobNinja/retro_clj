@@ -383,3 +383,10 @@
       (wave "" {:user user})
       (is (= ((:wave (:states @user)))
              "/wave")))))
+
+(deftest dance-test
+  (testing "adds dance state"
+    (let [user (atom {})]
+      (dance "" {:user user})
+      (is (= ((get-in @user [:states :dance]))
+             "/dance")))))

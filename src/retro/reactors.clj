@@ -100,3 +100,6 @@
 
 (defn wave [_ {:keys [user]}]
   (swap! user update-in [:states] assoc :wave (fn [] "/wave")))
+
+(defn dance [_ {:keys [user]}]
+  (swap! user update-in [:states] assoc :dance (fn [] "/dance")))
