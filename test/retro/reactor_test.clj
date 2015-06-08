@@ -390,3 +390,9 @@
       (dance "" {:user user})
       (is (= ((get-in @user [:states :dance]))
              "/dance")))))
+
+(deftest stop-test
+  (testing "dance"
+    (let [user (atom {:states {:dance "foo"}})]
+      (stop "Dance" {:user user})
+      (is (nil? (get-in @user [:states :dance]))))))

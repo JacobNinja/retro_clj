@@ -103,3 +103,10 @@
 
 (defn dance [_ {:keys [user]}]
   (swap! user update-in [:states] assoc :dance (fn [] "/dance")))
+
+(defn stop [packet {:keys [user]}]
+  (let [command (condp = packet
+                  "Dance" :dance
+                  nil)]
+    (swap! user update-in [:states] dissoc command)
+    nil))
