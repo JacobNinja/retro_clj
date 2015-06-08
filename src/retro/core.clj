@@ -44,6 +44,7 @@
    headers/credits [reactors/default handlers/credits]
    headers/catalog-purchase [reactors/catalog-purchase handlers/catalog-purchase]
    headers/wave [reactors/wave handlers/wave]
+   headers/dance [reactors/dance handlers/dance]
    })
 
 (defn- escape [{:keys [body] :as packet}]

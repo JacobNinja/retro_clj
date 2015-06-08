@@ -21,6 +21,7 @@
 (def look-to 79)
 (def stop 88)
 (def place-stuff 90)
+(def dance 93)
 (def wave 94)
 (def catalog-purchase 100)
 (def catalog-pages 101)
