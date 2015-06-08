@@ -45,6 +45,7 @@
    headers/catalog-purchase [reactors/catalog-purchase handlers/catalog-purchase]
    headers/wave [reactors/wave handlers/wave]
    headers/dance [reactors/dance handlers/room-movement]
+   headers/stop [reactors/stop handlers/room-movement]
    })
 
 (defn- escape [{:keys [body] :as packet}]
